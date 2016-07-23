@@ -1,7 +1,8 @@
-# README
+하나와영 웹페이지 프로젝트 
+---
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 프로젝트 설명
+하나와영 웹페이지를 위한 Rails 프로젝트입니다
 
 Things you may want to cover:
 
