@@ -6,7 +6,7 @@ class AdminController < ApplicationController
       if is_admin?
         render template: "admin/dashboard"
       else
-        render file: "public/401.html", status: :unauthorized
+        render file: "public/401.html", status: :unauthorized, layout: false
       end
 
     else
