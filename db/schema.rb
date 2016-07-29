@@ -24,6 +24,12 @@ ActiveRecord::Schema.define(version: 20160726155954) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.boolean  "is_admin",               default: false
+    t.integer  "student_number",                         null: false
+    t.string   "name"
+    t.string   "department_name"
+    t.string   "entry_semester"
+    t.string   "kakaotalkid"
+    t.string   "profile_image_url"
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
     t.index ["email"], name: "index_users_on_email", unique: true

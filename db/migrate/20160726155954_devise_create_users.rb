@@ -32,6 +32,13 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
 
 
       t.boolean :is_admin, default: false
+      t.integer :student_number, null: false
+      t.string :name
+      t.string :department_name
+      t.string :entry_semester
+      t.string :kakaotalkid
+      t.string :profile_image_url
+
 
 
       t.timestamps null: false
