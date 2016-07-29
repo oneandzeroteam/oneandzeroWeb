@@ -694,7 +694,7 @@ figure.post-media + * {
 	position: relative;
 	width: 100%;
 	height: auto !important;
-	background: url("../images/art/screen-container.png") no-repeat top / 100%;
+	background: url("../../../public/assets/images/art/screen-container.png") no-repeat top / 100%;
 	overflow: hidden;
 }
 .screen-container:before{
@@ -2325,7 +2325,7 @@ p .btn {
 	left: 0;
 	bottom: 0;
 	right: 0;
-	background: url("../images/art/pattern-background01.jpg");
+	background: url("../../../public/assets/images/art/pattern-background01.jpg");
 	opacity: .05;
 }
 #testimonials #owl-testimonials {
