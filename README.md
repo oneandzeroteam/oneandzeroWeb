@@ -4,6 +4,9 @@
 ## 프로젝트 설명
 하나와영 웹페이지를 위한 Rails 프로젝트입니다
 
+## 야식 선택지
+- 치킨
+
 Things you may want to cover:
 
 * Ruby version
