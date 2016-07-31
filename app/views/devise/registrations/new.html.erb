@@ -52,6 +52,10 @@
       <%= f.text_field :kakaotalkid, class: "form-control" %>
     </div>
 
+      <%= flash[:recaptcha_error] %>
+    <div class="recaptcha">
+      <%= recaptcha_tags %>
+    </div>
     <div class="actions">
       <%= f.submit "회원가입" , class: "btn" %>
     </div>

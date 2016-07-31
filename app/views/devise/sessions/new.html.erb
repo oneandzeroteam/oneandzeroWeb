@@ -19,6 +19,11 @@
       </div>
     <% end -%>
 
+      <%= flash[:recaptcha_error] %>
+    <div class="recaptcha">
+        <%= recaptcha_tags %>
+    </div>
+
     <div class="actions">
       <%= f.submit "로그인", class: "btn" %>
     </div>

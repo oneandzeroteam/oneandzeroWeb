@@ -27,3 +27,6 @@
 # Ignore design templates 
 /AdminLTE-2.3.0/*
 /REEN/*
+
+#ENV
+.env
