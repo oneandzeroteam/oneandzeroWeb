@@ -6,9 +6,8 @@
   <title>하나와영 Admin | Dashboard</title>
   <%= csrf_meta_tags %>
 
-
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'admin' %>
+  <%= javascript_include_tag  'admin' %>
 
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -439,16 +438,18 @@
         <!--</ul>-->
         <!--</li>-->
         <!--<li><a href="documentation/index.html"><i class="fa fa-book"></i> <span>Documentation</span></a></li>-->
-        <li class="header">LABELS</li>
-        <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
-        <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
-        <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
+
+        <!--<li class="header">LABELS</li>-->
+        <!--<li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>-->
+        <!--<li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>-->
+        <!--<li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>-->
       </ul>
     </section>
     <!-- /.sidebar -->
   </aside>
-    <%= yield %>
 
+    <%= yield %>
+  </div><!-- ./wrapper -->
   <!-- FastClick -->
   <script src="/assets/plugins/fastclick/fastclick.min.js"></script>
   <!-- Sparkline -->

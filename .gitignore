@@ -23,3 +23,7 @@
 
 # Ignore intelliJ configuration files
 /.idea/*
+
+# Ignore design templates 
+/AdminLTE-2.3.0/*
+/REEN/*
