@@ -27,7 +27,7 @@
     <% @users.each do |user| %>
         <div class="box">
           <div class="box-header with-border">
-            <h3 class="box-title"><%= user.email %></h3>
+            <h3 class="box-title"><%= user.name %>(<%= user.email %>)</h3>
             <div class="box-tools pull-right">
               <!-- Buttons, labels, and many other things can be placed here! -->
               <!-- Here is a label for example -->
@@ -40,6 +40,10 @@
           </div><!-- /.box-body -->
           <div class="box-footer">
             <p>Email : <%= user.email %></p>
+            <p>학번 : <%= user.student_number %></p>
+            <p>학과 : <%= user.department_name %></p>
+            <p>입회학기 : <%= user.entry_semester %></p>
+            <p>카카오 아이디 : <%= user.kakaotalkid %></p>
           </div><!-- box-footer -->
         </div><!-- /.box -->
     <% end %>
