@@ -1,0 +1,74 @@
+<!-- ============================================================= MAIN ============================================================= -->
+
+<main>
+
+  <!-- ============================================================= SECTION – PORTFOLIO ============================================================= -->
+
+  <section id="portfolio">
+
+
+    <div class="container inner-bottom">
+      <div class="row">
+        <div class="col-sm-12 portfolio">
+
+          <!-- 상단 -->
+          <div class="container inner">
+            <div class="row">
+              <div class="col-md-8 col-sm-9 center-block text-center">
+
+                <h1>Alumni</h1>
+                <p>하나와영을 빛내주신 멋진 얼굴들입니다.</p>
+
+              </div><!-- /.col -->
+            </div><!-- /.row -->
+          </div><!-- /.container -->
+
+
+          <ul class="filter text-center">
+            <!-- Alumni  경계 위아래 구분선 -->
+          </ul><!-- /.filter -->
+
+
+          <ul class="items col-3 gap">
+
+            <% @members.each do |member| %>
+                <!-- Alumni Items -->
+                <li class="item thumb interactive">
+                  <figure>
+
+                    <div class="icon-overlay icn-link">
+                      <a href="/members/<%= member.id %>"><img src="<%= member.image_url %>" /></a>
+                    </div><!-- /.icon-overlay -->
+
+                    <figcaption class="bordered no-top-border">
+                      <div class="info">
+                        <h4><a href="/members/<%= member.id %>"><%= member.name %></a></h4>
+                        <p><%= member.occupation %></p></p>
+                      </div><!-- /.info -->
+                    </figcaption>
+
+                  </figure>
+                </li><!-- /.item -->
+            <% end %>
+
+
+
+          </ul><!-- /.items -->
+
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div><!-- /.container -->
+  </section>
+  <!-- ============================================================= SECTION – PORTFOLIO : END ============================================================= -->
+
+
+  <!-- ============================================================= SECTION – SHARE ============================================================= -->
+
+
+  <!-- ============================================================= SECTION – SHARE : END ============================================================= -->
+
+</main>
+
+<!-- ============================================================= MAIN : END ============================================================= -->
+
+

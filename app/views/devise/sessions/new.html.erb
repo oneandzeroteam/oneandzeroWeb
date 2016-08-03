@@ -1,33 +1,35 @@
-<div class="col-md-offset-4 col-md-4" style="position: absolute;top: 50%;transform: translateY(-50%);">
-  <h2>로그인</h2>
+<main class="container-fluid" style="height:700px" >
+  <div class="col-md-4 col-md-offset-3" style="margin-top:100px">
+    <h2>로그인</h2>
 
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="field">
-      <%= f.label :이메일 %><br />
-      <%= f.email_field :email, autofocus: true, class: "form-control" %>
-    </div>
-
-    <div class="field">
-      <%= f.label :비밀번호 %><br />
-      <%= f.password_field :password, autocomplete: "off", class: "form-control"%>
-    </div>
-
-    <% if devise_mapping.rememberable? -%>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field">
-        <%= f.check_box :remember_me %>
-        <%= f.label :remember_me %>
+        <%= f.label :이메일 %><br />
+        <%= f.email_field :email, autofocus: true, class: "form-control" %>
       </div>
-    <% end -%>
 
-      <%= flash[:recaptcha_error] %>
-    <div class="recaptcha">
-        <%= recaptcha_tags %>
-    </div>
+      <div class="field">
+        <%= f.label :비밀번호 %><br />
+        <%= f.password_field :password, autocomplete: "off", class: "form-control"%>
+      </div>
 
-    <div class="actions">
-      <%= f.submit "로그인", class: "btn" %>
-    </div>
-  <% end %>
+      <% if devise_mapping.rememberable? -%>
+        <div class="field">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
+        </div>
+      <% end -%>
 
-  <div class=""><%= render "devise/shared/links" %></div>
-</div>
+        <%= flash[:recaptcha_error] %>
+      <div class="recaptcha">
+          <%= recaptcha_tags %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "로그인", class: "btn" %>
+      </div>
+    <% end %>
+
+    <div class=""><%= render "devise/shared/links" %></div>
+  </div>
+</main>

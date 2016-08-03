@@ -314,8 +314,8 @@ main header + * {
 	margin-top: 35px !important;
 }
 .inner {
-	padding-top: 40px;
-	padding-bottom: 40px;
+	padding-top: 120px;
+	padding-bottom: 120px;
 }
 .inner-md {
 	padding-top: 100px;
@@ -694,7 +694,7 @@ figure.post-media + * {
 	position: relative;
 	width: 100%;
 	height: auto !important;
-	background: url("../images/art/screen-container.png") no-repeat top / 100%;
+	background: url("") no-repeat top / 100%;
 	overflow: hidden;
 }
 .screen-container:before{

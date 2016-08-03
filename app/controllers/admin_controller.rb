@@ -15,12 +15,12 @@ class AdminController < ApplicationController
   end
 
 
-  def indexusers
+  def index_users
     @users = User.all
     render template: "admin/users"
   end
 
-  def deleteuser
+  def destroy_user
     @user = User.find(params[:userid])
     unless @user.is_admin?
       @user.destroy!
@@ -34,11 +34,50 @@ class AdminController < ApplicationController
     end
   end
 
+  def index_members
+    @members = Member.all
+    render template: "admin/members"
+  end
+
+  def new_member
+    @member = Member.new
+    render template: "admin/new_member"
+  end
+
+  def create_member
+    @member = Member.new(member_params)
+
+    respond_to do |format|
+      if @member.save
+        format.html { redirect_to admin_members_path, notice: '멤버가 생성되었습니다' }
+      else
+        format.html { redirect_to admin_members_path, notice: '#{@member.name} 을 생성할 수 없습니다' }
+      end
+    end
+  end
+
+  def destroy_member
+    set_member
+    @member.destroy
+    respond_to do |format|
+      format.html { redirect_to admin_members_path, notice: '멤버가 제거되었습니다' }
+      format.json { head :no_content }
+    end
+  end
 
   private
 
   def is_admin?
-    current_user.is_admin == true
+    current_user.is_admin
   end
 
+  # Use callbacks to share common setup or constraints between actions.
+  def set_member
+    @member = Member.find(params[:memberid])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def member_params
+    params.require(:member).permit(:name, :email)
+  end
 end
