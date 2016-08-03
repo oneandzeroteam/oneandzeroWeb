@@ -33,6 +33,10 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
 
       t.boolean :is_admin, default: false
 
+      ## Member Model Linkage
+      t.boolean :is_member, default: false
+      t.integer :member_id
+
       t.integer :student_number
       t.string :name
       t.string :department_name

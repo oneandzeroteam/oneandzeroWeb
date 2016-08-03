@@ -40,20 +40,8 @@ class AdminController < ApplicationController
   end
 
   def new_member
-    @member = Member.new
+    # @member = Member.new
     render template: "admin/new_member"
-  end
-
-  def create_member
-    @member = Member.new(member_params)
-
-    respond_to do |format|
-      if @member.save
-        format.html { redirect_to admin_members_path, notice: '멤버가 생성되었습니다' }
-      else
-        format.html { redirect_to admin_members_path, notice: '#{@member.name} 을 생성할 수 없습니다' }
-      end
-    end
   end
 
   def destroy_member

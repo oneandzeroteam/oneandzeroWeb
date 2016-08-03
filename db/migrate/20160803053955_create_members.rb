@@ -7,6 +7,9 @@ class CreateMembers < ActiveRecord::Migration[5.0]
       t.string :email
       t.text :description
 
+      ## User Model Linkage
+      t.integer :user_id
+
       t.boolean :is_professor, default: false
       t.boolean :is_alumni , default: false
       t.timestamps

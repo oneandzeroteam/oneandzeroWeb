@@ -23,18 +23,7 @@
         <div class="alert alert-success" role="alert"><%= notice %></div>
     <% end %>
   <div class="col-md-4 col-md-offset-4" style="margin-top:100px">
-    <%= form_for(@member , :url => url_for(:controller => "admin", :action => "create_member")) do |f| %>
-        <% if @member.errors.any? %>
-            <div id="error_explanation">
-              <h2><%= pluralize(member.errors.count, "error") %> prohibited this member from being saved:</h2>
-
-              <ul>
-                <% @member.errors.full_messages.each do |message| %>
-                    <li><%= message %></li>
-                <% end %>
-              </ul>
-            </div>
-        <% end %>
+    <%= form_for @member do |f| %>
 
         <div class="form-group">
         <%= f.label :이름 %>
@@ -63,3 +52,4 @@
   <!-- Default to the left -->
   <strong>Copyright &copy; 2016 <a href="#">oneandzero</a>.</strong> All rights reserved.
 </footer>
+</div>
