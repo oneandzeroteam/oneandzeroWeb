@@ -694,7 +694,7 @@ figure.post-media + * {
 	position: relative;
 	width: 100%;
 	height: auto !important;
-	background: url("../images/art/screen-container.png") no-repeat top / 100%;
+	background: url("") no-repeat top / 100%;
 	overflow: hidden;
 }
 .screen-container:before{
@@ -3830,12 +3830,12 @@ input:focus:-ms-input-placeholder {
     text-transform: uppercase;
 }
 .classic-blog .post .date .day {
-    font-size: 20px;
+    font-size: 17px;
     margin-bottom: 1px;
     display: block;
 }
 .classic-blog .post .date .month {
-    font-size: 12px;
+    font-size: 17px;
     display: block;
 }
 .classic-blog .sidemeta .format-wrapper {
