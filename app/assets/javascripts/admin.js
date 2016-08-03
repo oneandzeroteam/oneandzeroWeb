@@ -15,6 +15,6 @@
 //= require bootstrap.min
 // require turbolinks
 // require_tree .
-//= require admin_lte/app.min
-//= require admin_lte/dashboard2
+//= require admin/app.min
+//= require admin/dashboard2
 
