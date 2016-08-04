@@ -49,8 +49,12 @@
           <!-- /.info -->
 
           <ul class="info pull-right">
-            <li><a href="/users/sign_in">Sign in</a></li>
-            <li><a href="/users/sign_up">Sign up</a></li>
+            <% if user_signed_in? %>
+              <li><a href="/users/sign_out" data-method="DELETE">logout</a></a></li>
+            <% else %>
+              <li><a href="/users/sign_in">Sign in</a></li>
+              <li><a href="/users/sign_up">Sign up</a></li>
+            <% end %>
           </ul>
           <!-- /.social -->
 
