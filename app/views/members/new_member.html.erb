@@ -27,7 +27,7 @@
 						<div class="col-sm-12">
 							<div class="row">
 								
-								<div class="col-sm-6 inner-right-sm">
+								<div>
 
     <% if alert %>
         <div class="alert alert-danger" role="alert"><%= alert %></div>
@@ -69,15 +69,22 @@
 											</div><!-- /.col -->
 										</div><!-- /.row -->
 										
-										<%= f.submit "멤버 만들기", class: "btn btn-default btn-submit" %>
+										<div class="row">
+											<div class="col-sm-12">
+												<p class="text-small">Alumni입니까? (checked: yes)</p>
+												<%= f.check_box :is_alumni %>
+											</div><!-- /.col -->
+										</div><!-- /.row -->
+
+
+												<%= f.submit "멤버 만들기", class: "btn" %>
+			
 										
 	<% end %>
 									
 								</div><!-- ./col -->
 								
-								<div class="col-sm-6 inner-left-sm border-left">
-									
-								</div><!-- /.col -->
+
 								
 							</div><!-- /.row -->
 						</div><!-- /.col -->
