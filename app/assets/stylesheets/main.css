@@ -314,8 +314,8 @@ main header + * {
 	margin-top: 35px !important;
 }
 .inner {
-	padding-top: 120px;
-	padding-bottom: 120px;
+	padding-top: 60px;
+	padding-bottom: 60px;
 }
 .inner-md {
 	padding-top: 100px;
