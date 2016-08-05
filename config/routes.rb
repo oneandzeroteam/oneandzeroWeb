@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   resources :posts do
     resources :comments
   end
+
+  resource :github_webhooks, only: :create, defaults: { formats: :json }
   
   devise_for :users, controllers: {registrations: "registrations"}
 
