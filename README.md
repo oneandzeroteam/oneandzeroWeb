@@ -6,6 +6,7 @@
 
 ## 야식 선택지
 - 치킨
+- 곱창
 
 Things you may want to cover:
 
