@@ -8,6 +8,10 @@
 - 치킨
 - 곱창
 
+
+### 지각
+- 영정
+
 Things you may want to cover:
 
 * Ruby version
