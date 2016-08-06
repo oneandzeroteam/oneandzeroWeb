@@ -1,5 +1,4 @@
 class CommentsController < ApplicationController
-  
   # GET /posts/new
   #def new
   #  if user_signed_in?
@@ -8,9 +7,9 @@ class CommentsController < ApplicationController
   #end
   
   def create
-    @post = Post.find(params[:post_id])
-    @comment = @post.comments.create(params[:comment])
-    redirect_to post_path(@post)
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.create(params[:comment])
+    redirect_to post_path(@post)
   end
 
   def destroy
