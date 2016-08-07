@@ -1,4 +1,4 @@
-﻿/*
+/*
 Template: 		REEN – Made for Designers
 Description: 	Creative Portfolio Bootstrap 3 Template
 Version: 		1.3.1
@@ -6097,4 +6097,34 @@ a.changecolor {
 	300 {
 		max-height: 20px;
 	}
+}
+
+
+.board_container{
+	border-bottom: 1px solid;
+
+}
+
+td.postnum {
+	width: 5%;
+	text-align: center;
+}
+
+td.title {
+	width: 54%;
+}
+
+td.bauthor {
+	width: 17%;
+	text-align: center;
+}
+
+td.date {
+	width: 15%;
+	text-align: center;
+}
+
+td.bview {
+	width: 9%;
+	text-align: center;
 }
