@@ -3787,6 +3787,15 @@ input:focus:-ms-input-placeholder {
 	content: "Comments";
 	margin-left: 4px;
 }
+
+.meta li.views a:before {
+	content: "\f30e";
+}
+.meta li.views a:after {
+	content: "views";
+	margin-left: 4px;
+}
+
 .meta li.likes a:before {
 	content: "\2665";
 }
