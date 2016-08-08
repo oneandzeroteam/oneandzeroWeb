@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :posts
   resources :posts do
     resources :comments
   end
@@ -8,6 +9,10 @@ Rails.application.routes.draw do
   root "pages#show", page: "home"
   get "/pages/:page" => "pages#show"
 
+  get "/board/:boardname" => "posts#index"
+  get "/board/:boardname/posts/new" => "posts#new"
+  post "/board/:boardname/posts/" => "posts#create"
+  get "/board/:boardname/posts/:post_id" => "posts#show"
 
   #post "/members/new" => "members#new"
   get "/members/" => "members#index"
