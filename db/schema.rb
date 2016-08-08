@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(version: 20160804084538) do
     t.string   "occupation"
     t.string   "email"
     t.text     "description"
-    t.integer  "user_id"
     t.boolean  "is_professor", default: false
     t.boolean  "is_alumni",    default: false
     t.datetime "created_at",                   null: false
@@ -56,8 +55,6 @@ ActiveRecord::Schema.define(version: 20160804084538) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.boolean  "is_admin",               default: false
-    t.boolean  "is_member",              default: false
-    t.integer  "member_id"
     t.integer  "student_number"
     t.string   "name"
     t.string   "department_name"

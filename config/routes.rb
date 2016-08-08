@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   
   devise_for :users, controllers: {registrations: "registrations"}
 
-  root "pages#show", page: "home"
-  get "/pages/:page" => "pages#show"
+  root "pages#show", pagename: "home"
+  get "/pages/:pagename" => "pages#show"
 
 
   #post "/members/new" => "members#new"
