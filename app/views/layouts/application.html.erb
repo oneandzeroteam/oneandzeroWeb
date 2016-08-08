@@ -43,17 +43,17 @@
         <div class="container">
 
           <ul class="info pull-left">
-            <li><a href="#"><i class="icon-mail-1 contact"></i> koreaoaz@korea.ac.kr</a></li>
-            <li><i class="icon-mobile contact"></i> 010 3186 9822 </li>
+            <li><b>고려대학교 소프트웨어 전공학회 하나와영</b></li>
+            <!--<li><i class="icon-mobile contact"></i> 010 3186 9822 </li>-->
           </ul>
           <!-- /.info -->
 
           <ul class="info pull-right">
             <% if user_signed_in? %>
-              <li><a href="/users/sign_out" data-method="DELETE">Log out</a></a></li>
+              <li><a href="/users/sign_out" data-method="DELETE">로그아웃</a></a></li>
             <% else %>
-              <li><a href="/users/sign_in">Sign in</a></li>
-              <li><a href="/users/sign_up">Sign up</a></li>
+              <li><a href="/users/sign_in">로그인</a></li>
+              <li><a href="/users/sign_up">회원가입</a></li>
             <% end %>
           </ul>
           <!-- /.social -->
@@ -87,7 +87,7 @@
             <ul class="nav navbar-nav">
               
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle js-activated">About</a>
+                <a href="#" class="dropdown-toggle js-activated">About us</a>
 
                 <ul class="dropdown-menu">
                   <li><a href="/pages/about">About OAZ</a></li>
