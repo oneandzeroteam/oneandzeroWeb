@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   def show
     if valid_page?
-      render template: "pages/#{params[:page]}"
+      render template: "pages/#{params[:pagename]}"
     else
       render file: "public/404.html", status: :not_found
     end
@@ -10,7 +10,7 @@ class PagesController < ApplicationController
   private
 
   def valid_page?
-    File.exist?(Pathname.new(Rails.root + "app/views/pages/#{params[:page]}.html.erb"))
+    File.exist?(Pathname.new(Rails.root + "app/views/pages/#{params[:pagename]}.html.erb"))
   end
 
 end
