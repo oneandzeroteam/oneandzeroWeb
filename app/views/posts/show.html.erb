@@ -102,10 +102,12 @@
             </div><!-- /.post-author -->
 
 
+
             <div id="comments">
-              <h2>5 Comments</h2>
+              <!--<h2>5 Comments</h2>-->
               <ol class="commentlist">
-                <li class="comment">
+                <% @post.comments.each do |comment| %>
+                  <li class="comment">
                   <div class="avatar icon-overlay icn-link">
                     <a href="#"><img src="/assets/images/art/human02.jpg" alt=""></a>
                   </div><!-- /.avatar -->
@@ -113,14 +115,14 @@
                   <div class="commentbody">
 
                     <div class="author">
-                      <h3><a href="#">Jennifer Fox</a></h3>
+                      <h3><a href="#"><%= comment.user.name %></a></h3>
                       <div class="meta">
                         <span class="date">about 5 hours ago</span>
                       </div><!-- /.meta -->
                     </div><!-- /.author -->
 
                     <div class="message">
-                      <p>Magnis modipsae que lib voloratati andigen daepeditem ut repro labor. Laceaque quiae sitiorem rest non restibusaes es tumquam core posae volor remped modis volor. Doloreiur qui commolu ptatemp dolupta oreprerum aut tibusam. Eumenis et consent accullignis dentibea autem inisita posae volor conecus resto explabo que voloratati andigen emperum quiae sitiorem.</p>
+                      <p><%= comment.body %> </p>
                       <ul class="meta">
                         <li class="reply"><a href="#">Reply</a></li>
                         <li class="votes">24</li>
@@ -132,128 +134,14 @@
                   </div><!-- /.commentbody -->
                 </li><!-- /.comment -->
 
-                <li class="comment">
-                  <div class="avatar icon-overlay icn-link">
-                    <a href="#"><img src="/assets/images/art/human03.jpg" alt=""></a>
-                  </div><!-- /.avatar -->
-
-                  <div class="commentbody">
-
-                    <div class="author">
-                      <h3><a href="#">Chris Cavill</a></h3>
-                      <div class="meta">
-                        <span class="date">about 4 hours ago</span>
-                      </div><!-- /.meta -->
-                    </div><!-- /.author-->
-
-                    <div class="message">
-                      <p>Conecus iure posaemne voloris remped modis aut accabora incim resto explaboris eictemperum quiae sitiorem. Doloreiur qui commolu ptatemp dolupta oreprerum tibusam emnis et consent accullignis.</p>
-                      <ul class="meta">
-                        <li class="reply"><a href="#">Reply</a></li>
-                        <li class="votes">18</li>
-                        <li class="upvote"><a href="#"><i class="icon-thumbs-up"></i></a></li>
-                        <li class="downvote"><a href="#"><i class="icon-thumbs-down"></i></a></li>
-                      </ul><!-- /.meta -->
-                    </div><!-- /.message -->
-
-                  </div><!-- /.commentbody -->
-
-                  <ul class="children">
-                    <li class="comment">
-                      <div class="avatar icon-overlay icn-link">
-                        <a href="#"><img src="/assets/images/art/human01.jpg" alt=""></a>
-                      </div><!-- /.avatar -->
-
-                      <div class="commentbody">
-
-                        <div class="author">
-                          <h3><a href="#">Amber Jones</a></h3>
-                          <div class="meta">
-                            <span class="date">about 2 hours ago</span>
-                          </div><!-- /.meta -->
-                        </div><!-- /.author -->
-
-                        <div class="message">
-                          <p>Laceaque quiae sitiorem rest non restibusaes es tumquam core posae volor remped modis volor. Magnis modipsae que lib volorati andigen daepeditem ut repro labor. Menis et consent accullignis dentibea autem inisita eictemperum quiae posae volor.</p>
-                          <ul class="meta">
-                            <li class="reply"><a href="#">Reply</a></li>
-                            <li class="votes">20</li>
-                            <li class="upvote"><a href="#"><i class="icon-thumbs-up"></i></a></li>
-                            <li class="downvote"><a href="#"><i class="icon-thumbs-down"></i></a></li>
-                          </ul><!-- /.meta -->
-                        </div><!-- /.message -->
-
-                      </div><!-- /.commentbody -->
-
-                      <ul class="children">
-                        <li class="comment">
-                          <div class="avatar icon-overlay icn-link">
-                            <a href="#"><img src="/assets/images/art/human04.jpg" alt=""></a>
-                          </div><!-- /.avatar -->
-
-                          <div class="commentbody">
-
-                            <div class="author">
-                              <h3><a href="#">Toby Evans</a></h3>
-                              <div class="meta">
-                                <span class="date">about 1 hour ago</span>
-                              </div><!-- /.meta -->
-                            </div><!-- /.author -->
-
-                            <div class="message">
-                              <p>Magnis modipsae que lib voloratati andigen daep editem ut repro labor. Laceaque quiae sitiorem rest non restibsae es tumquam core posae volor remped modis volor. Doloreiur qui commolu ptatemp dolupta oreprum aut tibusam. Eumenis et consent accullignis dentibea autem inisita posae volor conecus resto explabo que voloratati andigen emperum quiae sitiorem.</p>
-                              <ul class="meta">
-                                <li class="reply"><a href="#">Reply</a></li>
-                                <li class="votes">9</li>
-                                <li class="upvote"><a href="#"><i class="icon-thumbs-up"></i></a></li>
-                                <li class="downvote"><a href="#"><i class="icon-thumbs-down"></i></a></li>
-                              </ul><!-- /.meta -->
-                            </div><!-- /.message -->
-
-                          </div><!-- /.commentbody -->
-                        </li><!-- /.comment -->
-                      </ul><!-- /.children -->
-                    </li><!-- /.comment -->
-                  </ul><!-- /.children -->
-                </li><!-- /.comment -->
-
-                <li class="comment">
-                  <div class="avatar icon-overlay icn-link">
-                    <a href="#"><img src="/assets/images/art/human05.jpg" alt=""></a>
-                  </div><!-- /.avatar -->
-
-                  <div class="commentbody">
-
-                    <div class="author">
-                      <h3><a href="#">Sophie Adams</a></h3>
-                      <div class="meta">
-                        <span class="date">about 20 minutes ago</span>
-                      </div><!-- /.meta -->
-                    </div><!-- /.author -->
-
-                    <div class="message">
-                      <p>Conecus iure posae volor remped modisatae aut accabora incim resto explaboris eictemperum quiae sitiorem. Doloreiur qui commolu ptatemp dolupta oreprerum tibusam emnis et consent accullignis. Doloreiur qui commolu ptatemp dolupta oreprerum aut tibusam. Eumenis et consent accullignis dentibea autem inisita posae volor conecus resto explabo voloratati andigen emperum quiae sitiorem rest non restibsae.</p>
-                      <ul class="meta">
-                        <li class="reply"><a href="#">Reply</a></li>
-                        <li class="votes">3</li>
-                        <li class="upvote"><a href="#"><i class="icon-thumbs-up"></i></a></li>
-                        <li class="downvote"><a href="#"><i class="icon-thumbs-down"></i></a></li>
-                      </ul><!-- /.meta -->
-                    </div><!-- /.message -->
-
-                  </div><!-- /.commentbody -->
-                </li><!-- /.comment -->
-              </ol><!-- /.commentlist -->
-            </div><!-- /#comments -->
+                <% end %>
 
             <div class="comment-form-wrapper">
               <h2>Comment</h2>
-
-              <form id="commentform" class="forms" action="" method="post">
-
+              <form id="commentform" class="forms" action="/posts/<%= @post.id %>/comments" method="POST">
                 <div class="row">
                   <div class="col-sm-12">
-                    <textarea name="message" class="form-control" placeholder="Enter your comment ..."></textarea>
+                    <textarea name="comment[body]" class="form-control" placeholder="Enter your comment ..."></textarea>
                   </div><!-- /.col -->
                 </div><!-- /.row -->
 
@@ -272,9 +160,7 @@
             <!-- ============================================================= SIDE NAVIGATION ============================================================= -->
 
             <ul class="sidenav">
-              <li><a href="#">Board1</a></li>
-              <li><a href="#">Board2</a></li>
-              <li><a href="#">Board3</a></li>
+              <%= render :partial => "sidenav" %>
             </ul><!-- /.sidenav -->
 
             <!-- ============================================================= SIDE NAVIGATION : END ============================================================= -->

@@ -10,10 +10,12 @@
         <!-- ============================================================= SIDE NAVIGATION ============================================================= -->
 
         <ul class="sidenav">
-          <% @boards.each do |board| %>
-          <li><a href="/board/<%= board.name %>"><%= board.name %></a></li>
-          <% end %>
+          <%= render :partial => "sidenav" %>
         </ul><!-- /.sidenav -->
+
+          <!-- <% @boards.each do |board| %>
+          <li><a href="/board/<%= board.name %>"><%= board.name %></a></li>
+          <% end %>-->
 
         <!-- ============================================================= SIDE NAVIGATION : END ============================================================= -->
 

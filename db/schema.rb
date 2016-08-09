@@ -19,13 +19,13 @@ ActiveRecord::Schema.define(version: 20160808125135) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.string   "user"
-    t.string   "references"
-    t.text     "body"
+    t.integer  "user_id"
     t.integer  "post_id"
+    t.text     "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_comments_on_post_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "members", force: :cascade do |t|
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20160808125135) do
     t.string   "occupation"
     t.string   "email"
     t.text     "description"
+    t.integer  "user_id"
     t.boolean  "is_professor", default: false
     t.boolean  "is_alumni",    default: false
     t.datetime "created_at",                   null: false
@@ -42,6 +43,7 @@ ActiveRecord::Schema.define(version: 20160808125135) do
 
   create_table "posts", force: :cascade do |t|
     t.integer  "user_id"
+    t.integer  "board_id"
     t.string   "title"
     t.text     "content"
     t.datetime "created_at", null: false
@@ -61,6 +63,8 @@ ActiveRecord::Schema.define(version: 20160808125135) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.boolean  "is_admin",               default: false
+    t.boolean  "is_member",              default: false
+    t.integer  "member_id"
     t.integer  "student_number"
     t.string   "name"
     t.string   "department_name"

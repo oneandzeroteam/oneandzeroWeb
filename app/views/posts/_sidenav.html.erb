@@ -1,0 +1,7 @@
+<!-- ============================================================= SIDE NAVIGATION ============================================================= -->
+
+<ul class="sidenav">
+  <% Board.all.each do |board| %>
+    <li><a href="/board/<%= board.name %>"><%= board.name %></a></li>
+  <% end %>
+</ul><!-- /.sidenav -->
