@@ -4,19 +4,25 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @boards = Board.all
+    @board = Board.where(name: params[:boardname]).first
+    @posts = @board.posts.all
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @board = Board.where(name: params[:boardname]).first
   end
 
   # GET /posts/new
   def new
     if user_signed_in?
-      @post = Post.new(user: current_user)
-    end # else 로그인으로 연결필요함
+      @board = Board.where(name: params[:boardname]).first
+      @post = Post.new
+    else
+      redirect_to new_user_session_path
+    end
   end
 
 
@@ -28,10 +34,12 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
-
+    board = Board.where(name: params[:boardname]).first
+    @post.board_id = board.id
+    @post.user_id = current_user.id
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
+        format.html { redirect_to "/board/#{board.name}", notice: 'Post was successfully created.' }
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new }
@@ -45,7 +53,7 @@ class PostsController < ApplicationController
   def update
     respond_to do |format|
       if @post.update(post_params)
-        format.html { redirect_to @post, notice: 'Post was successfully updated.' }
+        format.html { redirect_to :show, notice: 'Post was successfully updated.' }
         format.json { render :show, status: :ok, location: @post }
       else
         format.html { render :edit }
@@ -67,11 +75,11 @@ class PostsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
-      @post = Post.find(params[:id])
+      @post = Post.find(params[:post_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:user_id, :title, :content)
+      params.require(:post).permit(:title, :content)
     end
 end

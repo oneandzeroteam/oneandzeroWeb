@@ -1,31 +1,122 @@
-<p id="notice"><%= notice %></p>
+<!-- ============================================================= MAIN ============================================================= -->
 
-<h1>Posts</h1>
+<main>
 
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Title</th>
-      <th>Content</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <div class="container inner">
+    <div class="row">
 
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.user %></td>
-        <td><%= post.title %></td>
-        <td><%= post.content %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <div class="col-md-3 inner-right-md inner-bottom-sm">
 
-<br>
+        <!-- ============================================================= SIDE NAVIGATION ============================================================= -->
 
-<%= link_to 'New Post', new_post_path %>
+        <ul class="sidenav">
+          <% @boards.each do |board| %>
+          <li><a href="/board/<%= board.name %>"><%= board.name %></a></li>
+          <% end %>
+        </ul><!-- /.sidenav -->
+
+        <!-- ============================================================= SIDE NAVIGATION : END ============================================================= -->
+
+      </div><!-- /.col -->
+
+      <div class="col-md-9 inner-left-md border-left">
+
+        <!-- ============================================================= SECTION – HERO ============================================================= -->
+
+
+
+        <!-- ============================================================= SECTION – HERO : END ============================================================= -->
+
+
+        <!-- ============================================================= SECTION – CONTENT ============================================================= -->
+
+
+
+        <section class="content-header"  style="padding-bottom: 5px; border-bottom: 2px solid;">
+          <h1>
+            게시판
+          </h1>
+          <ol class="breadcrumb">
+            <li><i class="fa fa-dashboard"></i>Board</li>
+            <li class="active"><a clss="dropdown" href="#">Board1</a></li>
+          </ol>
+        </section>
+
+
+        <table width=100%>
+
+          <tr class="board_container" class="text-normal">
+            <td class="postnum">
+
+            </td>
+
+            <td class="title" align="center">
+              <b>제목</b>
+            </td>
+
+            <td class="bauthor">
+              <b>작성자</b>
+            </td>
+
+            <td class="date">
+              <b>날짜</b>
+            </td>
+
+            <td class="bview">
+              <b>조회</b>
+            </td>
+          </tr>
+
+          <% @posts.each do |post| %>
+
+          <tr class="board_container text-small">
+            <td class="postnum">
+              <%= post.id %>
+            </td>
+
+            <td class="title">
+              <a class="dropdown" href="/board/<%= @board.name %>/posts/<%= post.id %>"><%= post.title %></a>
+            </td>
+
+            <td class="bauthor">
+              <%= post.user.name %>
+            </td>
+
+            <td class="date">
+              <%= post.created_at.getlocal.to_formatted_s(:short) %>
+            </td>
+            <td class="bview">
+              10
+            </td>
+          </tr>
+
+          <% end %>
+        </table>
+        <a href="/board/<%= @board.name %>/posts/new" class="btn btn-small btn-gray">글작성</a>
+        <br /><br />
+        <center>
+          <ul class="pagination">
+            <li><a href="#">Prev</a></li>
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">Next</a></li>
+          </ul><!-- /.pagination -->
+        </center>
+
+
+
+
+
+
+
+        <!-- ============================================================= SECTION – CONTENT : END ============================================================= -->
+
+      </div><!-- ./col -->
+
+    </div><!-- /.row -->
+  </div><!-- /.container -->
+
+</main>
+
+<!-- ============================================================= MAIN : END ============================================================= -->
