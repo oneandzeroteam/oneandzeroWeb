@@ -8,11 +8,13 @@
 						<div class="col-sm-12">	
 							<ul class="format-filter text-center">
 								<li><a class="active" href="#" data-filter="*" title="All" data-rel="tooltip" data-placement="top"><i class="icon-th"></i></a></li>
-								<li><a href="#" data-filter=".format-standard" title="Standard" data-rel="tooltip" data-placement="top"><i class="icon-edit"></i></a></li>
-								<li><a href="#" data-filter=".format-image" title="Image" data-rel="tooltip" data-placement="top"><i class="icon-picture-1"></i></a></li>
-								<li><a href="#" data-filter=".format-gallery" title="Gallery" data-rel="tooltip" data-placement="top"><i class="icon-picture"></i></a></li>
 							</ul><!-- /.format-filter -->
 						</div><!-- /.col -->
+						
+						<!-- Admin 전용 타임라인 게시 -->
+						<div class="col-sm-12">
+							<p class="text-center"><a href="/pages/newTimeline" class="btn btn-small btn-red">Timeline 작성</a></p>
+						</div>
 					</div><!-- /.row -->
 					
 					<div class="row">
@@ -20,7 +22,7 @@
 							
 							<div class="posts sidemeta">
 								
-								<div class="post format-standard">
+								<div class="post format-standard"> <!-- 첫번째 타임라인 포스트 -->
 									
 									<div class="date-wrapper">
 										<div class="date">
@@ -29,8 +31,10 @@
 										</div><!-- /.date -->
 									</div><!-- /.date-wrapper -->
 									
-									<div class="format-wrapper">
-										<a href="#" data-filter=".format-standard"><i class="icon-edit"></i></a>
+									<!-- Admin 전용 타임라인 수정/삭제 -->
+									<div class="text-right">
+										<a href="/pages/editTimeline" title="Edit" data-rel="tooltip" data-placement="top"><i class="icon-edit"></i></a>
+										<a href="delTimeline" class="active" title="Delete" data-rel="tooltip" data-placement="top"><i class="icon-trash-1"></i></a>
 									</div><!-- /.format-wrapper -->
 									
 									<div class="post-content">
@@ -44,84 +48,28 @@
 									
 								</div><!-- /.post -->
 								
-								<div class="post format-image">
+								<div class="post format-standard"> <!-- 두번째 타임라인 포스트 -->
 									
 									<div class="date-wrapper">
 										<div class="date">
-											<span class="day">xxxx.</span>
-											<span class="month">oo.</span>
+											<span class="day">xxxx.</span> <!-- year로 씁시다. -->
+											<span class="month">00.</span> <!-- month로 씁시다. -->
 										</div><!-- /.date -->
 									</div><!-- /.date-wrapper -->
 									
-									<div class="format-wrapper">
-										<a href="#" data-filter=".format-image"><i class="icon-picture-1"></i></a>
-									</div><!-- /.format-wrapper -->
-									
 									<div class="post-content">
 										
-										<figure class="icon-overlay icn-link post-media">
-											<a href="#"><img src="/assets/images/art/photograph04-lg.jpg" alt=""></a>
-										</figure><!-- /.post-media -->
+										<h1 class="post-title">
+											<a href="#">하나와영 창립</a> 
+										</h1>
 										
-										<h2 class="post-title">
-											<a href="#">타임라인 사진첨부 가능</a>
-										</h2>
-										
-										
-										<p class="text-small">부연설명!</p>
-										
+										<p class="text-small">이렇게 저렇게 어쩌고 저쩌고 해서 하나와영이 이 날 태어나게 되었습니다.</p> <!-- 부연설명(있을경우만) -->
 									</div><!-- /.post-content --> 
-									
+									<br /><br />
 								</div><!-- /.post -->
 								
-								<div class="post format-gallery">
-									
-									<div class="date-wrapper">
-										<div class="date">
-											<span class="day">oxxx.</span>
-											<span class="month">xx.</span>
-										</div><!-- /.date -->
-									</div><!-- /.date-wrapper -->
-									
-									<div class="format-wrapper">
-										<a href="#" data-filter=".format-gallery"><i class="icon-picture"></i></a>
-									</div><!-- /.format-wrapper -->
-									
-									<div class="post-content">
-										
-										<div id="owl-work" class="owl-carousel owl-inner-pagination owl-inner-nav post-media">
-											
-											<div class="item">
-												<figure>
-													<img src="/assets/images/art/work06-lg.jpg" alt="">
-												</figure>
-											</div><!-- /.item -->
-											
-											<div class="item">
-												<figure>
-													<img src="/assets/images/art/work02-lg.jpg" alt="">
-												</figure>
-											</div><!-- /.item -->
-											
-											<div class="item">
-												<figure>
-													<img src="/assets/images/art/work08a-lg.jpg" alt="">
-												</figure>
-											</div><!-- /.item -->
-											
-											
-										</div><!-- /.owl-carousel -->
-										
-										<h2 class="post-title">
-											<a href="#">여러장의 사진 첨부 가능</a>
-										</h2>
-										
-										
-										<p class="text-small">부연설명</p>
-										
-									</div><!-- /.post-content --> 
-									<br />
-								</div><!-- /.post -->
+								
+								
 							</div><!-- /.posts -->
 						</div><!-- /.col -->
 					</div><!-- /.row -->
