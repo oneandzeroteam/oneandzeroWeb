@@ -24,7 +24,7 @@
     <% end %>
 
 
-    <%= form_for @member do |f| %>
+    <%= form_for(@member, :url => url_for(:controller => "admin", :action => "create_member")) do |f| %>
 
         <div class="row field">
           <div class="col-sm-12">
