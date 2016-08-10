@@ -1,22 +1,24 @@
 class MembersController < ApplicationController
 
   def create
-    @member = Member.create(member_params)
+    if(is_admin?)
+      @member = Member.create(member_params)
     
-    respond_to do |format|
-      if @member.save
-        if ((@user = @member.find_pairUser(@member.email)) != nil)
-          if @member.add_linkage_with_user(@user)
+      respond_to do |format|
+        if @member.save
+          if ((@user = @member.find_pairUser(@member.email)) != nil)
+            if @member.add_linkage_with_user(@user)
+              format.html { redirect_to admin_members_path,
+                notice: "Member #{@member.name} was created and linked same User." }
+            end
+          else
             format.html { redirect_to admin_members_path,
-              notice: "Member #{@member.name} was created and linked same User." }
+              notice: "Member #{@member.name} was created." }
           end
         else
           format.html { redirect_to admin_members_path,
-            notice: "Member #{@member.name} was created." }
+            notice: "Creating Member was Failed."}
         end
-      else
-        format.html { redirect_to admin_members_path,
-          notice: "Creating Member was Failed."}
       end
     end
   end
@@ -61,6 +63,11 @@ class MembersController < ApplicationController
                                    :is_alumni)
   end
 
-
-
+  def is_admin?
+    if user_signed_in?
+      current_user.is_admin
+    else
+      false
+    end
+  end
 end
