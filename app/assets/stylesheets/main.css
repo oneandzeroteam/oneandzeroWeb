@@ -6081,7 +6081,7 @@ a.changecolor {
 }
 
 @-skrollr-keyframes shrink-header {
-	40 {
+	40% {
 		padding-top: 30px;
 		padding-bottom: 30px;
 		-webkit-box-shadow: 0 10px 10px rgba(0,0,0,0);
@@ -6089,7 +6089,7 @@ a.changecolor {
 				box-shadow: 0 10px 10px rgba(0,0,0,0);
 	}
 
-	300 {
+	300% {
 		padding-top: 0;
 		padding-bottom: 0;
 		-webkit-box-shadow: 0 10px 10px rgba(0,0,0,0.1);
@@ -6099,11 +6099,11 @@ a.changecolor {
 }
 
 @-skrollr-keyframes shrink-logo {
-	40 {
+	40% {
 		max-height: 40px;
 	}
 
-	300 {
+	300% {
 		max-height: 20px;
 	}
 }
