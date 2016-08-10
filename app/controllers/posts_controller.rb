@@ -9,6 +9,11 @@ class PostsController < ApplicationController
     @posts = @board.posts.all
   end
 
+  def blog
+    @board = Board.where(name: "tech-blog").first
+    @posts = @board.posts.all
+  end
+
   # GET /posts/1
   # GET /posts/1.json
   def show

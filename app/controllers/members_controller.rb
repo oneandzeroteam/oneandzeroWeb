@@ -1,33 +1,5 @@
 class MembersController < ApplicationController
 
-  def create
-    if(is_admin?)
-      @member = Member.create(member_params)
-    
-      respond_to do |format|
-        if @member.save
-          if ((@user = @member.find_pairUser(@member.email)) != nil)
-            if @member.add_linkage_with_user(@user)
-              format.html { redirect_to admin_members_path,
-                notice: "Member #{@member.name} was created and linked same User." }
-            end
-          else
-            format.html { redirect_to admin_members_path,
-              notice: "Member #{@member.name} was created." }
-          end
-        else
-          format.html { redirect_to admin_members_path,
-            notice: "Creating Member was Failed."}
-        end
-      end
-    end
-  end
-
-  def new
-    @member = Member.new
-    render template: "members/new_member"
-  end
-
   def index
     # /members
     @members = Member.where(is_alumni: false , is_professor: false)

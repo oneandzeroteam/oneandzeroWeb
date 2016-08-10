@@ -40,8 +40,29 @@ class AdminController < ApplicationController
   end
 
   def new_member
-    # @member = Member.new
+    @member = Member.new
     render template: "admin/new_member"
+  end
+
+  def create_member
+    @member = Member.create(member_params)
+
+    respond_to do |format|
+      if @member.save
+        if ((@user = @member.find_pairUser(@member.email)) != nil)
+          if @member.add_linkage_with_user(@user)
+            format.html { redirect_to admin_members_path,
+                                      notice: "Member #{@member.name} was created and linked same User." }
+          end
+        else
+          format.html { redirect_to admin_members_path,
+                                    notice: "Member #{@member.name} was created." }
+        end
+      else
+        format.html { redirect_to admin_members_path,
+                                  notice: "Creating Member was Failed."}
+      end
+    end
   end
 
   def destroy_member
@@ -56,6 +77,8 @@ class AdminController < ApplicationController
   def index_board
     @boards = Board.all
   end
+
+
 
   private
 

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   root "pages#show", pagename: "index"
   get "/pages/:pagename" => "pages#show"
 
+  get "/board/tech-blog" => "posts#blog"
   get "/board/:boardname" => "posts#index"
   get "/board/:boardname/posts/new" => "posts#new"
   post "/board/:boardname/posts/" => "posts#create"
@@ -24,7 +25,7 @@ Rails.application.routes.draw do
   get "/admin/dashboard" => "admin#dashboard"
   get "/admin/users" => "admin#index_users"
   get "/admin/members/" => "admin#index_members"
-  get "/admin/members/new" => "members#new"
+  get "/admin/members/new" => "admin#new_member"
   delete "/admin/users/:userid" => "admin#destroy_user"
   delete "/admin/members/:memberid" => "admin#destroy_member"
 
