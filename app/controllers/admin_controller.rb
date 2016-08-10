@@ -53,6 +53,10 @@ class AdminController < ApplicationController
     end
   end
 
+  def index_board
+    @boards = Board.all
+  end
+
   private
 
   def is_admin?

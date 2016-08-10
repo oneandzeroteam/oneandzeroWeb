@@ -63,8 +63,6 @@ ActiveRecord::Schema.define(version: 20160808125135) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.boolean  "is_admin",               default: false
-    t.boolean  "is_member",              default: false
-    t.integer  "member_id"
     t.integer  "student_number"
     t.string   "name"
     t.string   "department_name"
