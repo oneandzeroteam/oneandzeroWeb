@@ -13,8 +13,6 @@
 - 영정
 - 가람
 
-### githook Test
-3
 
 Things you may want to cover:
 
