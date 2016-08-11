@@ -1,5 +1,6 @@
 class TimelineController < ApplicationController
   def show
+    @title = Timeline.all
   end
 
   def insert
