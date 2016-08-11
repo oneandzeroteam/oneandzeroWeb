@@ -5,6 +5,7 @@ class TimelineController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       rormat.xml {render :xml => @timelines}
+    end
   end
 
   def insert
