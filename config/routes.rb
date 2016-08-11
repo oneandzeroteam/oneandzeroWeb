@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+ 
   resources :posts
   resources :posts do
     resources :comments
@@ -8,6 +9,12 @@ Rails.application.routes.draw do
 
   root "pages#show", pagename: "index"
   get "/pages/:pagename" => "pages#show"
+
+  #timeline routes
+  get '/timeline/show'
+  get '/timeline/insert'
+  get '/timeline/update'
+  get '/timeline/delete'
 
   get "/board/tech-blog" => "posts#blog"
   get "/board/:boardname" => "posts#index"
