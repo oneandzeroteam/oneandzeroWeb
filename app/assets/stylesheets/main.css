@@ -1335,9 +1335,10 @@ aside .thumb figure {
 	vertical-align: middle;
     padding: 0;
 	max-width: 300px;
+
 }
 .navbar-brand img {
-	max-height: 60px;
+	max-height: 50px;
 }
 .navbar-header .navbar-brand {
 	display: none;
