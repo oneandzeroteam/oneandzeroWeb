@@ -327,7 +327,28 @@
             <li class=""><a href="/admin/members/new"><i class="fa fa-circle-o"></i>멤버생성</a></li>
           </ul>
         </li>
-        <li><a href="/users/sign_out" data-method="POST"><i class="fa fa-link"></i> <span>로그아웃</span></a></li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-dashboard"></i> <span>타임라인 관리</span> <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="treeview-menu">
+            <li class=""><a href="/admin/members"><i class="fa fa-circle-o"></i>모든 이벤트</a></li>
+            <li class=""><a href="/admin/members/new"><i class="fa fa-circle-o"></i>이벤트 생성</a></li>
+          </ul>
+        </li>
+
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-dashboard"></i> <span>게시판 관리</span> <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="treeview-menu">
+            <li class=""><a href="/admin/members"><i class="fa fa-circle-o"></i>모든 게시판</a></li>
+            <li class=""><a href="/admin/members/new"><i class="fa fa-circle-o"></i>게시판 생성</a></li>
+            <li class=""><a href="/admin/members/new"><i class="fa fa-circle-o"></i>게시물 관리</a></li>
+          </ul>
+        </li>
+
+        <li><a href="/users/sign_out" data-method="DELETE"><i class="fa fa-link"></i> <span>로그아웃</span></a></li>
 
         <!--<li class="treeview">-->
         <!--<a href="#">-->

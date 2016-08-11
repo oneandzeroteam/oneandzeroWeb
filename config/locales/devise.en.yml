@@ -3,8 +3,8 @@
 en:
   devise:
     confirmations:
-      confirmed: "Your email address has been successfully confirmed."
-      send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."
+      confirmed: "계정이 활성화 되었습니다."
+      send_instructions: "인증과정을 담고 있는 메일이 전송되었습니다."
       send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions for how to confirm your email address in a few minutes."
     failure:
       already_authenticated: "You are already signed in."
@@ -15,7 +15,7 @@ en:
       not_found_in_database: "Invalid %{authentication_keys} or password."
       timeout: "Your session expired. Please sign in again to continue."
       unauthenticated: "You need to sign in or sign up before continuing."
-      unconfirmed: "You have to confirm your email address before continuing."
+      unconfirmed: "로그인을 하실려면 이메일로 인증과정을 마치셔야합니다. 메일함을 확인해주세요"
     mailer:
       confirmation_instructions:
         subject: "Confirmation instructions"
@@ -43,8 +43,8 @@ en:
       update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and follow the confirm link to confirm your new email address."
       updated: "Your account has been updated successfully."
     sessions:
-      signed_in: "Signed in successfully."
-      signed_out: "Signed out successfully."
+      signed_in: "로그인 되었습니다."
+      signed_out: "로그아웃 되었습니다."
       already_signed_out: "Signed out successfully."
     unlocks:
       send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."

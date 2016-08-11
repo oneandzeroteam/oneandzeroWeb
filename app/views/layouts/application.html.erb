@@ -50,6 +50,7 @@
 
           <ul class="info pull-right">
             <% if user_signed_in? %>
+              <li><a href="/admin/dashboard">대시보드</a></a></li>
               <li><a href="/users/sign_out" data-method="DELETE">로그아웃</a></a></li>
             <% else %>
               <li><a href="/users/sign_in">로그인</a></li>
@@ -91,7 +92,7 @@
 
                 <ul class="dropdown-menu">
                   <li><a href="/pages/about">About OAZ</a></li>
-                  <li><a href="/pages/timeline">Timeline</a></li>
+                  <li><a href="/timeline/show">Timeline</a></li>
                 </ul> 
               </li>
               
@@ -105,7 +106,7 @@
                 <a href="#" class="dropdown-toggle js-activated">Members</a>
 
                 <ul class="dropdown-menu">
-                  <li><a href="/professor">Chairman's Greeting</a></li>
+                  <li><a href="/pages/chairman_greeting">Chairman's Greeting</a></li>
                   <li><a href="/members">Members</a></li>
                   <li><a href="/alumni">Alumni</a></li>
                   <!-- <li><a href="portfolio2.html">3 Columns Details Grid</a></li> -->
@@ -299,7 +300,14 @@
     <!-- /.navbar -->
   </header>
   <!-- ============================================================= HEADER : END ============================================================= -->
-
+  <div class="col-md-4 col-md-offset-3">
+    <% if alert %>
+        <div class="alert alert-danger" role="alert" style="margin-top:20px;"><%= alert %></div>
+    <% end %>
+    <% if notice %>
+        <div class="alert alert-success" role="alert" style="margin-top:20px;"><%= notice %></div>
+    <% end %>
+  </div>
 
   <%= yield %>
 
@@ -409,4 +417,8 @@
 
 </body>
 
+<script type="text/javascript" charset="utf-8">
+  $(".alert").fadeOut(1000, function(){ $(this).remove();});
+</script>
 </html>
+

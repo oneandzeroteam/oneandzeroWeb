@@ -30,3 +30,14 @@
 
 #ENV
 .env
+
+#precompiled assets
+public/assets/.sprockets-manifest-*.json
+public/assets/admin-*.css
+public/assets/admin-*.css.gz
+public/assets/admin-*.js
+public/assets/admin-*.js.gz
+public/assets/application-*.js
+public/assets/application-*.js.gz
+public/assets/application-*.css
+public/assets/application-*.css.gz
