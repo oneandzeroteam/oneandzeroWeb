@@ -1,6 +1,10 @@
 class TimelineController < ApplicationController
   def show
-    @title = Timeline.all
+    @timelines = Timeline.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      rormat.xml {render :xml => @timelines}
   end
 
   def insert
@@ -8,7 +12,7 @@ class TimelineController < ApplicationController
 
   def update
   end
-  
+
   def delete
   end
 end
