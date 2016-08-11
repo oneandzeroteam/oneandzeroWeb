@@ -14,10 +14,13 @@ Rails.application.routes.draw do
   get "/board/:boardname/posts/new" => "posts#new"
   post "/board/:boardname/posts/" => "posts#create"
   get "/board/:boardname/posts/:post_id" => "posts#show"
+  
 
   get "/members/" => "members#index"
   get "/alumni" => "members#alumni"
-  get "/professor" => "members#professor"
+  get "/chairman_greeting" => "members#chairman_greeting"
+  get "/professor" => "members#professor" 
+  
   get "/members/:id" => "members#show"
 
   # ADMIN
