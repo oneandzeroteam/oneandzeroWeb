@@ -7,6 +7,15 @@ class PagesController < ApplicationController
     end
   end
 
+  def recruit_check
+	  if request.xhr?
+		  respond_to do |format|
+			  msg = { :status => "ok", :message => "Success!", :html => "<b>...</b>" }
+			  format.json  { render :json => msg }
+		  end
+	  end
+  end
+
   private
 
   def valid_page?
