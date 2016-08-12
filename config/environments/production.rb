@@ -1,7 +1,11 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.default_url_options = {
+	  		:host => 'oaz.korea.ac.kr',
+  			:openssl_verify_mode  => 'none'
+  }
+  config.action_mailer.delivery_method = "sendmail"
 
   # Code is not reloaded between requests.
   config.cache_classes = true
