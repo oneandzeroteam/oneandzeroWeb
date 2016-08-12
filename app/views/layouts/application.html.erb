@@ -137,11 +137,11 @@
                         <h4>Focus on</h4>
                         <figure>
                           <div class="icon-overlay icn-link">
-                            <a href="/pages/project_post"><img src="/assets/images/art/work01.jpg" alt=""></a>
+                            <a href="/projects/<%= @recent_project.id %>"><img src="<%= @recent_project.image_url %>" alt=""></a>
                           </div>
                           <figcaption>
-                            <p>Git, Javascript, CSS, Html... 이런 거 처음 들어본 사람?? 하나와영 웹 팀의 프론트 엔드는 그런 상태에서 시작했다고 합니다. </p>
-                            
+                            <p><b><%= @recent_project.title %></b></p>
+                            <p><%= @recent_project.short_description %></p>
                           </figcaption>
                         </figure>
                       </div>
@@ -151,13 +151,14 @@
                         <h4>Current Project</h4>
 
                         <div class="row thumbs gap-xs">
-
+                          <% @current_projects.each do |project| %>
                           <div class="col-xs-6 thumb">
                             <figure class="icon-overlay icn-link">
-                              <a href="/pages/project_post"><img src="/assets/images/art/work02.jpg" alt=""></a>
+                              <a href="/projects/<%= project.id %>"><img src="<%= project.image_url %>" alt=""></a>
                             </figure>
                           </div>
                           <!-- /.thumb -->
+                          <% end %>
 
                           <div class="col-xs-6 thumb">
                             <figure class="icon-overlay icn-link">
