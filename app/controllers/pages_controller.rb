@@ -9,8 +9,13 @@ class PagesController < ApplicationController
 
   def recruit_check
 	  if request.xhr?
+		  name = params[:name]
+		  phoneNumber = params[:phoneNumber]
+		  email = params[:email]
+		  message = params[:message]
+		  ApplicationMailer.recruit_mail().deliver_now
 		  respond_to do |format|
-			  msg = { :status => "ok", :message => "Success!", :html => "<b>...</b>" }
+			  msg = { :status => "ok", :name => name, :phoneNumber => phoneNumber, :email => email, :message => message }
 			  format.json  { render :json => msg }
 		  end
 	  end

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   root "pages#show", pagename: "index"
   get "/pages/:pagename" => "pages#show"
+  post "/pages/recruit_check" => "pages#recruit_check"
 
   #timeline routes
   get '/timeline/index'

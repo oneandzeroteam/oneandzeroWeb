@@ -5,7 +5,18 @@ Rails.application.configure do
 	  		:host => 'oaz.korea.ac.kr',
   			:openssl_verify_mode  => 'none'
   }
-  config.action_mailer.delivery_method = "sendmail"
+  #config.action_mailer.delivery_method = "sendmail"
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      address:              'localhost',
+      port:                 25,
+      domain:               'localhost',
+      user_name:            ENV['MAILER_USER'],
+      password:             ENV['MAILER_PASSWORD'],
+      authentication:       'plain',
+      openssl_verify_mode:  'none',
+      enable_starttls_auto: true
+  }
 
   # Code is not reloaded between requests.
   config.cache_classes = true
