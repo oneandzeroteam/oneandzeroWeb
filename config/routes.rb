@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get "/pages/:pagename" => "pages#show"
 
   #timeline routes
-  get '/timeline/timeline_read'
+  get '/timeline/index'
   get '/timeline/timeline_create'
   get '/timeline/timeline_update'
   get '/timeline/timeline_destroy'

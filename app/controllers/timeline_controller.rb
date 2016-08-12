@@ -1,10 +1,10 @@
 class TimelineController < ApplicationController
-  def show
-    @timelines = Timeline.all
+  def index
+    @timeline = Timeline.all
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml {render :xml => @timelines}
+      format.xml {render :xml => @timeline}
     end
   end
 
