@@ -25,7 +25,7 @@
         <link href="/assets/fonts/fontello.css" rel="stylesheet">
 
         <!-- Favicon -->
-        <link rel="shortcut icon" href="../assets/images/art/fevicon oaz with white.png">
+        <link rel="shortcut icon" href="../assets/images/art/favicon oaz with white.png">
 
         <!-- HTML5 elements and media queries Support for IE8 : HTML5 shim and Respond.js -->
         <!--[if lt IE 9]>
@@ -96,13 +96,9 @@
                   <li><a href="/timeline/index">Timeline</a></li>
                 </ul> 
               </li>
-              
-              <li class="dropdown">
-                <a href="/pages/recruit" class="dropdown-toggle">Recruit</a>
-                <!-- /.dropdown-menu -->
-              </li>
-              <!-- /.dropdown -->
-              
+
+              <li><a href="/pages/recruit" class="scroll-to" data-anchor-offset="0">Recruit</a></li>
+
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle js-activated">Members</a>
 
@@ -250,21 +246,12 @@
 
               <!-- ============================================================= MEGA MENU : END ============================================================= -->
 
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle js-activated">Users</a>
 
-                <ul class="dropdown-menu">
-                  <% if user_signed_in? %>
-                    <li><a href="/users/sign_out" data-method="DELETE">Sign Out</a></li>
-                  <% else %>
-                    <li><a href="/users/sign_in">Sign In</a></li>
-                    <li><a href="/users/sign_up">Sign Up</a></li>
-                  <% end %>
-                </ul>
-                <!-- /.dropdown-menu -->
-              </li>
-              <!-- /.dropdown -->
-
+              <% if user_signed_in? %>
+                  <li><a href="/users/sign_out" data-method="DELETE" class="scroll-to" data-anchor-offset="0">Log Out</a></li>
+              <% else %>
+                  <li><a href="/users/sign_in" class="scroll-to" data-anchor-offset="0">Log In</a></li>
+              <% end %>
 
               <li class="dropdown pull-right searchbox">
                 <a href="#" class="dropdown-toggle js-activated"><i class="icon-search"></i></a>
@@ -359,6 +346,7 @@
 			  <li><a href="http://dmaps.kr/29ags" target="_blank"><i class="icon-location contact"></i>고려대학교 공학별관 703호</a></li>
             <li><i class="icon-mobile contact"></i> 010-3186-9822 </li>
             <li><a href="#"><i class="icon-mail-1 contact"></i> koreaoaz@gmail.com</a></li>
+            <li><a href="/pages/policy"><i class="icon-document contact"></i>  개인정보처리방침</a></li>
           </ul><!-- /.contacts -->
         </div><!-- /.col -->
 
