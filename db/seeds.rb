@@ -7,6 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 #Administrator
-User.new(email: "admin@oaz.com", password: "1234", is_admin: true).save(validate: false)
+User.new(email: "admin@oaz.com", password: "1234", is_admin: true, confirmed_at: DateTime.now).save(validate: false)
 Board.create(name: 'tech-blog')
 Member.create(name: 'Hana-Kim', image_url: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTCTkOgzjmmH9ql4kGPgcAvI02RjThxk9GROpK6xz-Lt2ly_DZ4LzZkYA", occupation: "운영진")
