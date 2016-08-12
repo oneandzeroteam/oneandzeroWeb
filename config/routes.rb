@@ -1,33 +1,34 @@
 Rails.application.routes.draw do
- 
-  resources :posts
+
+  resources :timeline
   resources :posts do
     resources :comments
   end
-  
+
   devise_for :users, controllers: {registrations: "registrations"}
 
   root "pages#show", pagename: "index"
   get "/pages/:pagename" => "pages#show"
 
   #timeline routes
-  get '/timeline/index'
-  get '/timeline/timeline_create'
-  get '/timeline/timeline_update'
-  get '/timeline/timeline_destroy'
+  # get '/timeline/index' => "timeline#index"
+  # post '/timeline/index' => "timeline#create"
+  # get '/timeline/new' => "timeline#new"
+  # get '/timeline/edit'
+  # get '/timeline/destroy'
 
   get "/board/tech-blog" => "posts#blog"
   get "/board/:boardname" => "posts#index"
   get "/board/:boardname/posts/new" => "posts#new"
   post "/board/:boardname/posts/" => "posts#create"
   get "/board/:boardname/posts/:post_id" => "posts#show"
-  
+
 
   get "/members/" => "members#index"
   get "/alumni" => "members#alumni"
   get "/chairman_greeting" => "members#chairman_greeting"
-  get "/professor" => "members#professor" 
-  
+  get "/professor" => "members#professor"
+
   get "/members/:id" => "members#show"
 
   # ADMIN
