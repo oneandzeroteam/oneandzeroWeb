@@ -11,10 +11,10 @@ Rails.application.routes.draw do
   get "/pages/:pagename" => "pages#show"
 
   #timeline routes
-  get '/timeline/show'
-  get '/timeline/insert'
-  get '/timeline/update'
-  get '/timeline/delete'
+  get '/timeline/timeline_read'
+  get '/timeline/timeline_create'
+  get '/timeline/timeline_update'
+  get '/timeline/timeline_destroy'
 
   get "/board/tech-blog" => "posts#blog"
   get "/board/:boardname" => "posts#index"
