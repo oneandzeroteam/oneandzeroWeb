@@ -32,33 +32,33 @@
 								
 								<div class="col-sm-6 outer-top-md inner-right-sm">
 									
-									<%= form_tag("/recruit", id: "contactform", class: "forms", method: "POST", remote: true) do%>
+									<%= form_tag("/recruit", id: "recruitform", class: "forms", method: "POST", remote: true) do%>
 										
 										<div class="row">
 											<div class="col-sm-6">
-												<input type="text" name="name" class="form-control" placeholder="이름 (Required)">
+												<input type="text" name="name" class="form-control" placeholder="이름 (Required)" required>
 											</div><!-- /.col -->
 										</div><!-- /.row -->
 										
 										<div class="row">
 											<div class="col-sm-6">
-												<input type="tel" name="phoneNumber" class="form-control" placeholder="전화번호 (Required)">
+												<input type="tel" name="phoneNumber" class="form-control" placeholder="전화번호 (Required)" required>
 											</div><!-- /.col -->
 										</div><!-- /.row -->
 										
 										<div class="row">
 											<div class="col-sm-6">
-												<input type="email" name="email" class="form-control" placeholder="E-mail (Required)">
+												<input type="email" name="email" class="form-control" placeholder="E-mail (Required)" required>
 											</div><!-- /.col -->
 										</div><!-- /.row -->
 										
 										<div class="row">
 											<div class="col-sm-12">
-												<textarea name="message" class="form-control" placeholder="지원 동기, 배우고 싶은 것 등 학회에 하고 싶은 말을 적어주세요!"></textarea>
+												<textarea name="message" class="form-control" placeholder="지원 동기, 배우고 싶은 것 등 학회에 하고 싶은 말을 적어주세요!" required></textarea>
 											</div><!-- /.col -->
 										</div><!-- /.row -->
 										
-										<button type="submit" class="btn btn-default btn-submit">지원서 보내기</button>
+										<button type="submit" id="form_submit_button" class="btn btn-default btn-submit">지원서 보내기</button>
 										
 									<% end %>
 									
