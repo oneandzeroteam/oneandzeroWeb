@@ -1,0 +1,56 @@
+<main>
+
+  <!-- ============================================================= SECTION – PORTFOLIO ============================================================= -->
+
+  <section id="portfolio">
+
+    <div class="container inner">
+      <div class="row">
+        <div class="col-md-8 col-sm-9 center-block text-center">
+          <header>
+            <h1>하나와영 진행 프로젝트</h1>
+            <p class="text-small">현재 진행중인 프로젝트와 과거에 진행되었던 프로젝트를 나누어 볼 수 있습니다.</p>
+          </header>
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div><!-- /.container -->
+
+    <div class="container inner-bottom">
+      <div class="row">
+        <div class="col-sm-12 portfolio">
+
+          <ul class="filter text-center">
+            <li><a href="#" data-filter="*" class="active">All</a></li>
+            <li><a href="#" data-filter=".current">Current Projects</a></li>
+            <li><a href="#" data-filter=".past">Past Proects</a></li>
+          </ul><!-- /.filter -->
+
+          <ul class="items col-3">
+            <% @projects.each do |project| %>
+            <li class="item thumb
+            <% if project.is_ongoing %> current <% else %> past <% end %>"> <!-- identity: past projects -->
+              <a href="/projects/<%= project.id %>">
+                <figure>
+                  <figcaption class="text-overlay">
+                    <div class="info">
+                      <h4><%= project.title %></h4>
+                      <p><%= project.description %></p>
+                    </div><!-- /.info -->
+                  </figcaption>
+                  <img src="/assets/images/art/work01.jpg" alt="">
+                </figure>
+              </a>
+            </li><!-- /.item -->
+            <% end %>
+          </ul><!-- /.items -->
+
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div><!-- /.container -->
+  </section>
+
+  <!-- ============================================================= SECTION – PORTFOLIO : END ============================================================= -->
+
+</main>
+
+<!-- ============================================================= MAIN : END ============================================================= -->

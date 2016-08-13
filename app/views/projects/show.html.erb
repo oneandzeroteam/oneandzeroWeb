@@ -1,0 +1,51 @@
+<main>
+
+  <!-- ============================================================= SECTION – PORTFOLIO POST ============================================================= -->
+
+  <section id="portfolio-post">
+    <div class="container inner-top-md">
+
+      <div class="row">
+        <div class="col-sm-12">
+          <div id="owl-work" class="owl-carousel owl-inner-pagination owl-outer-nav owl-ui-lg">
+
+            <div class="item">
+              <figure>
+                <img src="<%= @project.image_url %>" alt="">
+              </figure>
+            </div><!-- /.item -->
+
+          </div><!-- /.owl-carousel -->
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+
+      <div class="row">
+
+        <div class="col-sm-7 inner-top-xs inner-right-xs">
+          <header>
+            <h2><%= @project.title %></h2>
+            <p class="text-normal"><%= @project.short_description %></p>
+            <p class="text-normal"><%= @project.long_description %></p>
+            <br /><br />
+          </header>
+        </div><!-- /.col -->
+
+        <div class="col-sm-4 col-sm-offset-1 outer-top-xs inner-left-xs border-left">
+          <ul class="item-details">
+            <li class="date">May 23, 2015</li>
+            <li class="categories">Identity, Interactive, Print</li>
+            <li class="client">Creative Startup</li>
+            <li class="url"><a href="http://demo.fuviz.com/reen">demo.fuviz.com/reen</a></li>
+          </ul><!-- /.item-detailsdddd -->
+        </div><!-- /.col -->
+
+      </div><!-- /.row -->
+
+    </div><!-- /.container -->
+  </section>
+
+  <!-- ============================================================= SECTION – PORTFOLIO POST : END ============================================================= -->
+
+</main>
+
+<!-- ============================================================= MAIN : END ============================================================= -->
