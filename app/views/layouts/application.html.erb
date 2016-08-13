@@ -160,41 +160,6 @@
                           <!-- /.thumb -->
                           <% end %>
 
-                          <div class="col-xs-6 thumb">
-                            <figure class="icon-overlay icn-link">
-                              <a href="/pages/project_post"><img src="/assets/images/art/work03.jpg" alt=""></a>
-                            </figure>
-                          </div>
-                          <!-- /.thumb -->
-
-                          <div class="col-xs-6 thumb">
-                            <figure class="icon-overlay icn-link">
-                              <a href="/pages/project_post"><img src="/assets/images/art/work04.jpg" alt=""></a>
-                            </figure>
-                          </div>
-                          <!-- /.thumb -->
-
-                          <div class="col-xs-6 thumb">
-                            <figure class="icon-overlay icn-link">
-                              <a href="/pages/project_post"><img src="/assets/images/art/work05.jpg" alt=""></a>
-                            </figure>
-                          </div>
-                          <!-- /.thumb -->
-
-                          <div class="col-xs-6 thumb">
-                            <figure class="icon-overlay icn-link">
-                              <a href="/pages/project_post"><img src="/assets/images/art/work06.jpg" alt=""></a>
-                            </figure>
-                          </div>
-                          <!-- /.thumb -->
-
-                          <div class="col-xs-6 thumb">
-                            <figure class="icon-overlay icn-link">
-                              <a href="/pages/project_post"><img src="/assets/images/art/work07.jpg" alt=""></a>
-                            </figure>
-                          </div>
-                          <!-- /.thumb -->
-
                         </div>
                         <!-- /.row -->
                       </div>
@@ -205,16 +170,9 @@
                         <h4>Past Works</h4>
 
                         <ul class="circled">
-                          <li><a href="/pages/project_post">학회 Web 리뉴얼</a></a></li>
-                          <li><a href="/pages/project_post">알판사</a></li>
-                          <li><a href="/pages/project_post">강의 녹음 / 텍스트화 어플리케이션</a></li>
-                          <li><a href="/pages/project_post">하나와영 그래픽스_2D 표정인식</a></li>
-                          <li><a href="/pages/project_post">게임 녹화 프로그램</a></li>
-                          <li><a href="/pages/project_post">포켓몬 고!</a></li>
-                          <li><a href="/pages/project_post">쩌는 어플리케이션</a></li>
-                          <li><a href="/pages/project_post">말로만 듣던 바로 그 앱</a></li>
-                          <li><a href="/pages/project_post">어쌔신 크리드 10</a></li>
-                          <li><a href="/pages/project_post">다크 소울 10</a></li>
+                          <% @past_projects.each do |project| %>
+                          <li><a href="/projects/<%= project.id %>"><%= project.title %></a></li>
+                          <% end %>
                           <a href="/projects" class="btn btn-gray">프로젝트 더 알아보기...</a></a>
                         </ul>
                         <!-- /.circled -->
