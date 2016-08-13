@@ -1,71 +1,69 @@
 		<main>
 			<!-- ============================================================= SECTION – BLOG ============================================================= -->
-			 
+
 			<section id="blog" class="light-bg">
 				<div class="container inner-top-sm inner-bottom classic-blog no-sidebar">
-					
+
 					<div class="row inner-bottom-xs">
-						<div class="col-sm-12">	
+						<div class="col-sm-12">
 							<ul class="format-filter text-center">
 								<li><a class="active" href="#" data-filter="*" title="All" data-rel="tooltip" data-placement="top"><i class="icon-th"></i></a></li>
 							</ul><!-- /.format-filter -->
 						</div><!-- /.col -->
-						
+
 						<!-- Admin 전용 타임라인 게시 -->
 						<div class="col-sm-12">
-							<p class="text-center"><a href="/timeline/timeline_create" class="btn btn-small btn-red">Timeline 작성</a></p>
+							<p class="text-center"><a href="/timeline/new" class="btn btn-small btn-red">Timeline 작성</a></p>
 						</div>
 					</div><!-- /.row -->
-					
+
 					<div class="row">
 						<div class="col-md-9 center-block">
-							
+
 							<div class="posts sidemeta">
-								
+
 								<div class="post format-standard"> <!-- 첫번째 타임라인 포스트 -->
 								<% @timeline.each do |timeline| %> <!-- timeline 데이터를 불러와서 전부 출력-->
-									<div class="date-wrapper">
-										<div class="date">
-											<span class="day">xxxx.</span>	 <!-- year로 씁시다. -->
-											<span class="month">00.</span> <!-- month로 씁시다. -->
+									<div class="date-wrappe	r">
+										<div class="date"><%= timeline.date %>
 										</div><!-- /.date -->
 									</div><!-- /.date-wrapper -->
-									
+
 									<!-- Admin 전용 타임라인 수정/삭제 -->
 									<div class="text-small text-right">
-										<a href="/timeline/timeline_update"><i class="icon-edit"></i> 수정</a> | 
-										<a href="/timeline/timeline_destroy"><i class="icon-trash-1" ></i>삭제</a>
+										<a href="/timeline/edit"><i class="icon-edit"></i> 수정</a> |
+										<a href="/timeline/destroy"><i class="icon-trash-1" ></i>삭제</a>
 									</div>
-									
+
+
 									<div class="post-content">
-										
+
 										<h1 class="post-title">
-											<a href="#"><%= timeline.title %></a> 
+											<a href="#"><%= timeline.title %></a>
 										</h1>
-										
-										<p class="text-small"><%= timeline.contents %></p><!-- 부연설명(있을경우만) --> 
-										
+
+										<p class="text-small"><%= timeline.contents %></p><!-- 부연설명(있을경우만) -->
+
 										<figure class="icon-overlay icn-link post-media"><!--이미지 보여주기. 업로드,다중보기 추후 업데이트-->
  -											<a href="#"><img src="/assets/images/art/photograph04-lg.jpg" alt=""></a>
  -									</figure><!-- /.post-media -->
- 
-									</div><!-- /.post-content --> 
-								<% end %>	
-								
+
+									</div><!-- /.post-content -->
+								<% end %>
+
 								<div class="comment-form-wrapper">
 								<!-- 타임라인 맨아래 깨지는 현상 방지용. notouch plz -->
 								</div><!-- /.comment-form-wrapper -->
-						
+
 							</div><!-- /.posts -->
 						</div><!-- /.col -->
 					</div><!-- /.row -->
-					
+
 				</div><!-- /.container -->
 			</section>
-			
+
 			<!-- ============================================================= SECTION – BLOG : END ============================================================= -->
-			
+
 		</main>
-		
+
 		<!-- ============================================================= MAIN : END ============================================================= -->
-		
