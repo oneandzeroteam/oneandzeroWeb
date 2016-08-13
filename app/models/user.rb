@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :posts
   has_many :comments
+  has_many :borrowablestuffs
 
   validates :student_number, :presence => true
   validates :name,  presence: true

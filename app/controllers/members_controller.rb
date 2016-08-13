@@ -34,12 +34,4 @@ class MembersController < ApplicationController
                                    :is_professor,
                                    :is_alumni)
   end
-
-  def is_admin?
-    if user_signed_in?
-      current_user.is_admin
-    else
-      false
-    end
-  end
 end

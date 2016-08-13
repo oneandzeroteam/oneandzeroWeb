@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :posts do
     resources :comments
   end
+  resources :borrowablestuffs
 
   devise_for :users, controllers: {registrations: "registrations"}
 
