@@ -1,12 +1,6 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
-
   resources :timeline
-=======
- 
   resources :projects
-  resources :posts
->>>>>>> e874be0fc7f2551fc0a296b3922fd393b2ed88fa
   resources :posts do
     resources :comments
   end
