@@ -1,6 +1,7 @@
 class AdminController < ApplicationController
-  layout "admin"
   before_action :is_admin?
+  layout "admin"
+
 
   def dashboard
     if is_admin?
@@ -8,6 +9,7 @@ class AdminController < ApplicationController
     end
   end
 
+  # ================================================= USERS CRUD =================================================
 
   def index_users
     @users = User.all
@@ -28,6 +30,9 @@ class AdminController < ApplicationController
     end
   end
 
+  # =============================================== USERS CRUD END ===============================================
+
+  # ================================================ MEMBERS CRUD ================================================
   def index_members
     @members = Member.all
     render template: "admin/members"
@@ -35,7 +40,6 @@ class AdminController < ApplicationController
 
   def new_member
     @member = Member.new
-    render template: "admin/new_member"
   end
 
   def create_member
@@ -68,11 +72,37 @@ class AdminController < ApplicationController
     end
   end
 
+  # ============================================== MEMBERS CRUD END ==============================================
+
+  # =============================================== TIMELINES CRUD ================================================
+
+  def index_timelines
+    @timelines = Timeline.all
+    render template: "admin/timelines"
+  end
+
+  def new_timeline
+    @timeline = Timeline.new
+  end
+
+  def create_timeline
+    @timeline=Timeline.new(timeline_params)
+
+    respond_to do |format|
+      if @timeline.save
+        format.html { redirect_to admin_timelines_path , notice: '이벤트가 성공적으로 생성되었습니다' }
+      else
+        format.html { redirect_to admin_timelines_path, notice: '이벤트 생성에 실패했습니다'}
+      end
+    end
+  end
+
+  # ================================================ BOARDS CRUD =================================================
   def index_board
     @boards = Board.all
   end
 
-
+  # ============================================== BOARDS CRUD END ===============================================
 
   private
 
@@ -94,8 +124,11 @@ class AdminController < ApplicationController
     @member = Member.find(params[:memberid])
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
   def member_params
     params.require(:member).permit(:name, :email)
+  end
+
+  def timeline_params
+    params.require(:timeline).permit(:title, :content, :date)
   end
 end

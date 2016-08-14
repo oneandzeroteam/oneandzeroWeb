@@ -1,23 +1,17 @@
 Rails.application.routes.draw do
+  root "pages#show", pagename: "index"
+  get "/pages/:pagename" => "pages#show"
+
   resources :timeline
   resources :projects
+  resources :borrowablestuffs
   resources :posts do
     resources :comments
   end
-  resources :borrowablestuffs
 
   devise_for :users, controllers: {registrations: "registrations"}
 
-  root "pages#show", pagename: "index"
-  get "/pages/:pagename" => "pages#show"
   post "/pages/recruit_check" => "pages#recruit_check"
-
-  #timeline routes
-  # get '/timeline/index' => "timeline#index"
-  # post '/timeline/index' => "timeline#create"
-  # get '/timeline/new' => "timeline#new"
-  # get '/timeline/edit'
-  # get '/timeline/destroy'
 
   get "/board/tech-blog" => "posts#blog"
   get "/board/:boardname" => "posts#index"
@@ -38,6 +32,9 @@ Rails.application.routes.draw do
   get "/admin/users" => "admin#index_users"
   get "/admin/members/" => "admin#index_members"
   get "/admin/members/new" => "admin#new_member"
+  get "/admin/timelines" => "admin#index_timelines"
+  get "/admin/timelines/new" => "admin#new_timeline"
+  post "admin/timelines" => "admin#create_timeline"
   post "/admin/members" => "admin#create_member"
   delete "/admin/users/:userid" => "admin#destroy_user"
   delete "/admin/members/:memberid" => "admin#destroy_member"
