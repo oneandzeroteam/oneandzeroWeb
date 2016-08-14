@@ -3415,7 +3415,7 @@ blockquote:before {
 	font-size: 20px;
 	font-weight: 400;
 	letter-spacing: .15em;
-	text-transform: uppercase;
+	
 	color: #FFF;
 }
 .pricing .plan .btn {
@@ -3469,14 +3469,15 @@ blockquote:before {
 	padding: 40px;
 }
 .pricing.col-4 .plan h2 {
-	font-size: 18px;
+	font-size: 15px;
 }
 .pricing.col-4 .plan .price .amount {
-	font-size: 90px;
+	font-size: 22px;
 }
 .pricing.col-4 .plan .features {
     padding: 20px 30px;
 }
+
 
 
 /*===================================================================================*/
