@@ -1,16 +1,10 @@
 class AdminController < ApplicationController
   layout "admin"
+  before_action :is_admin?
 
   def dashboard
-    if user_signed_in?
-      if is_admin?
-        render template: "admin/dashboard"
-      else
-        render file: "public/401.html", status: :unauthorized, layout: false
-      end
-
-    else
-      redirect_to new_user_session_path
+    if is_admin?
+      render template: "admin/dashboard"
     end
   end
 
@@ -83,7 +77,16 @@ class AdminController < ApplicationController
   private
 
   def is_admin?
-    current_user.is_admin
+    if user_signed_in?
+      if current_user.is_admin
+        return true
+      else
+        render file: "public/401.html", status: :unauthorized, layout: false
+      end
+
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   # Use callbacks to share common setup or constraints between actions.
