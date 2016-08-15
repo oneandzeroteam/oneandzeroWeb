@@ -32,7 +32,7 @@
 	
 											<div class="row">
 												<div class="col-md-9" style="padding-top: 5px;">
-													 <form id="" class="forms" action="/board/tech-blog/posts" method="POST">
+													 <form id="" class="forms" action="/borrowablestuffs/<%=@borrowablestuff.id%>/borrow" method="PATCH">
 													<table width="100%">
 														<tr>
 															<td width="15%" align="right" style="padding-top: 15px;">
@@ -84,7 +84,7 @@
 															</td>
 															
 															<td width="85%" style="padding-top: 15px; padding-left: 10px;">
-																<input type="text" name="post[title]" class="form-control" placeholder="ex) 7">
+																<input type="integer" name="lended_period" class="form-control" placeholder="최대일수 <%=@borrowablestuff.max_lendingperiod%>">
 															</td>
 															
 														</tr>

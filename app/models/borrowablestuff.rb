@@ -1,35 +1,38 @@
 class Borrowablestuff < ApplicationRecord
   has_many :users
-
   validates :stufftype, presence: true
-  validates :stuffcode, uniqueness: true
+  validates :stuffcode, uniqueness: true
 
   def create_code
-    self.stuffcode = stuffencode + stuffnumbering.to_s # todo 1-> 01
+    self.stuffstrcode = stuffencode
+    self.stuffintcode = self.stuffnumbering
+    self.stuffcode = stuffencode + ("%02d" % self.stuffnumbering)
     return self.save
   end
 
   def stuffencode
-    if(@borrowablestuff = Borrowablestuff.find(stufftype: self.stufftype))
-      return @borrowablestuff.stuffcode
+    if( (@borrowablestuff = Borrowablestuff.where(stufftype: self.stufftype).first) ) # Existing stufftype
+      return @borrowablestuff.stuffstrcode
     else
+      # Unknown stufftype -> Auto ENCODE by stufftype.first(3), if duplicated? -> plus 'B', 'C' ...
       @alphabetlength = 3;
-      while(Borrowablestuff.find(:stuffcode.last(@alphabetlength) => self.stufftype.first(@alphabetlength)))
-        @alphabetlength = @alphabetlength+1
+      @duplicatecode = 'A'.bytes[0];
+      while(Borrowablestuff.where("stuffstrcode = :stuffcodeCOMPARE", {stuffcodeCOMPARE: self.stufftype.first(@alphabetlength) + ((@duplicatecode == 'A'.bytes[0])? '': @duplicatecode.chr)} ).first)
+        @duplicatecode = @duplicatecode + 1
       end
-      return self.stufftype.first(@alphabetlength)
+      return self.stufftype.first(@alphabetlength) + ((@duplicatecode == 'A'.bytes[0])? '': @duplicatecode.chr)
     end
   end
 
-  def stuffnunbering
-    1#todo Borrowablestuff.where(stuffcode: => stuffencode).개수 + 1
+  def stuffnumbering
+    Borrowablestuff.where("stuffstrcode = :stuffcodeCOMPARE", {stuffcodeCOMPARE: self.stuffstrcode} ).count + 1
   end
 
   def borrow(user, lended_period)
-    if (canborrow?(user) && validperiod?(lended_period))
-     self.lended_at = DateTime.beginning_of_day
+    if (canborrowuser?(user) && validperiod?(lended_period) && unborrowed?)
+      self.lended_at = DateTime.now.beginning_of_day
       self.lended_period = lended_period
-      self.current_lended_user = user
+      self.current_lended_user_id = user.id
       return self.save
     end
   end
@@ -38,12 +41,20 @@ class Borrowablestuff < ApplicationRecord
     self.lastest_lended_user = self.current_lended_user
     self.current_lended_user = nil
     @remain_period = self.remain_period
-    self.lended_at = DateTime.beginning_of_day
+    self.lended_at = DateTime.now.beginning_of_day
     if self.save
       return @remain_period
     else
       return false
     end 
+  end
+
+  def borrowed?
+    (self.current_lended_user_id != nil)
+  end
+
+  def unborrowed?
+    !borrowed?
   end
 
   def canborrowuser?(user)
@@ -55,7 +66,8 @@ class Borrowablestuff < ApplicationRecord
   end
 
   def remain_period
-  (self.lended_period - self.lended_at.since(DateTime.beginning_of_day)/60/60/24)
-  # Seconds /60/60/24 -> Days
+    if borrowed?
+      (self.lended_period - (DateTime.now.day - self.lended_at.day + 1))
+    end
   end
 end

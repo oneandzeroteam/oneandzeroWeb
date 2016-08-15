@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20160813063532) do
 
   create_table "borrowablestuffs", force: :cascade do |t|
     t.string   "stufftype"
+    t.string   "stuffstrcode"
+    t.integer  "stuffintcode"
     t.string   "stuffcode"
     t.text     "description"
     t.string   "image_url"

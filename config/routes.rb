@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :timeline
   resources :projects
   resources :borrowablestuffs
+  get "/borrowablestuffs/:borrowablestuff_id/borrow" => "borrowablestuffs#borrow"
+
   resources :posts do
     resources :comments
   end

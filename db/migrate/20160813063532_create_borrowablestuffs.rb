@@ -2,7 +2,9 @@ class CreateBorrowablestuffs < ActiveRecord::Migration[5.0]
   def change
     create_table :borrowablestuffs do |t|
       t.string :stufftype                  , comment: "e.g. Monitor"
-      t.string :stuffcode                  , comment: "e.g. 02MON"
+      t.string :stuffstrcode               , comment: "e.g. MON"
+      t.integer :stuffintcode              , comment: "e.g. 02"
+      t.string :stuffcode                  , comment: "e.g. MON02"
       t.text :description
       t.string :image_url
 

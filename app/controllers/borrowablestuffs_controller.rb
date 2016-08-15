@@ -1,5 +1,6 @@
 class BorrowablestuffsController < ApplicationController
   before_action :set_borrowablestuff, only: [:show, :edit, :destroy, :borrow, :return]
+  before_action :set_user
 
   def index # 종류별 리스팅, todo
     @borrowablestuffs = Borrowablestuff.all
@@ -34,6 +35,7 @@ class BorrowablestuffsController < ApplicationController
   def create
     @borrowablestuff = Borrowablestuff.new(borrowablestuff_params)
     @borrowablestuff.create_code
+    @borrowablestuff.max_lendingperiod = 14 # todo 제거
     respond_to do |format|
       if @borrowablestuff.save
         if params[:borrowflag]
@@ -50,20 +52,22 @@ class BorrowablestuffsController < ApplicationController
   end
 
   def borrow
-    respond_to do |format|
-      if @borrowablestuff.borrow(params[:user], params[:lended_period])
-        format.html { redirect_to(@borrowablestuff, :notice => 'borrowablestuff was successfully borrowed.') }
-        format.json { render :show, status: :updated, location: @borrowablestuff }
-      else
-        format.html { render :new }
-        format.json { render json: @borrowablestuff.errors, status: :unprocessable_entity }
+    if _user_signed_in?
+      respond_to do |format|
+        if @borrowablestuff.borrow(@user, params[:lended_period].to_i)
+          format.html { redirect_to(@borrowablestuff, :notice => 'borrowablestuff was successfully borrowed.') }
+          format.json { render :show, status: :updated, location: @borrowablestuff }
+        else
+          format.html { redirect_to(@borrowablestuff, :notice => 'failed.') }
+          format.json { render json: @borrowablestuff.errors, status: :unprocessable_entity }
+        end
       end
     end
   end
 
   def return
     respond_to do |format|
-      if @borrowablestuff.return
+      if (@remain_period = @borrowablestuff.return)
         format.html { redirect_to(@borrowablestuff, :notice => 'borrowablestuff was successfully returned.') }
         format.json { render :show, status: :updated, location: @borrowablestuff }
       else
@@ -86,6 +90,16 @@ class BorrowablestuffsController < ApplicationController
   end
 
   private
+
+  def _user_signed_in?
+    if user_signed_in?
+      return true
+    else
+      redirect_to new_user_session_path
+      return false
+    end
+  end
+
     def is_admin?
      if user_signed_in?
        current_user.is_admin
@@ -95,8 +109,12 @@ class BorrowablestuffsController < ApplicationController
     end
 
     # Use callbacks to share common setup or constraints between actions.
-    def set_borrowablestufff
-      @borrowablestuff = Borrowablestuff.find(params[:borrowablestuff_id])
+    def set_borrowablestuff
+      @borrowablestuff = Borrowablestuff.find( ((params[:borrowablestuff_id]) ? (params[:borrowablestuff_id]) : (params[:id])) )
+    end
+
+    def set_user
+      @user = current_user
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

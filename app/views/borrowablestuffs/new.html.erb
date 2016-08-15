@@ -1,0 +1,108 @@
+
+<!-- ============================================================= MAIN ============================================================= -->
+
+<main>
+
+  <div class="container inner">
+    <div class="row">
+
+      <div class="col-md-9 inner-left-md border-left">
+
+        <!-- ============================================================= SECTION – HERO ============================================================= -->
+
+
+
+        <!-- ============================================================= SECTION – HERO : END ============================================================= -->
+
+
+        <!-- ============================================================= SECTION – CONTENT ============================================================= -->
+
+
+        <section>
+
+
+          <section class="content-header"  style="padding-bottom: 2px; border-bottom: 1px solid;">
+            <h2>
+              물품 등록
+            </h2>
+
+          </section>
+
+          <section style="margin-top: 20px;">
+
+            <form id="new_borrowablestuff" class="forms" action="/borrowablestuffs" method="POST">
+              <center>
+                <div class="row">
+                  <div class="col-sm-12">
+                    <input type="string" name="borrowablestuff[stufftype]" class="form-control" placeholder="물품 종류(ex: 모니터)">
+                  </div><!-- /.col -->
+                </div><!-- /.row -->
+				
+				<div class="row">
+                  <div class="col-sm-12">
+                    <input type="text" name="borrowablestuff[description]" class="form-control" placeholder="물품 설명(ex: 17인치 빨간모니터)">
+                  </div><!-- /.col -->
+                </div><!-- /.row -->
+				
+				<div class="row">
+                  <div class="col-sm-12">
+                    <input type="string" name="borrowablestuff[image_url]" class="form-control" placeholder="이미지 업로드">
+                  </div><!-- /.col -->
+                </div><!-- /.row -->
+        
+        <div class="row">
+                  <div class="col-sm-12">
+                    <input type="integer" name="borrowablestuff[max_lendingperiod]" class="form-control" placeholder="최대 대여가능 일수(default: 14)">
+                  </div><!-- /.col -->
+                </div><!-- /.row -->
+        
+        <div class="row">
+                  <div class="col-sm-12">
+                    <input type="integer" name="borrowablestuff[lended_period]" class="form-control" placeholder="대여 일">
+                  </div><!-- /.col -->
+                </div><!-- /.row -->
+
+                <button type="submit" class="btn btn-default btn-gray btn-submit">물품 등록하기</button>
+              </center>
+            </form>
+
+
+          </section>
+          <br />
+
+
+
+
+
+
+
+
+          <ul class="filter text-center">
+            <!-- Alumni  경계 위아래 구분선 -->
+          </ul><!-- /.filter -->
+          <!-- To the right -->
+          <div class="pull-right hidden-xs">
+            개발 넘나 힘든것
+          </div>
+          <!-- Default to the left -->
+          <strong>Copyright &copy; 2016 <a href="#">oneandzero</a>.</strong> All rights reserved.
+
+
+
+
+        </section>
+
+
+
+
+        <!-- ============================================================= SECTION – CONTENT : END ============================================================= -->
+
+      </div><!-- ./col -->
+
+    </div><!-- /.row -->
+  </div><!-- /.container -->
+
+</main>
+
+<!-- ============================================================= MAIN : END ============================================================= -->
+		
