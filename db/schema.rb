@@ -73,7 +73,6 @@ ActiveRecord::Schema.define(version: 20160813063532) do
 
   create_table "projects", force: :cascade do |t|
     t.string   "title"
-    t.text     "description"
     t.text     "short_description"
     t.text     "long_description"
     t.string   "image_url"
