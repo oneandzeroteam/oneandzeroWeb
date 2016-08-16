@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/oneandzeroteam/oneandzeroWeb.svg?branch=master)](https://travis-ci.org/oneandzeroteam/oneandzeroWeb)
+
 하나와영 웹페이지 프로젝트 
 ---
 
