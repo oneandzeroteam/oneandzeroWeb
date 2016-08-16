@@ -67,11 +67,11 @@ class BorrowablestuffsController < ApplicationController
 
   def return
     respond_to do |format|
-      if (@remain_period = @borrowablestuff.return)
+      if (@remain_period = @borrowablestuff.return) # todo return=negative -> expired panalty
         format.html { redirect_to(@borrowablestuff, :notice => 'borrowablestuff was successfully returned.') }
         format.json { render :show, status: :updated, location: @borrowablestuff }
       else
-        format.html { render :new }
+        format.html { redirect_to(@borrowablestuff, :notice => 'failed.') }
         format.json { render json: @borrowablestuff.errors, status: :unprocessable_entity }
       end
     end

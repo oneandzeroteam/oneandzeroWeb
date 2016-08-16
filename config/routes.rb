@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :projects
   resources :borrowablestuffs
   get "/borrowablestuffs/:borrowablestuff_id/borrow" => "borrowablestuffs#borrow"
+  get "/borrowablestuffs/:borrowablestuff_id/return" => "borrowablestuffs#return"
 
   resources :posts do
     resources :comments

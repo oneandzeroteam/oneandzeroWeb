@@ -1,0 +1,95 @@
+
+        <section>
+
+
+          <section class="content-header"  style="border-bottom: 1px solid;">
+            <h2>
+              물품 (대여중)
+            </h2>
+
+          </section>
+
+<section style="padding-top: 20px;">
+	
+											<div class="row">
+												<div class="col-md-9" style="padding-top: 5px;">
+													<table width="100%">
+														<tr>
+															<td width="15%" align="right" style="padding-top: 15px;">
+																대여 물품: 
+															</td>
+															
+															<td width="85%" style="padding-top: 15px; padding-left: 10px;">
+																<%= @borrowablestuff.stufftype %>
+															</td>
+															
+														</tr>
+														
+														<tr>
+															<td width="15%" align="right" style="padding-top: 15px;">
+																물품 코드:
+															</td>
+															
+															<td width="85%" style="padding-top: 15px; padding-left: 10px;">
+																<%= @borrowablestuff.stuffcode %>
+															</td>
+															
+														</tr>
+														
+														<tr>
+															<td width="15%" align="right" style="padding-top: 15px;">
+																대여인:
+															</td>
+															
+															<td width="85%" style="padding-top: 15px; padding-left: 10px;">
+																<%= (@current_lended_user = (User.where(:id => @borrowablestuff.current_lended_user_id)).first) ? (@current_lended_user.name) : ("없음") %>
+															</td>
+															
+														</tr>
+														
+														<tr>
+															<td width="15%" align="right" style="padding-top: 15px;">
+																대여시작:
+															</td>
+															
+															<td width="85%" style="padding-top: 15px; padding-left: 10px;">
+																<%= @borrowablestuff.lended_at %>
+															</td>
+															
+														</tr>
+														
+														<tr>
+															<td width="15%" align="right">
+																반납일:
+															</td>
+															
+															<td width="85%" style="padding-top: 15px; padding-left: 10px;">
+																<%= @borrowablestuff.dueday %>
+															</td>
+															
+														</tr>
+														
+														
+														
+													</table>
+												</div> <!-- ./col-->
+		
+		
+		
+		
+		
+		
+											
+											<!-- 물품 이지미가 있는 경우에만 보여주세요 -->
+										<% unless @borrowablestuff.image_url.empty? %>
+											<div class="col-md-3" style="padding-top: 20px;">
+												<figure><img src=@borrowalbestuff.image_url alt=""></figure>
+											</div><!-- /.col -->
+											<!-- -->
+										<% end %>
+											
+										</div><!-- /.row -->
+	
+</section>
+
+
