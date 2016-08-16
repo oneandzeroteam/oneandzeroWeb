@@ -81,6 +81,12 @@ class AdminController < ApplicationController
     render template: "admin/timelines"
   end
 
+
+  def index_borrowed
+    render template: "admin/borrowed"
+  end
+  
+  
   def new_timeline
     @timeline = Timeline.new
   end

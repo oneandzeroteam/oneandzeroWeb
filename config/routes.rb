@@ -31,6 +31,7 @@ Rails.application.routes.draw do
 
   # ADMIN
   get "/admin/dashboard" => "admin#dashboard"
+  get "/admin/borrowed" => "index_borrowed"
   get "/admin/users" => "admin#index_users"
   get "/admin/members/" => "admin#index_members"
   get "/admin/members/new" => "admin#new_member"
