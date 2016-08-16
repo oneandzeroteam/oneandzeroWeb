@@ -14,8 +14,9 @@ ActiveRecord::Schema.define(version: 20160813063532) do
 
   create_table "boards", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "borrowablestuffs", force: :cascade do |t|
@@ -27,11 +28,12 @@ ActiveRecord::Schema.define(version: 20160813063532) do
     t.string   "image_url"
     t.integer  "max_lendingperiod",      default: 14
     t.integer  "lended_period"
+    t.boolean  "is_borrowed",            default: false
     t.datetime "lended_at"
     t.integer  "lastest_lended_user_id"
     t.integer  "current_lended_user_id"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
     t.index ["current_lended_user_id"], name: "index_borrowablestuffs_on_current_lended_user_id"
     t.index ["lastest_lended_user_id"], name: "index_borrowablestuffs_on_lastest_lended_user_id"
   end

@@ -175,156 +175,45 @@
 
       <div class="row">
 
+        <% @current_projects.first(2).each do |project| %>
         <div class="col-sm-6 inner-top-sm">
           <figure>
 
             <div class="icon-overlay icn-link">
-              <a href="portfolio-post.html"><img src="assets/images/art/work02.jpg" alt=""></a>
+              <a href="/projects/<%= project.id %>"><img src="<%= project.image_url %>" alt=""></a>
             </div><!-- /.icon-overlay -->
 
             <figcaption class="bordered no-top-border">
               <div class="info">
-                <h3><a href="portfolio-post.html">Grand Motel gets an identity brushup</a></h3>
-                <p>Identity</p>
+                <h3><a href="/projects/<%= project.id %>"><%= project.title %></a></h3>
+                <p><%= project.short_description %></p>
               </div><!-- /.info -->
             </figcaption>
 
           </figure>
         </div><!-- /.col -->
-
-        <div class="col-sm-6 inner-top-sm">
-          <figure>
-
-            <div class="icon-overlay icn-link">
-              <a href="portfolio-post.html"><img src="assets/images/art/work08.jpg" alt=""></a>
-            </div><!-- /.icon-overlay -->
-
-            <figcaption class="bordered no-top-border">
-              <div class="info">
-                <h3><a href="portfolio-post.html">Fresh branding for a creative startup</a></h3>
-                <p>Identity</p>
-              </div><!-- /.info -->
-            </figcaption>
-
-          </figure>
-        </div><!-- /.col -->
+        <% end %>
 
       </div><!-- /.row -->
 
       <div class="row inner-top-sm">
         <div id="owl-latest-works" class="owl-carousel owl-item-gap">
 
+          <% @past_projects.first(8).each do |project| %>
           <div class="item">
-            <a href="portfolio-post.html">
+            <a href="/projects/<%= project.id %>">
               <figure>
                 <figcaption class="text-overlay">
                   <div class="info">
-                    <h4>Vintage Bicycles</h4>
-                    <p>Interactive</p>
+                    <h4><%= project.title %></h4>
+                    <p><%= project.short_description %></p>
                   </div><!-- /.info -->
                 </figcaption>
-                <img src="assets/images/art/work03.jpg" alt="">
+                <img src="<%= project.image_url %>" alt="">
               </figure>
             </a>
           </div><!-- /.item -->
-
-          <div class="item">
-            <a href="portfolio-post.html">
-              <figure>
-                <figcaption class="text-overlay">
-                  <div class="info">
-                    <h4>Simpli Nota</h4>
-                    <p>Identity</p>
-                  </div><!-- /.info -->
-                </figcaption>
-                <img src="assets/images/art/work04.jpg" alt="">
-              </figure>
-            </a>
-          </div><!-- /.item -->
-
-          <div class="item">
-            <a href="portfolio-post.html">
-              <figure>
-                <figcaption class="text-overlay">
-                  <div class="info">
-                    <h4>Vinyl Records</h4>
-                    <p>Identity</p>
-                  </div><!-- /.info -->
-                </figcaption>
-                <img src="assets/images/art/work07.jpg" alt="">
-              </figure>
-            </a>
-          </div><!-- /.item -->
-
-          <div class="item">
-            <a href="portfolio-post.html">
-              <figure>
-                <figcaption class="text-overlay">
-                  <div class="info">
-                    <h4>Astor & Yancy</h4>
-                    <p>Identity</p>
-                  </div><!-- /.info -->
-                </figcaption>
-                <img src="assets/images/art/work09.jpg" alt="">
-              </figure>
-            </a>
-          </div><!-- /.item -->
-
-          <div class="item">
-            <a href="portfolio-post.html">
-              <figure>
-                <figcaption class="text-overlay">
-                  <div class="info">
-                    <h4>Signwall</h4>
-                    <p>Identity</p>
-                  </div><!-- /.info -->
-                </figcaption>
-                <img src="assets/images/art/work16.jpg" alt="">
-              </figure>
-            </a>
-          </div><!-- /.item -->
-
-          <div class="item">
-            <a href="portfolio-post.html">
-              <figure>
-                <figcaption class="text-overlay">
-                  <div class="info">
-                    <h4>Tri Fold Brochure</h4>
-                    <p>Print</p>
-                  </div><!-- /.info -->
-                </figcaption>
-                <img src="assets/images/art/work10.jpg" alt="">
-              </figure>
-            </a>
-          </div><!-- /.item -->
-
-          <div class="item">
-            <a href="portfolio-post.html">
-              <figure>
-                <figcaption class="text-overlay">
-                  <div class="info">
-                    <h4>Embroidered</h4>
-                    <p>Identity</p>
-                  </div><!-- /.info -->
-                </figcaption>
-                <img src="assets/images/art/work05a.jpg" alt="">
-              </figure>
-            </a>
-          </div><!-- /.item -->
-
-          <div class="item">
-            <a href="portfolio-post.html">
-              <figure>
-                <figcaption class="text-overlay">
-                  <div class="info">
-                    <h4>El Corcho</h4>
-                    <p>Identity</p>
-                  </div><!-- /.info -->
-                </figcaption>
-                <img src="assets/images/art/work12.jpg" alt="">
-              </figure>
-            </a>
-          </div><!-- /.item -->
+          <% end %>
 
         </div><!-- /.owl-carousel -->
       </div><!-- /.row -->

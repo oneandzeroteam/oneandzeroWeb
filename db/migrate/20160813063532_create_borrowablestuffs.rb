@@ -11,9 +11,11 @@ class CreateBorrowablestuffs < ActiveRecord::Migration[5.0]
       t.integer :max_lendingperiod         , default: 14
       t.integer :lended_period
 
+      t.boolean :is_borrowed , default: false
+
       t.datetime :lended_at
-      t.references :lastest_lended_user, references: :user, comment: "lastest_rended_user"
-      t.references :current_lended_user, references: :user, comment: "current_rended_user"
+      t.references :lastest_lended_user, references: :user, comment: "lastest_lended_user"
+      t.references :current_lended_user, references: :user, comment: "current_lended_user"
 
       t.timestamps
     end

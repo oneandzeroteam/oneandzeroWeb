@@ -3,12 +3,12 @@
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      Borrowed
-      <small>물품관리</small>
+      Boards
+      <small>게시판</small>
     </h1>
     <ol class="breadcrumb">
-      <li><i class="fa fa-dashboard"></i>Borrowed</li>
-      <li class="active">Users</li>
+      <li><i class="fa fa-dashboard"></i>Admin</li>
+      <li class="active">Boards</li>
     </ol>
   </section>
 
@@ -23,30 +23,25 @@
         <div class="alert alert-success" role="alert"><%= notice %></div>
     <% end %>
 
-        <% @items.each do |item| %>
+
+    <% @boards.each do |board| %>
         <div class="box">
           <div class="box-header with-border">
-            <h3 class="box-title"><%= item.stufftype %>(<%= item.stuffstrcode %> )</h3>
+            <h3 class="box-title"><a href="/admin/boards/<%= board.id %>/posts"><%= board.name %></a></h3>
             <div class="box-tools pull-right">
               <!-- Buttons, labels, and many other things can be placed here! -->
               <!-- Here is a label for example -->
-
-              
+              <a href="/admin/boards/<%= board.id %>" data-method="DELETE" class="btn btn-box-tool"><i class="fa fa-times"></i></a>
             </div><!-- /.box-tools -->
           </div><!-- /.box-header -->
           <div class="box-body">
-            <p>대여인: <%= item.current_lended_user.name %></p>
-            <p>대여상태: <% if item.is_borrowed %>대여중<% else %>대여 가능<% end %></p> <!-- 대여상태에 따라 대여중/반납완료/연체 -->
-            <p>대여기간: <%= item.lended_at %> ~ <%= item.lended_at + item.max_lending_period %></p>
             <!-- TODO: Picture -->
           </div><!-- /.box-body -->
           <div class="box-footer">
-            
-
+            <p>설명 : <%= board.description %></p>
           </div><!-- box-footer -->
         </div><!-- /.box -->
-        <% end %>
-
+    <% end %>
   </section><!-- /.content -->
 </div><!-- /.content-wrapper -->
 

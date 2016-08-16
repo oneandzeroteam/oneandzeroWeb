@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
     @recent_project = Project.all.first
     @current_projects = Project.where(is_ongoing: true).limit(6)
     @past_projects = Project.where(is_ongoing: false).limit(10)
+		@boards = Board.all
   end
 
   after_filter :store_action

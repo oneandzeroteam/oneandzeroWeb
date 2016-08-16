@@ -117,7 +117,9 @@
                 <a href="#" class="dropdown-toggle js-activated">Board</a>
 
                 <ul class="dropdown-menu">
-                  <li><a href="/board/tech-blog">Tech blog</a></li>
+                  <% @boards.each do |board| %>
+                    <li><a href="/board/<%= board.name %>"><%= board.name %></a></li>
+                  <% end %>
                 </ul>
                 <!-- /.dropdown-menu -->
               </li>
@@ -207,6 +209,7 @@
 
               <!-- ============================================================= MEGA MENU : END ============================================================= -->
 
+              <li><a href="/borrowablestuffs" class="scroll-to" data-anchor-offset="0">Goods Rental</a></li>
 
               <% if user_signed_in? %>
                   <li><a href="/users/sign_out" data-method="DELETE" class="scroll-to" data-anchor-offset="0">Log Out</a></li>
