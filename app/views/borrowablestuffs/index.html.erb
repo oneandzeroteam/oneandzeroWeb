@@ -34,6 +34,14 @@
 						
 												
 						
+                <% @borrowablestuffs.each do |borrowablestuff| %>
+                	<% @borrowablestuff = borrowablestuff %>
+					<% case @borrowablestuff.status(@user)
+           			   when "borrowable" %><%= render :partial => "borrow" %>
+        			<% when "returnable" %><%= render :partial => "return" %>
+        			<% when "showstuffable" %><%= render :partial => "showstuff" %>
+        			<% end %>
+        		<% end %>
 
 						<div class="col-lg-3 col-sm-6">
 							<div class="plan">

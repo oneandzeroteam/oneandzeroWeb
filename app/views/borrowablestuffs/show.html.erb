@@ -17,109 +17,11 @@
 
         <!-- ============================================================= SECTION – CONTENT ============================================================= -->
 
-
-        <section>
-
-
-          <section class="content-header"  style="border-bottom: 1px solid;">
-            <h2>
-              물품 대여
-            </h2>
-
-          </section>
-
-<section style="padding-top: 20px;">
-	
-											<div class="row">
-												<div class="col-md-9" style="padding-top: 5px;">
-													 <form id="" class="forms" action="/borrowablestuffs/<%=@borrowablestuff.id%>/borrow" method="PATCH">
-													<table width="100%">
-														<tr>
-															<td width="15%" align="right" style="padding-top: 15px;">
-																대여 물품:
-															</td>
-															
-															<td width="85%" style="padding-top: 15px; padding-left: 10px;">
-																테스트전용책 (분류)
-															</td>
-															
-														</tr>
-														
-														<tr>
-															<td width="15%" align="right" style="padding-top: 15px;">
-																물품 코드:
-															</td>
-															
-															<td width="85%" style="padding-top: 15px; padding-left: 10px;">
-																BOOK-101-1011
-															</td>
-															
-														</tr>
-														
-														<tr>
-															<td width="15%" align="right" style="padding-top: 15px;">
-																대여인:
-															</td>
-															
-															<td width="85%" style="padding-top: 15px; padding-left: 10px;">
-																김테스트하나
-															</td>
-															
-														</tr>
-														
-														<tr>
-															<td width="15%" align="right" style="padding-top: 15px;">
-																대여시작:
-															</td>
-															
-															<td width="85%" style="padding-top: 15px; padding-left: 10px;">
-																2016-00-00
-															</td>
-															
-														</tr>
-														
-														<tr>
-															<td width="15%" align="right">
-																대여일수:
-															</td>
-															
-															<td width="85%" style="padding-top: 15px; padding-left: 10px;">
-																<input type="integer" name="lended_period" class="form-control" placeholder="최대일수 <%=@borrowablestuff.max_lendingperiod%>">
-															</td>
-															
-														</tr>
-														
-														
-														<tr>
-															<td colspan="2" align="center">
-																<button type="submit" class="btn btn-default btn-submit">대여 신청</button>
-															</td>
-														</tr>
-														
-														
-														
-													</table>
-													</form>
-												</div> <!-- ./col-->
-		
-		
-		
-		
-		
-		
-											
-											<!-- 물품 이지미가 있는 경우에만 보여주세요 -->
-											<div class="col-md-3" style="padding-top: 20px;">
-												<figure><img src="/assets/images/art/product01.jpg" alt=""></figure>
-											</div><!-- /.col -->
-											<!-- -->
-											
-										</div><!-- /.row -->
-	
-</section>
-
-
-
+        <% case @borrowablestuff.status(@user)
+           when "borrowable" %><%= render :partial => "borrow" %>
+        <% when "returnable" %><%= render :partial => "return" %>
+        <% when "showstuffable" %><%= render :partial => "showstuff" %>
+    	<% end %>
 
           <br />
 

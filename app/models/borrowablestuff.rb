@@ -30,7 +30,7 @@ class Borrowablestuff < ApplicationRecord
 
   def borrow(user, lended_period)
     if (canborrowuser?(user) && validperiod?(lended_period) && unborrowed?)
-      self.lended_at = DateTime.now.beginning_of_day
+      self.lended_at = DateTime.now
       self.lended_period = lended_period
       self.current_lended_user_id = user.id
       return self.save
@@ -38,8 +38,8 @@ class Borrowablestuff < ApplicationRecord
   end
 
   def return
-    self.lastest_lended_user = self.current_lended_user
-    self.current_lended_user = nil
+    self.lastest_lended_user_id = self.current_lended_user_id
+    self.current_lended_user_id = nil
     @remain_period = self.remain_period
     self.lended_at = DateTime.now.beginning_of_day
     if self.save
@@ -49,8 +49,26 @@ class Borrowablestuff < ApplicationRecord
     end 
   end
 
+  def status(user)
+    if(self.current_lended_user_id == user.id)
+      return "returnable"
+    elsif(self.current_lended_user == nil)
+      return "borrowable"
+    else
+      return "showstuffable"
+    end
+  end
+
   def borrowed?
     (self.current_lended_user_id != nil)
+  end
+
+  def current_lended_user
+    User.where(:id => current_lended_user_id).first
+  end
+
+  def lastest_lended_user
+    User.where(:id => lastest_lended_user_id).first
   end
 
   def unborrowed?
@@ -67,7 +85,13 @@ class Borrowablestuff < ApplicationRecord
 
   def remain_period
     if borrowed?
-      (self.lended_period - (DateTime.now.day - self.lended_at.day + 1))
+      (dueday - DateTime.now.to_date)
+    end
+  end
+
+  def dueday
+    if borrowed?
+      (lended_at.to_date + self.lended_period)
     end
   end
 end
