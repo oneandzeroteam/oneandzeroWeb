@@ -2,18 +2,11 @@ class BorrowablestuffsController < ApplicationController
   before_action :set_borrowablestuff, only: [:show, :edit, :destroy, :borrow, :return]
   before_action :set_user
 
-  def index # 종류별 리스팅, todo
+  def index
     @borrowablestuffs = Borrowablestuff.all
   end
 
   def show
-  end
-
-  def edit
-    if is_admin?
-      #todo
-    else
-    end
   end
 
   def update
@@ -114,7 +107,9 @@ class BorrowablestuffsController < ApplicationController
     end
 
     def set_user
-      @user = current_user
+      if _user_signed_in?
+        @user = current_user
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
