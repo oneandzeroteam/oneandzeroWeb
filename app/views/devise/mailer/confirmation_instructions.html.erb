@@ -1,5 +1,12 @@
-<p>Welcome <%= @email %>!</p>
+<p>안녕하세요 <%= @email %>님!</p>
 
-<p>You can confirm your account email through the link below:</p>
+<p>고려대학교 소프트웨어 전공학회 하나와영에 가입해주셔서 감사합니다!</p>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+<p>아래의 링크를 클릭하시면 회원가입이 완료됩니다</p>
+
+<br/>
+<p><%= link_to '계정 활성화 하기', confirmation_url(@resource, confirmation_token: @token) %></p>
+
+<br/>
+<p>감사합니다</p>
+<p>하나와영 웹팀, 하나와영 운영진 드림</p>
