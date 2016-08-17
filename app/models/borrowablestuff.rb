@@ -3,7 +3,7 @@ class Borrowablestuff < ApplicationRecord
   validates :stufftype, presence: true
   validates :stuffcode, uniqueness: true
 
-  def create_code
+  def create_code # stuffencode, stuffnumbering로 코드제작, e.g. type = MONITOR -> MON01
     self.stuffstrcode = stuffencode
     self.stuffintcode = self.stuffnumbering
     self.stuffcode = stuffencode + ("%02d" % self.stuffnumbering)
@@ -11,10 +11,10 @@ class Borrowablestuff < ApplicationRecord
   end
 
   def stuffencode
-    if( (@borrowablestuff = Borrowablestuff.where(stufftype: self.stufftype).first) ) # Existing stufftype
+    if( (@borrowablestuff = Borrowablestuff.where(stufftype: self.stufftype).first) ) # 같은 stufftype 차용
       return @borrowablestuff.stuffstrcode
     else
-      # Unknown stufftype -> Auto ENCODE by stufftype.first(3), if duplicated? -> plus 'B', 'C' ...
+      # 낯선 stufftype -> 첫 3글자로 제작, 겹칠경우 B, C ... e.g) Monitor -> Mon, Monitortype2 -> MonB
       @alphabetlength = 3;
       @duplicatecode = 'A'.bytes[0];
       while(Borrowablestuff.where("stuffstrcode = :stuffcodeCOMPARE", {stuffcodeCOMPARE: self.stufftype.first(@alphabetlength) + ((@duplicatecode == 'A'.bytes[0])? '': @duplicatecode.chr)} ).first)
@@ -41,7 +41,7 @@ class Borrowablestuff < ApplicationRecord
     self.lastest_lended_user_id = self.current_lended_user_id
     self.current_lended_user_id = nil
     @remain_period = self.remain_period
-    self.lended_at = DateTime.now.beginning_of_day
+    self.lended_at = DateTime.now # 반납일시 기록
     if self.save
       return @remain_period
     else
@@ -49,7 +49,7 @@ class Borrowablestuff < ApplicationRecord
     end 
   end
 
-  def status(user)
+  def status(user) # View용, 순서대로 반납대상 유저, 대여가능, 대여불가(Just showstuff)
     if(self.current_lended_user_id == user.id)
       return "returnable"
     elsif(self.current_lended_user == nil)
