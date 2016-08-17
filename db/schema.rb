@@ -83,11 +83,14 @@ ActiveRecord::Schema.define(version: 20160813063532) do
 
   create_table "timelines", force: :cascade do |t|
     t.string   "title"
-    t.text     "content"
+    t.string   "description"
     t.string   "image_url"
+    t.string   "image_caption"
+    t.string   "content_title"
+    t.text     "content_body"
     t.datetime "date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "users", force: :cascade do |t|

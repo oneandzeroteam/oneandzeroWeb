@@ -13,8 +13,11 @@ Board.create(name: 'tech-blog')
 Member.create(name: 'Hana-Kim', image_url: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTCTkOgzjmmH9ql4kGPgcAvI02RjThxk9GROpK6xz-Lt2ly_DZ4LzZkYA", occupation: "운영진")
 Project.create(title: "하나와영 웹프로젝트", short_description: "하나와영 공식 웹페이지 프로젝트 Ruby on Rails", is_ongoing: true)
 Project.create(title: "TEAM RASPBERRY", short_description: "라즈베리 파이를 이용한 패러럴 컴퓨팅 프로젝트", is_ongoing: false)
-Timeline.create(title: "하나와영 탄생", content: "왜 탄생했을까", date: DateTime.now)
 
+Timeline.create(title: "하나와영 탄생", description: "왜 탄생했을까", date: DateTime.new(1999, 01, 01))
+Timeline.create(title: "2013년 회장 부임식", description: "노창재 회장이 부임함", image_url: "https://scontent.xx.fbcdn.net/v/t1.0-9/321388_523037847730713_312580791_n.jpg?oh=92219af599ff65750db6d971ed1a84ba&oe=5859FFB4", image_caption: "노창재 신임회장이 학회를 넘겨받고 있다.", content_title: "노창재 신임회장은 2013년 개강총회에서 회장으로 선출", content_body: "노창재 회장이 1일 만장일치로 개강총회에서 회장직이 당선되었습니다", date: DateTime.new(2013, 03, 1))
+Timeline.create(title: "네이버 D2 참가", description: "네이버에서 주최하는 D2 캠퍼스 행사에 운영진이 참가함", image_url: "https://scontent.xx.fbcdn.net/v/t1.0-9/12742407_482383551949513_1674226440383779987_n.jpg?oh=dd2f12fb21a3e4d4ea1eb5e5922f3ed1&oe=58462336", date: DateTime.new(2016, 02, 24))
+Timeline.create(title: "2014년 하나와영 핸즈 합동 전시회", description: "하나와영과 핸즈가 공동으로 여는 합동전시회가 열렸습니다", image_url: "https://scontent.xx.fbcdn.net/v/t1.0-9/1932250_275204415977414_1347649047_n.jpg?oh=023fc7b28c8b7f9afe4740f85ac1b19d&oe=5848AE8D", date: DateTime.new(2014, 03, 19))
 
 User.new(email: "nicholaskim94@gmail.com", password: "1234", name: "김승주", is_admin: true, is_member: true, confirmed_at: DateTime.now).save(validate: false)
 Board.create(name: 'Sweet-facts')
