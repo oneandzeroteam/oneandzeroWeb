@@ -26,7 +26,7 @@ class PostsController < ApplicationController
       @board = Board.where(name: params[:boardname]).first
       @post = Post.new
     else
-      redirect_to new_user_session_path
+      redirect_to new_user_session_path, flash: {notice: "로그인이 필요한 페이지입니다."}
     end
   end
 
