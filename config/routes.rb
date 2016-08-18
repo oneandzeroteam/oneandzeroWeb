@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :post_attachments
   root "pages#show", pagename: "index"
   get "/pages/:pagename" => "pages#show"
 
