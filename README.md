@@ -1,9 +1,8 @@
-하나와영 웹페이지 프로젝트 
---------------
+하나와영 웹페이지 프로젝트  
+==============
 
-[![Build Status](https://travis-ci.org/oneandzeroteam/oneandzeroWeb.svg?branch=master)](https://travis-ci.org/oneandzeroteam/oneandzeroWeb)
+[![Build Status](https://travis-ci.org/oneandzeroteam/oneandzeroWeb.svg?branch=master)](https://travis-ci.org/oneandzeroteam/oneandzeroWeb) [![Code Climate](https://codeclimate.com/github/oneandzeroteam/oneandzeroWeb/badges/gpa.svg)](https://codeclimate.com/github/oneandzeroteam/oneandzeroWeb)
 
-[![Code Climate](https://codeclimate.com/github/oneandzeroteam/oneandzeroWeb/badges/gpa.svg)](https://codeclimate.com/github/oneandzeroteam/oneandzeroWeb)
 
 
 ## 프로젝트 설명
@@ -29,21 +28,37 @@ sh reset_db.sh
 rails server
 ```
 
-### 기능
 
-### 더 써야하는 것들
-* Configuration
+## Configuration 
+- TODO
 
+
+## Services
+
+### TODO
+
+
+
+
+## Database
 * Database creation
 
 * Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
 
 
 ## Deployment instructions
+
+### Environment Variables
+
+이 프로젝트는 [bkeepers/dotenv](https://github.com/bkeepers/dotenv) 로 환경변수를 관리합니다.
+
+프로젝트 루트에 `.env` 파일을 만들고 다음과 같은 변수들을 선언해줘야 합니다.
+```
+RECAPTCHA_PUBLIC_KEY
+RECAPTCHA_PRIVATE_KEY
+SECRET_KEY_BASE
+```
 
 ### Githook
 
@@ -63,20 +78,20 @@ client.subscribe "https://github.com/#{repo}/events/push.json", callback_url, we
 
 더 자세한 서버 설정 방법은 [이 프로젝트](https://github.com/ssaunier/github_webhook)의 README를 참고하세요
 
-
-
+### Email Server
+- TODO 
 
 ## Dependencies
 
-- Devise
-- Dotenv-rails
+- [plataformatec/devise](https://github.com/plataformatec/devise)
+- [bkeepers/dotenv](https://github.com/bkeepers/dotenv) 
 - Recaptcha
 
 ## Contributions
 
 모든 코드나 기여는 환영합니다.  
 
-이슈트레커를 이용하거나 직접 풀 리퀘스트를 날려주시면 됩니다.
+버그리포트, 기능추가 요청은 이슈트레커를 이용하거나 직접 풀 리퀘스트를 날려주시면 됩니다.
 
 하나와영 회원이라면 [하니외영 Github](https://github.com/oneandzeroteam) 에 가입함에 따라 리파저토리에 대한 권한이 부여됩니다
 
