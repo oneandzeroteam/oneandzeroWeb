@@ -1,61 +1,48 @@
-		<!-- ============================================================= MAIN ============================================================= -->
-		
-		<main>
-			
-			<!-- ============================================================= SECTION – PRICING TABLES ============================================================= -->
-			
-			<section id="modal">
-				<div class="container inner">
-					<div class="row">
-						<div class="col-md-8 col-sm-9 center-block text-center">
-							<header>
-								<h1>물품 대여</h1>
-								<p>
-									학회실에 비치되어있는 물품들을 등록하여 자유롭게 대여받을 수 있습니다.
-								</p>
-								<p class="text-normal">찾으시는 물품이 없으세요? </p><p class="text-normal"><a href="/borrowablestuffs/new" style="no-decoration"><i class="icon-suitcase"></i> 물품 등록하기</a></p>
-								<br />
-							</header>
+<!-- ============================================================= MAIN ============================================================= -->
 
-						</div><!-- /.col --> 
-						
-						
-					</div><!-- /.row -->
-						
-							<ul class="filter text-center">
-								<li><a href="#" data-filter="*" class="active">All</a></li>
-								<li><a href="#" data-filter=".book">Book</a></li>
-								<li><a href="#" data-filter=".etc">etc</a></li>
-							</ul><!-- /.filter -->
-					
-					
-					<div class="row pricing col-4">
-						
-												
-						
-                <% @borrowablestuffs.each do |borrowablestuff| %>
-                	<% @borrowablestuff = borrowablestuff %>
-					<% case @borrowablestuff.status(@user)
-           			   when "borrowable" %><%= render :partial => "borrow" %>
-        			<% when "returnable" %><%= render :partial => "return" %>
-        			<% when "showstuffable" %><%= render :partial => "showstuff" %>
-        			<% end %>
-        		<% end %>
+<main>
 
-						
-					</div><!-- /.row -->
-					
-				</div><!-- /.container -->
-			</section>
-			
-			<!-- ============================================================= SECTION – PRICING TABLES : END ============================================================= -->
-			
-			
-			
-			
-			
-		</main>
-		
-		<!-- ============================================================= MAIN : END ============================================================= -->
-		
-	
+	<!-- ============================================================= SECTION – PRICING TABLES ============================================================= -->
+
+	<section id="modal">
+		<div class="container inner">
+			<div class="row">
+				<div class="col-md-8 col-sm-9 center-block text-center">
+					<header>
+						<h1>물품 대여</h1>
+						<p>
+							학회실에 비치되어있는 물품들을 등록하여 자유롭게 대여받을 수 있습니다.
+						</p>
+						<p class="text-normal">찾으시는 물품이 없으세요? </p><p class="text-normal"><a href="/borrowablestuffs/new" style="no-decoration"><i class="icon-suitcase"></i> 물품 등록하기</a></p>
+						<br />
+					</header>
+
+				</div><!-- /.col --> 
+
+
+			</div><!-- /.row -->
+
+			<ul class="filter text-center">
+				<li><a href="#" data-filter="*" class="active">All</a></li>
+				<li><a href="#" data-filter=".book">Book</a></li>
+				<li><a href="#" data-filter=".etc">etc</a></li>
+			</ul><!-- /.filter -->
+
+			<div class="row pricing col-4">
+				<% @borrowablestuffs.each do |borrowablestuff| %>
+				<% @borrowablestuff = borrowablestuff %>
+				<% case @borrowablestuff.status(@user) when "borrowable" %><%= render :partial => "borrow" %>
+				<% when "returnable" %><%= render :partial => "return" %>
+				<% when "showstuffable" %><%= render :partial => "showstuff" %>
+				<% end %>
+				<% end %>
+			</div><!-- /.row -->
+		</div><!-- /.container -->
+	</section>
+
+	<!-- ============================================================= SECTION – PRICING TABLES : END ============================================================= -->
+
+</main>
+
+<!-- ============================================================= MAIN : END ============================================================= -->
+

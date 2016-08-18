@@ -1,35 +1,33 @@
 
-						<div class="col-lg-3 col-sm-6">
-							<div class="plan">
-								
-								<header>
-									
-									<div class="price">
-										<span class="amount"><%=@borrowablestuff.stufftype%></span>
-									</div><!-- /.price -->
-									
-									<h2><%=@borrowablestuff.stuffcode%></h2>
-									
-									<% unless @borrowablestuff.image_url.empty? %>
-									<div class="thumb">
-										<figure class="icon-overlay">
-												<img src=@borrowalbestuff.image_url alt="">
-										</figure>
-									</div><!-- /.thumb -->
-									<% end %>
-									
-									
-																						
-									<p><h2><%=@borrowablestuff.description%></h2></p>
-									
-									<a href="#" class="btn btn-small btn-gray">물품 반납하기</a> <!-- 대여 상태 및 해당 유저의 대여 정보에 따라 버튼의 내용이 대여하기/반납하기/대여중(클릭불가)로 --> 
-								</header>
-								
-								<ul class="features text-small">
-									<li><i class="icon-check-1"></i> 반납가능</li> <!-- 대여 가능/불가 -->
-									<li><i class="icon-users"></i> 대여자: <%= (@current_lended_user = (User.where(:id => @borrowablestuff.current_lended_user_id)).first) ? (@current_lended_user.name) : ("없음") %></li>
-									<li><i class="icon-calendar"></i> 반납일: <%=@borrowablestuff.dueday%></li>
-								</ul><!-- /.features -->
-								
-							</div><!-- /.plan -->
-						</div><!-- /.col -->
+<div class="col-lg-3 col-sm-6">
+	<div class="plan">
+
+		<header>
+
+			<div class="price">
+				<span class="amount"><%=@borrowablestuff.stufftype%></span>
+			</div><!-- /.price -->
+
+			<h2><%=@borrowablestuff.stuffcode%></h2>
+
+			<% unless @borrowablestuff.image_url.empty? %>
+			<div class="thumb">
+				<figure class="icon-overlay">
+					<img src=@borrowalbestuff.image_url alt="">
+				</figure>
+			</div><!-- /.thumb -->
+			<% end %>
+
+			<p><h2><%=@borrowablestuff.description%></h2></p>
+
+		<a href="#" class="btn btn-small btn-gray">물품 반납하기</a> <!-- 대여 상태 및 해당 유저의 대여 정보에 따라 버튼의 내용이 대여하기/반납하기/대여중(클릭불가)로 --> 
+		</header>
+
+	<ul class="features text-small">
+		<li><i class="icon-check-1"></i> 반납가능</li> <!-- 대여 가능/불가 -->
+		<li><i class="icon-users"></i> 대여자: <%= (@current_lended_user = (User.where(:id => @borrowablestuff.current_lended_user_id)).first) ? (@current_lended_user.name) : ("없음") %></li>
+		<li><i class="icon-calendar"></i> 반납일: <%=@borrowablestuff.dueday%></li>
+	</ul><!-- /.features -->
+
+</div><!-- /.plan -->
+</div><!-- /.col -->

@@ -32,40 +32,40 @@
           <ul class="items col-3 gap">
 
             <% @members.each do |member| %>
-                <!-- Alumni Items -->
-                <li class="item thumb interactive">
-                  <figure>
+            <!-- Alumni Items -->
+            <li class="item thumb interactive">
+              <figure>
 
-                    <div class="icon-overlay icn-link">
-                      <a href="/members/<%= member.id %>"><img src="<%= member.image_url %>" /></a>
-                    </div><!-- /.icon-overlay -->
+                <div class="icon-overlay icn-link">
+                  <a href="/members/<%= member.id %>"><img src="<%= member.image_url %>" /></a>
+                </div><!-- /.icon-overlay -->
 
-                    <figcaption class="bordered no-top-border">
-                      <div class="info">
-                        <h4><a href="/members/<%= member.id %>"><%= member.name %></a></h4>
-                        <p><%= member.occupation %></p></p>
-                      </div><!-- /.info -->
-                    </figcaption>
+                <figcaption class="bordered no-top-border">
+                  <div class="info">
+                    <h4><a href="/members/<%= member.id %>"><%= member.name %></a></h4>
+                    <p><%= member.occupation %></p></p>
+                  </div><!-- /.info -->
+                </figcaption>
 
-                  </figure>
-                </li><!-- /.item -->
-            <% end %>
-
-
-
-          </ul><!-- /.items -->
-
-        </div><!-- /.col -->
-      </div><!-- /.row -->
-    </div><!-- /.container -->
-  </section>
-  <!-- ============================================================= SECTION – PORTFOLIO : END ============================================================= -->
+            </figure>
+          </li><!-- /.item -->
+        <% end %>
 
 
-  <!-- ============================================================= SECTION – SHARE ============================================================= -->
+
+        </ul><!-- /.items -->
+
+    </div><!-- /.col -->
+    </div><!-- /.row -->
+  </div><!-- /.container -->
+</section>
+<!-- ============================================================= SECTION – PORTFOLIO : END ============================================================= -->
 
 
-  <!-- ============================================================= SECTION – SHARE : END ============================================================= -->
+<!-- ============================================================= SECTION – SHARE ============================================================= -->
+
+
+<!-- ============================================================= SECTION – SHARE : END ============================================================= -->
 
 </main>
 
