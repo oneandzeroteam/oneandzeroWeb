@@ -28,35 +28,15 @@
 
                 <div id="owl-work" class="owl-carousel owl-inner-pagination owl-inner-nav post-media">
 
-                  <div class="item">
-                    <figure>
-                      <img src="/assets/images/art/work06-lg.jpg" alt="">
-                    </figure>
-                  </div><!-- /.item -->
+                  <% @post_attachments.each do |attachment| %>
 
                   <div class="item">
                     <figure>
-                      <img src="/assets/images/art/work02-lg.jpg" alt="">
+                      <img src="<%=attachment.image_url%>" alt="">
                     </figure>
                   </div><!-- /.item -->
+                  <% end %>
 
-                  <div class="item">
-                    <figure>
-                      <img src="/assets/images/art/work08a-lg.jpg" alt="">
-                    </figure>
-                  </div><!-- /.item -->
-
-                  <div class="item">
-                    <figure>
-                      <img src="/assets/images/art/work09-lg.jpg" alt="">
-                    </figure>
-                  </div><!-- /.item -->
-
-                  <div class="item">
-                    <figure>
-                      <img src="/assets/images/art/work16-lg.jpg" alt="">
-                    </figure>
-                  </div><!-- /.item -->
 
                 </div><!-- /.owl-carousel -->
 
@@ -178,4 +158,3 @@
 </main>
 
 <!-- ============================================================= MAIN : END ============================================================= -->
-

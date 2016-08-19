@@ -174,7 +174,7 @@
 
           <div class="grid-blog col-2">
             <div class="posts">
-              
+
               <% @posts.each do |post| %>
                 <div class="post format-gallery">
 
@@ -182,35 +182,13 @@
 
                     <div id="owl-work" class="owl-carousel owl-inner-pagination owl-inner-nav post-media">
 
+                    <% post.post_attachments.each do |attachment| %>
                       <div class="item">
                         <figure>
-                          <img src="assets/images/art/work06-lg.jpg" alt="">
+                          <img src="<%=attachment.image_url%>" alt="">
                         </figure>
                       </div><!-- /.item -->
-
-                      <div class="item">
-                        <figure>
-                          <img src="assets/images/art/work02-lg.jpg" alt="">
-                        </figure>
-                      </div><!-- /.item -->
-
-                      <div class="item">
-                        <figure>
-                          <img src="assets/images/art/work08a-lg.jpg" alt="">
-                        </figure>
-                      </div><!-- /.item -->
-
-                      <div class="item">
-                        <figure>
-                          <img src="assets/images/art/work09-lg.jpg" alt="">
-                        </figure>
-                      </div><!-- /.item -->
-
-                      <div class="item">
-                        <figure>
-                          <img src="assets/images/art/work16-lg.jpg" alt="">
-                        </figure>
-                      </div><!-- /.item -->
+                    <% end %>
 
                     </div><!-- /.owl-carousel -->
 

@@ -12,13 +12,16 @@ class PostsController < ApplicationController
   def blog
     @board = Board.where(name: "tech-blog").first
     @posts = @board.posts.all
-    #@post_attachments = @post.post_attachments.all #ImageUploader
+    #@post = Post.find(params[:id])
+    #@post_attachments = @post.post_attachments #ImageUploader
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
     @board = Board.where(name: params[:boardname]).first
+    @post_attachments = @post.post_attachments.all
+
   end
 
   # GET /posts/new
@@ -26,7 +29,7 @@ class PostsController < ApplicationController
     if user_signed_in?
       @board = Board.where(name: params[:boardname]).first
       @post = Post.new
-      #@post_attachments = @post.post_attachments.build #ImageUploader
+      @post_attachments = @post.post_attachments.build #ImageUploader
     else
       redirect_to new_user_session_path, flash: {notice: "로그인이 필요한 페이지입니다."}
     end
@@ -44,6 +47,7 @@ class PostsController < ApplicationController
     board = Board.where(name: params[:boardname]).first
     @post.board_id = board.id
     @post.user_id = current_user.id
+    @post.post_attachments << Attachment.create(image_url: params[:image], post_id: @post.id)
     respond_to do |format|
       if @post.save
         #params[:post_attachments]['image'].each do |i| #ImageUploader
@@ -90,6 +94,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :content, post_attachments_attributes: [:id, :post_id, :image])
+      params.require(:post).permit(:title, :content)
     end
 end
