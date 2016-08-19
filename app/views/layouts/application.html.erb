@@ -206,8 +206,8 @@
                 <a href="#" class="dropdown-toggle js-activated"><i class="icon-search"></i></a>
 
                 <div class="dropdown-menu">
-                  <form id="search" class="navbar-form search" role="search">
-                    <input type="search" class="form-control" placeholder="Type to search">
+                  <form id="search" action="/search" class="navbar-form search" role="search" method="GET">
+                    <input type="search" class="form-control" name="query" placeholder="키워드를 입력하세요">
                     <button type="submit" class="btn btn-default btn-submit icon-right-open"></button>
                   </form>
                 </div>
@@ -261,29 +261,13 @@
 
           <div class="row thumbs gap-xs">
 
-            <div class="col-xs-6 thumb">
-              <figure class="icon-overlay icn-link">
-                <a href="/pages/project_post"><img src="/assets/images/art/work02.jpg" alt=""></a>
-              </figure>
-            </div><!-- /.thumb -->
-
-            <div class="col-xs-6 thumb">
-              <figure class="icon-overlay icn-link">
-                <a href="/pages/project_post"><img src="/assets/images/art/work03.jpg" alt=""></a>
-              </figure>
-            </div><!-- /.thumb -->
-
-            <div class="col-xs-6 thumb">
-              <figure class="icon-overlay icn-link">
-                <a href="/pages/project_post"><img src="/assets/images/art/work07.jpg" alt=""></a>
-              </figure>
-            </div><!-- /.thumb -->
-
-            <div class="col-xs-6 thumb">
-              <figure class="icon-overlay icn-link">
-                <a href="/pages/project_post"><img src="/assets/images/art/work01.jpg" alt=""></a>
-              </figure>
-            </div><!-- /.thumb -->
+            <% @current_projects.first(4).each do |project| %>
+                <div class="col-xs-6 thumb">
+                  <figure class="icon-overlay icn-link">
+                    <a href="/projects/<%= project.id %>"><img src="<%= project.image_url %>" alt=""></a>
+                  </figure>
+                </div><!-- /.thumb -->
+            <% end %>
 
           </div><!-- /.row -->
         </div><!-- /.col -->
@@ -304,7 +288,7 @@
           <p>이메일을 적어주시면 정기적으로 하나와영 소식을 보내드립니다.</p>
           <form id="newsletter" class="form-inline newsletter" role="form">
             <label class="sr-only" for="exampleInputEmail">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail" placeholder="E_mail">
+            <input type="email" class="form-control" id="exampleInputEmail" placeholder="Email">
             <button type="submit" class="btn btn-default btn-submit">구독하기</button>
           </form>
         </div><!-- /.col -->
@@ -319,9 +303,9 @@
         <ul class="footer-menu pull-right">
           <li><a href="/">Home</a></li>
           <li><a href="/pages/about">About</a></li>
-          <li><a href="">Blog</a></li>
-          <li><a href="about.html">Projects</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="/board/tech-blog">Blog</a></li>
+          <li><a href="/projects">Projects</a></li>
+          <li><a href="/pages/recruit">Contact</a></li>
         </ul><!-- .footer-menu -->
       </div><!-- .container -->
     </div><!-- .footer-bottom -->
