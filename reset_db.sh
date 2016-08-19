@@ -27,9 +27,20 @@ function production_reset
 
 function trigger_all
 {
-    set -ev
+    pre_rake
     development_reset
     production_reset
+    after_rake
+}
+
+function pre_rake
+{
+    set -ev
+}
+
+function after_rake
+{
+    rake searchkick:reindex
 }
 
 function usage
@@ -58,11 +69,13 @@ done
 # Test code to verify command line processing
 
 if [ "$environment" = "development" ]; then
-    set -ev
+    pre_rake
     development_reset
+    after_rake
 else
-    set -ev
+    pre_rake
     production_reset
+    after_rake
 fi
 
 

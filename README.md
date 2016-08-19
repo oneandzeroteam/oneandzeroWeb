@@ -87,7 +87,12 @@ client.subscribe "https://github.com/#{repo}/events/push.json", callback_url, we
 - TODO 
 
 ### Elastic Search
-- TODO
+
+#### Searchable Objects
+- Borrowablestuff
+- Member
+- Post
+- Project
 
 ## Dependencies
 
