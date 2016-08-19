@@ -22,7 +22,7 @@ ruby -v
 gem install rails -v 5.0.0
 ```
 
-How to start the server after migration
+데이터베이스 마이그레이션과 서버를 시작할려면, 
 ```
 sh reset_db.sh 
 rails server
@@ -85,7 +85,13 @@ client.subscribe "https://github.com/#{repo}/events/push.json", callback_url, we
 
 - [plataformatec/devise](https://github.com/plataformatec/devise)
 - [bkeepers/dotenv](https://github.com/bkeepers/dotenv) 
-- Recaptcha
+- [ambethia/recaptcha](https://github.com/ambethia/recaptcha)
+
+모든 라이브러리는 루비의 다음 명령어로 설치가 가능합니다
+
+```
+bundle install
+```
 
 ## Contributions
 
@@ -93,7 +99,7 @@ client.subscribe "https://github.com/#{repo}/events/push.json", callback_url, we
 
 버그리포트, 기능추가 요청은 이슈트레커를 이용하거나 직접 풀 리퀘스트를 날려주시면 됩니다.
 
-하나와영 회원이라면 [하니외영 Github](https://github.com/oneandzeroteam) 에 가입함에 따라 리파저토리에 대한 권한이 부여됩니다
+하나와영 회원이라면 [하니외영 Github](https://github.com/oneandzeroteam) 에 가입함에 따라 저장소에 대한 권한이 부여됩니다
 
 ## People
 
