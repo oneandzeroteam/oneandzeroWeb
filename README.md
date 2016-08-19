@@ -42,7 +42,7 @@ sh reset_db.sh -e production
 ## Services
 
 ### TODO
-
+- 일하자!
 
 #### Attachable Rails Objects
 - Borrowablestuff
