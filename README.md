@@ -27,7 +27,21 @@ gem install rails -v 5.0.0
 sh reset_db.sh 
 rails server
 ```
+##Front End Guide
 
+  사용된 사진들은 모두 public/assets/images에 저장되어 있습니다.
+운영진 사진과 랜딩페이지 사진은 /pics에, 
+사용된 로고들과 패비콘은 /logo_icon에, 
+기존 템플릿 icon들은 /art에 있습니다.
+
+  페이지 수정을 위해서는 app/views에 들어가시면 됩니다.
+/admin에는 admin계정을 위한 각종 도구 페이지가 있습니다.
+/layouts에는 패비콘과 사이드바, 하단메뉴가 정의되어 있습니다.
+/members에는 alumni, member 페이지가 있습니다.
+/pages에는 landing page(index.html.erb), about, chairman's greeting, 개인정보 취급 방침 등이 있습니다.
+/posts에는 테크 블로그와 새 글 쓰기 페이지가 있습니다.
+/projects에는 프로젝트 페이지가 있습니다.
+/timeline에는 타임라인 페이지가 있습니다.
 
 ## Configuration 
 - TODO
