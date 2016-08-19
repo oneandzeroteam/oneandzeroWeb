@@ -40,7 +40,7 @@ function pre_rake
 
 function after_rake
 {
-    rake searchkick:reindex
+    :
 }
 
 function usage

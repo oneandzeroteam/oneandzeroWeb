@@ -24,6 +24,7 @@ gem install rails -v 5.0.0
 
 개발용 데이터베이스 마이그레이션과 서버를 시작할려면, 
 ```
+elasticsearch
 sh reset_db.sh -e development
 rails server
 ```
@@ -43,7 +44,12 @@ sh reset_db.sh -e production
 ### TODO
 
 
-
+#### Attachable Rails Objects
+- Borrowablestuff
+- Member
+- Post
+- Project
+- Timeline
 
 ## Database
 * Database creation
@@ -88,7 +94,19 @@ client.subscribe "https://github.com/#{repo}/events/push.json", callback_url, we
 
 ### Elastic Search
 
-#### Searchable Objects
+하나와영 웹페이지 프로젝트는 검색 기능으로 Elastic Search 클러스터를 활용합니다
+간단한 방법으로 ElasticSearch를 띄울려면, Homebrew로는 
+
+```
+brew install elasticsearch
+elasticsearch
+```
+
+혹은 [Elastic.co](http://elastic.co) 에서 바이너리 파일을 받으시면 됩니다
+
+
+
+#### Searchable Rails Objects
 - Borrowablestuff
 - Member
 - Post
