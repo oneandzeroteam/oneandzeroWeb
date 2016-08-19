@@ -3,7 +3,7 @@ class BorrowablestuffsController < ApplicationController
   before_action :set_user
 
   def index
-    @borrowablestuffs = Borrowablestuff.all
+    @borrowablestuffs = Borrowablestuff.paginate(:page => params[:page])
   end
 
   def show

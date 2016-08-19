@@ -1,4 +1,7 @@
 class Member < ApplicationRecord
+  searchkick
+  self.per_page = 9
+
 	has_one :user
 
   def add_linkage_with_user(user)

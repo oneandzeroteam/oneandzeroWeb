@@ -1,4 +1,7 @@
 class Borrowablestuff < ApplicationRecord
+  searchkick
+  self.per_page = 8
+
   has_many :users
   validates :stufftype, presence: true
   validates :stuffcode, uniqueness: true

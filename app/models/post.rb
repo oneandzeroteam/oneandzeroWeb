@@ -1,4 +1,6 @@
 class Post < ApplicationRecord
+  searchkick
+
   belongs_to :user
   belongs_to :board
 

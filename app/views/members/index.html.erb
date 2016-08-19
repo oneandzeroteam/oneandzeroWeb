@@ -1,12 +1,5 @@
-<!-- ============================================================= MAIN ============================================================= -->
-
 <main>
-
-  <!-- ============================================================= SECTION – PORTFOLIO ============================================================= -->
-
   <section id="portfolio">
-
-
     <div class="container inner-bottom">
       <div class="row">
         <div class="col-sm-12 portfolio">
@@ -23,47 +16,37 @@
             </div><!-- /.row -->
           </div><!-- /.container -->
 
-
           <ul class="filter text-center">
             <!-- Alumni  경계 위아래 구분선 -->
           </ul><!-- /.filter -->
 
-
           <ul class="items col-3 gap">
+
             <% @members.each do |member| %>
-            <!-- Alumni Items -->
-            <li class="item thumb interactive">
-              <figure>
+                <!-- Alumni Items -->
+                <li class="item thumb interactive">
+                  <figure>
 
-                <div class="icon-overlay icn-link">
-                  <a href="/members/<%= member.id %>"><img src="<%= member.image_url %>" /></a>
-                </div><!-- /.icon-overlay -->
+                    <div class="icon-overlay icn-link">
+                      <a href="/members/<%= member.id %>"><img src="<%= member.image_url %>"/></a>
+                    </div><!-- /.icon-overlay -->
 
-                <figcaption class="bordered no-top-border">
-                  <div class="info">
-                    <h4><a href="/members/<%= member.id %>"><%= member.name %></a></h4>
-                    <p><%= member.occupation %></p></p>
-                  </div><!-- /.info -->
-                </figcaption>
+                    <figcaption class="bordered no-top-border">
+                      <div class="info">
+                        <h4><a href="/members/<%= member.id %>"><%= member.name %></a></h4>
+                        <p><%= member.occupation %></p></p>
+                      </div><!-- /.info -->
+                    </figcaption>
 
-            </figure>
-          </li><!-- /.item -->
-        <% end %>
-        </ul><!-- /.items -->
+                  </figure>
+                </li><!-- /.item -->
+            <% end %>
 
-    </div><!-- /.col -->
-    </div><!-- /.row -->
-  </div><!-- /.container -->
-</section>
-<!-- ============================================================= SECTION – PORTFOLIO : END ============================================================= -->
-
-
-<!-- ============================================================= SECTION – SHARE ============================================================= -->
-
-
-<!-- ============================================================= SECTION – SHARE : END ============================================================= -->
-
+          </ul><!-- /.items -->
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div><!-- /.container -->
+  </section>
+  <%= render :partial => 'layouts/pagination', :locals => {:model => @members } %>
 </main>
-
-<!-- ============================================================= MAIN : END ============================================================= -->
 

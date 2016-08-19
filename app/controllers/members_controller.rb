@@ -2,7 +2,7 @@ class MembersController < ApplicationController
 
   def index
     # /members
-    @members = Member.where(is_alumni: false , is_professor: false)
+    @members = Member.where(is_alumni: false , is_professor: false).paginate(:page => params[:page])
   end
 
   def show
@@ -12,14 +12,14 @@ class MembersController < ApplicationController
 
   def alumni
     # /alumni
-    @members = Member.where(is_alumni: true, is_professor: false)
+    @members = Member.where(is_alumni: true, is_professor: false).paginate(:page => params[:page])
   end
 
-  def professor
-    # /professor
-    @member = Member.where(is_professor: true).first
-    render template: "members/show"
-  end
+  # def professor
+  #   # /professor
+  #   @member = Member.where(is_professor: true).first
+  #   render template: "members/show"
+  # end
 
    
   private

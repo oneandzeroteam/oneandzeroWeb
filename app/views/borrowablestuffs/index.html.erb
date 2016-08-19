@@ -30,15 +30,20 @@
 
 			<div class="row pricing col-4">
 				<% @borrowablestuffs.each do |borrowablestuff| %>
-				<% @borrowablestuff = borrowablestuff %>
-				<% case @borrowablestuff.status(@user) when "borrowable" %><%= render :partial => "borrow" %>
-				<% when "returnable" %><%= render :partial => "return" %>
-				<% when "showstuffable" %><%= render :partial => "showstuff" %>
-				<% end %>
+          <!-- TODO: Fix variable to local -->
+          <% @borrowablestuff = borrowablestuff %>
+          <% case @borrowablestuff.status(@user) when "borrowable" %>
+                <%= render :partial => "borrow" %>
+            <% when "returnable" %>
+                <%= render :partial => "return" %>
+            <% when "showstuffable" %>
+                <%= render :partial => "showstuff" %>
+          <% end %>
 				<% end %>
 			</div><!-- /.row -->
 		</div><!-- /.container -->
 	</section>
+  <%= render :partial => 'layouts/pagination', :locals => {:model => @borrowablestuffs } %>
 
 	<!-- ============================================================= SECTION – PRICING TABLES : END ============================================================= -->
 
