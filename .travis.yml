@@ -2,10 +2,18 @@ language: ruby
 rvm:
   - 2.3.0
 
+services:
+  - elasticsearch
+
+before_script:
+  - sleep 10
+
 install:
     bundle install
+
 script:
     ./reset_db.sh
+
 env:
     global:
         - RAILS_ENV=production
@@ -19,4 +27,4 @@ notifications:
   slack:
       rooms:
             - oneandzeroweb:g0nMkPgQoz9TaYvhJjHDBLrh#general            
-            - oneandzeroweb:g0nMkPgQoz9TaYvhJjHDBLrh#server-deployment
+            - oneandzeroweb:g0nMkPgQoz9TaYvhJjHDBLrh#server_deployment

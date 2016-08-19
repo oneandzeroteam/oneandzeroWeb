@@ -11,13 +11,12 @@ Rails.application.routes.draw do
 
   resources :posts do
     resources :comments
-    resources :post_attachments
-  end
+    end
 
   devise_for :users, controllers: {registrations: "registrations"}
 
   post "/pages/recruit_check" => "pages#recruit_check"
-
+  get "/search" => "search#search"
   get "/board/tech-blog" => "posts#blog"
   get "/board/:boardname" => "posts#index"
   get "/board/:boardname/posts/new" => "posts#new"

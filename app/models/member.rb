@@ -3,6 +3,7 @@ class Member < ApplicationRecord
   self.per_page = 9
 
 	has_one :user
+  has_many :attachments
 
   def add_linkage_with_user(user)
     self.user_id = user.id
