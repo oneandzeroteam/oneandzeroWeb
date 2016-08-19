@@ -1,6 +1,6 @@
 class TimelineController < ApplicationController
   def index
-    @timelines = Timeline.order(:date).reverse_order
+    @timelines = Timeline.paginate(:page => params[:page]).order(:date).reverse_order
     respond_to do |format|
       format.html # index.html.erb.erb
       format.xml {render :xml => @timeline}
