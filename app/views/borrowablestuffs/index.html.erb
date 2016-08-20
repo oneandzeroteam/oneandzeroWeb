@@ -27,20 +27,7 @@
 				<li><a href="#" data-filter=".book">Book</a></li>
 				<li><a href="#" data-filter=".etc">etc</a></li>
 			</ul><!-- /.filter -->
-
-			<div class="row pricing col-4">
-				<% @borrowablestuffs.each do |borrowablestuff| %>
-          <!-- TODO: Fix variable to local -->
-          <% @borrowablestuff = borrowablestuff %>
-          <% case @borrowablestuff.status(@user) when "borrowable" %>
-                <%= render :partial => "borrow" %>
-            <% when "returnable" %>
-                <%= render :partial => "return" %>
-            <% when "showstuffable" %>
-                <%= render :partial => "showstuff" %>
-          <% end %>
-				<% end %>
-			</div><!-- /.row -->
+			<%= render "borrowablestuffs/index_listing" %>
 		</div><!-- /.container -->
 	</section>
   <%= render :partial => 'layouts/pagination', :locals => {:model => @borrowablestuffs } %>

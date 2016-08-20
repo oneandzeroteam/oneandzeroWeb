@@ -213,7 +213,8 @@ class AdminController < ApplicationController
   # ============================================== BORROWED CRUD =================================================
 
   def index_items
-    @items = Borrowablestuff.all
+    @user = current_user
+    @borrowablestuffs = Borrowablestuff.all
     render template: "admin/borrowed"
   end
 
