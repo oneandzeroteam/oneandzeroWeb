@@ -8,7 +8,7 @@ class CreateBorrowablestuffs < ActiveRecord::Migration[5.0]
       t.text :description
       t.string :image_url
 
-      t.integer :max_lendingperiod         , default: 14
+      t.integer :max_lendingperiod         , null: false, default: 14
       t.integer :lended_period
 
       t.boolean :is_borrowed , default: false

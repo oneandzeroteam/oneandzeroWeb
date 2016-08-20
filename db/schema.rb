@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20160819125645) do
     t.string   "stuffcode"
     t.text     "description"
     t.string   "image_url"
-    t.integer  "max_lendingperiod",      default: 14
+    t.integer  "max_lendingperiod",      default: 14,    null: false
     t.integer  "lended_period"
     t.boolean  "is_borrowed",            default: false
     t.datetime "lended_at"

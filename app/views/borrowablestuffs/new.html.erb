@@ -50,11 +50,15 @@
                   </div><!-- /.col -->
                 </div><!-- /.row -->
 
-                <div class="row">
-                  <div class="col-sm-12">
-                    <input type="integer" name="borrowablestuff[max_lendingperiod]" class="form-control" placeholder="최대 대여가능 일수(default: 14)">
-                  </div><!-- /.col -->
-                </div><!-- /.row -->
+              <% unless @user == nil %>
+                <% if @user.is_admin? %>
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <input type="integer" name="borrowablestuff[max_lendingperiod]" class="form-control" placeholder="최대 대여가능 일수">
+                    </div><!-- /.col -->
+                  </div><!-- /.row -->
+                <% end %>
+              <% end %>
 
                 <button type="submit" class="btn btn-default btn-gray btn-submit">물품 등록하기</button>
               </center>

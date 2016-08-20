@@ -6,11 +6,18 @@ class Borrowablestuff < ApplicationRecord
   validates :stufftype, presence: true
   validates :stuffcode, uniqueness: true
 
+  def initiate(params)
+    unless (params[:max_lendingperiod] == "")
+      self.max_lendingperiod = params[:max_lendingperiod]
+    end
+    return self
+  end
+
   def create_code # stuffencode, stuffnumbering로 코드제작, e.g. type = MONITOR -> MON01
     self.stuffstrcode = stuffencode
     self.stuffintcode = self.stuffnumbering
-    self.stuffcode = stuffencode + ("%02d" % self.stuffnumbering)
-    return self.save
+    self.stuffcode = (stuffencode || "") + ("%02d" % self.stuffintcode)
+    return self
   end
 
   def stuffencode

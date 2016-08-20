@@ -27,8 +27,8 @@ class BorrowablestuffsController < ApplicationController
 
   def create
     @borrowablestuff = Borrowablestuff.new(borrowablestuff_params)
-    @borrowablestuff.create_code
-    @borrowablestuff.max_lendingperiod = 14 # todo 제거
+    @borrowablestuff = @borrowablestuff.initiate(params[:borrowablestuff])
+    @borrowablestuff = @borrowablestuff.create_code
     respond_to do |format|
       if @borrowablestuff.save
         if params[:borrowflag]
@@ -118,7 +118,7 @@ class BorrowablestuffsController < ApplicationController
                             :stuffcode,
                             :description,
                             :image_url,
-                            :max_lendingperiod,
+                            #:max_lendingperiod,
                             :lended_period,
                             :lended_at,
                             :current_lended_user)
