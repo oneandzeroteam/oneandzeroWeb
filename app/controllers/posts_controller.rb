@@ -47,7 +47,7 @@ class PostsController < ApplicationController
     board = Board.where(name: params[:boardname]).first
     @post.board_id = board.id
     @post.user_id = current_user.id
-    @post.post_attachments << Attachment.create(image_url: params[:image], post_id: @post.id)
+    @post.post_attachments << PostAttachment.create(image_url: params[:image], post_id: @post.id)
     respond_to do |format|
       if @post.save
         #params[:post_attachments]['image'].each do |i| #ImageUploader
@@ -94,6 +94,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :content)
+      params.require(:post).permit(:title, :content, {images: []})
     end
 end
