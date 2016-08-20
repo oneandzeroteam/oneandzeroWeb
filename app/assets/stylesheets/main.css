@@ -3479,6 +3479,101 @@ blockquote:before {
 }
 
 
+/* ================= */
+
+.search .boxtitle {
+	margin-left: 2px;
+	font-weight: 900;
+}
+
+
+.search .searchbox {
+	border: 1px solid #E6E9ED;
+	
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+	
+	border-top-width: 2px;
+	border-bottom-width: 2px;
+
+	overflow: hidden;
+	
+	background: #F5F7FA;
+	padding: 10px 10px;
+
+	
+	margin-bottom: 10px; !important;
+}
+
+
+.search .searchbox .search_header{
+	font-size: 20px;
+	font-weight: 500;
+	
+}
+
+.search .searchbox .search_subheader{
+	font-size: 15px;
+
+}
+
+.search .searchbox .search_body{
+	padding-bottom: 10px;
+	max-height: 110px;
+	font-size: 15px;
+	overflow: hidden;
+	text-overflow: ellipsis;  
+	
+	overflow     : hidden;    /* 내용이 길면 감춤니다 */
+	display      : block;     /* ie6이상 현재요소를 블럭처리합니다. */
+}
+
+.search .searchbox .search_footer{
+	font-size: 13px;
+	margin-top: 10px;
+	padding-top: 5px;
+	border-top: 1px solid #E6E9ED;
+
+}
+
+
+.search .searchmore {
+	border: 1px solid #E6E9ED;
+
+	border-top-left-radius: 1px;
+	border-top-right-radius: 1px;
+	border-bottom-left-radius: 1px;
+	border-bottom-right-radius: 1px;
+
+	border-top-width: 2px;
+	border-bottom-width: 2px;
+
+	overflow: hidden;
+
+	background: #F5F7FA;
+	padding: 5px 5px;
+
+
+	margin-bottom: 10px; !important;
+}
+
+.search .searchbox .postimg{
+	display: block;
+	float: right;
+	text-align: center;
+	position : relative;
+	
+	
+	margin-left: 10px;
+}
+
+.search .searchbox .postimg img{
+	max-height: 70px;
+}
+/* ================= */
+
 
 /*===================================================================================*/
 /*	FORMS
