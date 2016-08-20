@@ -12,7 +12,7 @@ function development_reset
     rake db:create
     rake db:migrate
     rake db:seed
-
+    rake searchkick:reindex:all
 }   # end of development_reset
 
 
@@ -22,7 +22,7 @@ function production_reset
     RAILS_ENV=production rake db:create
     RAILS_ENV=production rake db:migrate
     RAILS_ENV=production rake db:seed
-
+    RAILS_ENV=production rake searchkick:reindex:all
 }   # end of production_reset
 
 function trigger_all

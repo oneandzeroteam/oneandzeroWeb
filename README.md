@@ -104,6 +104,16 @@ elasticsearch
 
 혹은 [Elastic.co](http://elastic.co) 에서 바이너리 파일을 받으시면 됩니다
 
+데이터 모델에 대한 인덱싱은 다음과 같이 할 수 있습니다
+
+```
+rake searchkick:reindex:all
+  
+# Or
+  
+RAILS_ENV=production rake searchkick:reindex:all
+```
+
 
 
 #### Searchable Rails Objects
