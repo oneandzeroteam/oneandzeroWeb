@@ -10,7 +10,5 @@ class Post < ApplicationRecord
   has_many :comments, :dependent => :destroy
 
   #image uploader
-  has_many :post_attachments
-  accepts_nested_attributes_for :post_attachments
-  
+  has_many :attachments
 end

@@ -1,0 +1,23 @@
+<% @results.each do |result| %>
+  <% result.each do |object| %>
+    <% if object.is_a? Project %>
+      <%= object.title %>
+      <%= object.short_description %>
+    <% end %>
+
+    <% if object.is_a? Member %>
+        <%= object.name %>
+        <%= object.email %>
+    <% end %>
+
+    <% if object.is_a? Borrowablestuff %>
+        <%= object.stufftype %>
+        <%= object.description %>
+    <% end %>
+
+    <% if object.is_a? Post %>
+        <%= object.title %>
+        <%= truncate(object.content, length: 60, omission: "...#{object.content[-5, 5]}") %>
+    <% end %>
+  <% end %>
+<% end %>
