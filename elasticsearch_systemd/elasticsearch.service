@@ -1,0 +1,53 @@
+[Unit]
+Description=Elasticsearch
+Documentation=http://www.elastic.co
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Environment=ES_HOME=/opt/elasticsearch/elasticsearch-2.3.0
+Environment=CONF_DIR=${path.conf}
+Environment=DATA_DIR=/opt/elasticsearch/elasticsearch-2.3.0/data
+Environment=LOG_DIR=/opt/elasticsearch/elasticsearch-2.3.0/logs
+Environment=PID_DIR=/var/run/elasticsearch
+EnvironmentFile=-${path.env}
+Environment=LD_LIBRARY_PATH=/usr/local/lib
+
+WorkingDirectory=/opt/elasticsearch/elasticsearch-2.3.0
+
+User=oaz
+Group=oaz
+
+#ExecStartPre=/usr/share/elasticsearch/bin/elasticsearch-systemd-pre-exec
+
+ExecStart=/opt/elasticsearch/elasticsearch-2.3.0/bin/elasticsearch \
+                                                -p ${PID_DIR}/elasticsearch.pid \
+												-Des.security.manager.enabled=false \
+												-Djava.library.path=/usr/local/lib
+
+StandardOutput=journal
+StandardError=inherit
+
+# Specifies the maximum file descriptor number that can be opened by this process
+LimitNOFILE=65536
+
+# Specifies the maximum number of bytes of memory that may be locked into RAM
+# Set to "infinity" if you use the 'bootstrap.memory_lock: true' option
+# in elasticsearch.yml and 'MAX_LOCKED_MEMORY=unlimited' in ${path.env}
+#LimitMEMLOCK=infinity
+
+# Disable timeout logic and wait until process is stopped
+TimeoutStopSec=0
+
+# SIGTERM signal is used to stop the Java process
+KillSignal=SIGTERM
+
+# Java process is never killed
+SendSIGKILL=no
+
+# When a JVM receives a SIGTERM signal it exits with code 143
+SuccessExitStatus=143
+
+[Install]
+WantedBy=multi-user.target
+

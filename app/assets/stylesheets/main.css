@@ -3504,7 +3504,7 @@ blockquote:before {
 	padding: 10px 10px;
 
 	
-	margin-bottom: 10px; !important;
+	margin-bottom: 10px !important;
 }
 
 
@@ -3556,7 +3556,7 @@ blockquote:before {
 	padding: 5px 5px;
 
 
-	margin-bottom: 10px; !important;
+	margin-bottom: 10px !important;
 }
 
 .search .searchbox .postimg{
