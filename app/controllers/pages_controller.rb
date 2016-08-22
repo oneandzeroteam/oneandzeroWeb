@@ -5,7 +5,12 @@ class PagesController < ApplicationController
     else
       render file: "public/404.html", status: :not_found
     end
-  end
+	end
+
+	def recruit
+		@admins = Member.where(is_admin: true).all
+		render template: "pages/recruit"
+	end
 
   def recruit_check
 	  if request.xhr?

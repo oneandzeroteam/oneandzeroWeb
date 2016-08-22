@@ -64,8 +64,10 @@ ActiveRecord::Schema.define(version: 20160819125645) do
     t.string   "image_url"
     t.string   "occupation"
     t.string   "email"
+    t.string   "facebook_url"
     t.text     "description"
     t.integer  "user_id"
+    t.boolean  "is_admin",     default: false
     t.boolean  "is_professor", default: false
     t.boolean  "is_alumni",    default: false
     t.datetime "created_at",                   null: false

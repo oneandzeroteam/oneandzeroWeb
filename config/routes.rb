@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     end
 
   devise_for :users, controllers: {registrations: "registrations"}
-
+  get "/recruit" => "pages#recruit"
   post "/pages/recruit_check" => "pages#recruit_check"
   get "/search" => "search#search"
   get "/board/tech-blog" => "posts#blog"

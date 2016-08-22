@@ -1,101 +1,168 @@
 <!-- ============================================================= MAIN ============================================================= -->
-
 <main>
+  <% content_for :head do %>
+      <%= javascript_include_tag 'recruit.js' %>
+  <% end %>
 
-	<% content_for :head do %>
-	<%= javascript_include_tag 'recruit.js' %>
-	<% end %>
+    <!-- ============================================================= SECTION – MAP ============================================================= -->
 
-	<!-- ============================================================= SECTION – CONTACT FORM ============================================================= -->
+    <section id="map" class="height-sm" style="width: 100%;"></section>
 
-	<section id="contact-form">
-		<div class="container inner">
-
-
-			<div class="row">
-				<div class="col-md-8 col-sm-9 center-block text-center">
-					<header>
-						<h1>하나와영 리크루트</h1>
-						<p class="text-normal">
-							열정만 가지고 오세요!
-						</p>
-						<p>
-							나머지는 채워드립니다.
-						</p>
-					</header>
-				</div><!-- /.col -->
-			</div><!-- /.row -->
+    <!-- ============================================================= SECTION – MAP : END ============================================================= -->
 
 
-			<div class="row">
-				<div class="col-sm-12">
-					<div class="row">
+    <!-- ============================================================= SECTION – HERO ============================================================= -->
 
-						<div class="col-sm-6 outer-top-md inner-right-sm">
+    <section id="hero" class="dark-bg img-bg img-bg-soft" style="background-image: url(assets/images/art/slider02.jpg);">
+      <div class="container inner-top-md inner-bottom-sm">
+        <div class="row">
 
-							<%= form_tag("/pages/recruit_check", id: "recruitform", class: "forms", method: "POST", remote: true) do%>
+          <div class="col-md-8 inner-right inner-bottom-xs">
+            <header>
+              <h1>하나와영 Recruit</h1>
+              <p>열정만 가지고 오세요! 나머지는 채워드립니다.</p>
+            </header>
+          </div><!-- /.col -->
 
-							<div class="row">
-								<div class="col-sm-6">
-									<input type="text" name="name" class="form-control" placeholder="이름 (Required)" required>
-								</div><!-- /.col -->
-							</div><!-- /.row -->
+          <div class="col-md-4">
+            <h3 style="margin-top: 8px;">하나와영</h3>
+            <ul class="contacts" class="text-small">
+              <li><i class="icon-location contact"></i> 고려대학교 공학별관 703호</li>
+              <li><i class="icon-mobile contact"></i> 01031869822 학회장 김재훈</li>
+              <li><a href="mailto:info@reen.com"><i class="icon-mail-1 contact"></i> koreaoaz@gmail.com</a></li>
+            </ul><!-- /.contacts -->
+          </div><!-- /.col -->
 
-							<div class="row">
-								<div class="col-sm-6">
-									<input type="tel" name="phoneNumber" class="form-control" placeholder="전화번호 (Required)" required>
-								</div><!-- /.col -->
-							</div><!-- /.row -->
+        </div><!-- ./row -->
+      </div><!-- /.container -->
+    </section>
 
-							<div class="row">
-								<div class="col-sm-6">
-									<input type="email" name="email" class="form-control" placeholder="E-mail (Required)" required>
-								</div><!-- /.col -->
-							</div><!-- /.row -->
+    <!-- ============================================================= SECTION – HERO : END ============================================================= -->
 
-							<div class="row">
-								<div class="col-sm-12">
-									<textarea name="message" class="form-control" placeholder="지원 동기, 배우고 싶은 것 등 학회에 하고 싶은 말을 적어주세요!" required></textarea>
-								</div><!-- /.col -->
-							</div><!-- /.row -->
+    <div class="container inner">
+      <div class="row">
 
-							<button type="submit" id="form_submit_button" class="btn btn-default btn-submit">지원서 보내기</button>
+        <div class="col-md-8 inner-right inner-bottom-md">
 
-							<% end %>
+          <!-- ============================================================= SECTION – CONTACT FORM ============================================================= -->
 
-							<div id="response"></div>
+          <section id="contact-form">
 
-						</div><!-- ./col -->
+            <h2>지원하기</h2>
 
-						<div class="col-sm-6 outer-top-md inner-left-sm border-left">
+            <%= form_tag("/pages/recruit_check", id: "recruitform", class: "forms", method: "POST", remote: true) do %>
 
-							<h2>하나와영OneAndZero</h2>
-							<ul class="contacts" class="text-small">
-								<li><i class="icon-location contact"></i>    고려대학교 공학별관 703호</li>
-								<li><i class="icon-mobile contact"></i>    01031869822 학회장 김재훈</li>
-								<li><a href="mailto:info@reen.com"><i class="icon-mail-1 contact"></i>    koreaoaz@gmail.com</a></li>
-							</ul><!-- /.contacts -->
+                <div class="row">
+                  <div class="col-sm-6">
+                    <input type="text" name="name" class="form-control" placeholder="이름 (Required)" required>
+                  </div><!-- /.col -->
+                </div><!-- /.row -->
 
-							<div class="social-network">
-								<h3>Social</h3>
-								<ul class="social">
-									<li><a href="https://www.facebook.com/groups/161712400527699/"><i class="icon-s-facebook"></i></a></li>
-								</ul><!-- /.social -->
-							</div><!-- /.social-network -->
+                <div class="row">
+                  <div class="col-sm-6">
+                    <input type="tel" name="phoneNumber" class="form-control" placeholder="전화번호 (Required)" required>
+                  </div><!-- /.col -->
+                </div><!-- /.row -->
 
-						</div><!-- /.col -->
+                <div class="row">
+                  <div class="col-sm-6">
+                    <input type="email" name="email" class="form-control" placeholder="E-mail (Required)" required>
+                  </div><!-- /.col -->
+                </div><!-- /.row -->
 
-					</div><!-- /.row -->
-				</div><!-- /.col -->
-			</div><!-- /.row -->
+                <div class="row">
+                  <div class="col-sm-12">
+                    <textarea name="message" class="form-control" placeholder="지원 동기, 배우고 싶은 것 등 학회에 하고 싶은 말을 적어주세요!" required></textarea>
+                  </div><!-- /.col -->
+                </div><!-- /.row -->
 
-		</div><!-- /.container -->
-	</section>
+                <button type="submit" id="form_submit_button" class="btn btn-default btn-submit">지원서 보내기</button>
 
-	<!-- ============================================================= SECTION – CONTACT FORM : END ============================================================= -->
+            <% end %>
 
+            <div id="response"></div>
 
+          </section>
+
+          <!-- ============================================================= SECTION – CONTACT FORM : END ============================================================= -->
+
+        </div><!-- ./col -->
+
+        <div class="col-md-4">
+
+          <!-- ============================================================= SECTION – CONTACT NAMES ============================================================= -->
+
+          <section id="contact-names" class="light-bg inner-xs inner-left-xs inner-right-xs">
+
+            <h3 class="team-headline sidelines text-center"><span>Contact names</span></h3>
+
+            <div class="row thumbs gap-md text-center">
+              <% @admins.each do |admin| %>
+
+              <div class="col-sm-6 thumb">
+                <figure class="member">
+
+                  <div class="member-image">
+
+                    <div class="text-overlay">
+                      <div class="info">
+                        <ul class="social">
+                          <li><a href="<%= admin.facebook_url %>"><i class="icon-s-facebook"></i></a></li>
+                          <li><a href="#"><i class="icon-s-gplus"></i></a></li>
+                          <li><a href="#"><i class="icon-s-twitter"></i></a></li>
+                        </ul><!-- /.social -->
+                      </div><!-- /.info -->
+                    </div><!-- /.text-overlay -->
+
+                    <img src="<%= admin.image_url %>">
+
+                  </div><!-- /.member-image -->
+
+                  <figcaption class="member-details bordered no-top-border">
+                    <h3>
+                      <%= admin.name %>
+                      <span><%= admin.occupation %></span>
+                    </h3>
+                  </figcaption>
+
+                </figure>
+              </div><!-- /.col -->
+              <% end %>
+
+            </div><!-- /.row -->
+
+          </section>
+
+          <!-- ============================================================= SECTION – CONTACT NAMES : END ============================================================= -->
+
+        </div><!-- /.col -->
+
+      </div><!-- /.row -->
+    </div><!-- /.container -->
 </main>
 
 <!-- ============================================================= MAIN : END ============================================================= -->
 
+<script>
+  function initMap() {
+    var myLatlng = new google.maps.LatLng(37.5831920,127.0265413);
+    var map = new google.maps.Map(document.getElementById('map'), {
+      center: myLatlng,
+      zoom: 17,
+      disableDefaultUI: true,
+      scrollwheel: false
+    });
+
+    var marker = new google.maps.Marker({
+      position: myLatlng,
+      title:"학회실 위치!",
+      map: map,
+      animation: google.maps.Animation.DROP,
+    });
+
+    window.setTimeout(function() {
+      markers.push(marker);
+    }, 1000);
+  }
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBN14_blcD0zqhvmnJ6EEUuttdaNUOz-lM&callback=initMap"></script>

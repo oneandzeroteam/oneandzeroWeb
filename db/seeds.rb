@@ -6,6 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# ADMIN SEED - FOR PRODUCTION
+Member.create(name: '김재훈', facebook_url: 'https://www.facebook.com/turtle.gatpa?fref=ts', image_url: '/assets/images/pics/chairman_about.png', occupation: '회장', description: '착하고 은근히 리더십이 있어서 학회를 잘 이끌어감. 뭐 필요하면 연락하면 된다. 좀 더 카리스마 있게 해도 괜찮을 듯.', is_admin: true)
+Member.create(name: '오영택', facebook_url: 'http://facebook.com/youlooksoupset', image_url: '/assets/images/pics/OYT_about_2.png', occupation: '부회장', description: '15학번인데 벌써 부회장의 자리에 오른 능력자. 차기 회장이라는 소문이 있던데...?!', is_admin: true)
+Member.create(name: '신홍규', facebook_url: 'https://www.facebook.com/profile.php?id=100005457848000&fref=ts', image_url: '/assets/images/pics/HG_about.jpg', occupation: '부회장', description: '베일에 감춰진 신비스러운 존재. 우리는 아직 그를 잘 모른다. 궁금하면 학회에 들어오면 된다.', is_admin: true)
+
 #Administrator
 User.new(email: "admin@oaz.com", password: "1234", name: "관리자", is_admin: true, is_member: true, confirmed_at: DateTime.now).save(validate: false)
 Board.create(name: 'tech-blog')
