@@ -2,10 +2,6 @@
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
   <section class="content-header">
-    <h1>
-      Items
-      <small>대여품목</small>
-    </h1>
     <ol class="breadcrumb">
       <li><i class="fa fa-dashboard"></i>Admin</li>
       <li class="active">Items</li>
@@ -23,41 +19,7 @@
         <div class="alert alert-success" role="alert"><%= notice %></div>
     <% end %>
 
-
-    <%= form_for(@item, :url => url_for(:controller => "admin", :action => "create_item")) do |f| %>
-
-        <div class="row field">
-          <div class="col-sm-12">
-            <%= f.text_field :stufftype, class: "form-control", placeholder: "물품이름" %>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-
-        <div class="row field">
-          <div class="col-sm-12">
-            <%= f.text_field :stuffstrcode, class: "form-control", placeholder: "종목이름" %>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-
-        <div class="row field">
-          <div class="col-sm-12">
-            <%= f.text_field :stuffintcode, class: "form-control", placeholder: "종목코드" %>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-
-        <div class="row field">
-          <div class="col-sm-12">
-            <%= f.text_field :stuffcode, class: "form-control", placeholder: "코드" %>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-
-        <div class="row field">
-          <div class="col-sm-12">
-            <%= f.text_area :description, class: "form-control", placeholder: "설명" %>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-
-        <%= f.submit "물품 생성", class: "btn" %>
-    <% end %>
+    <%= render "borrowablestuffs/new" %>
   </section><!-- /.content -->
 </div><!-- /.content-wrapper -->
 

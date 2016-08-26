@@ -1,8 +1,9 @@
 
 <div class="col-lg-3 col-sm-6">
 	<div class="plan">
-
 		<header>
+
+			<%= render :partial => "borrowablestuffs/admin/destroy_button" %>
 
 			<div class="price">
 				<span class="amount"><%=@borrowablestuff.stufftype%></span>
@@ -25,7 +26,10 @@
 
 	<ul class="features text-small">
 		<li><i class="icon-check-1"></i> 대여중</li> <!-- 대여 가능/불가 -->
-		<li><i class="icon-users"></i> 대여자: <%= (@current_lended_user = (User.where(:id => @borrowablestuff.current_lended_user_id)).first) ? (@current_lended_user.name) : ("없음") %></li>
+		<li><i class="icon-users"></i> 대여자: <%= (@current_lended_user = (User.where(:id => @borrowablestuff.current_lended_user_id)).first) ? (@current_lended_user.name) : ("없음") %>
+			<% if @user.is_admin? %>
+				<div style="text-align:left;"><a href="/borrowablestuffs/<%=@borrowablestuff.id%>/return">반납(관리자)</a></div>
+			<% end %> </li>
 		<li><i class="icon-calendar"></i> 반납일: <%=@borrowablestuff.dueday%></li>
 	</ul><!-- /.features -->
 
