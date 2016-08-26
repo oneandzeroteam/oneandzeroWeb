@@ -17,7 +17,6 @@ Rails.application.routes.draw do
   get "/recruit" => "pages#recruit"
   post "/pages/recruit_check" => "pages#recruit_check"
   get "/search" => "search#search"
-  get "/board/tech-blog" => "posts#blog"
   get "/board/:boardname" => "posts#index"
   get "/board/:boardname/posts/new" => "posts#new"
   post "/board/:boardname/posts/" => "posts#create"

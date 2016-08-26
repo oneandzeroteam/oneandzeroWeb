@@ -28,7 +28,9 @@
                   <figure>
 
                     <div class="icon-overlay icn-link">
-                      <a href="/members/<%= member.id %>"><img src="<%= member.image_url %>"/></a>
+                      <a href="/members/<%= member.id %>">
+                        <img src="<%= member.image_url %>" style="height:400px; object-fit:cover;"/>
+                      </a>
                     </div><!-- /.icon-overlay -->
 
                     <figcaption class="bordered no-top-border">

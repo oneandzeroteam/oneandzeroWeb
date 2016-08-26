@@ -6,14 +6,7 @@ class PostsController < ApplicationController
   def index
     @boards = Board.all
     @board = Board.where(name: params[:boardname]).first
-    @posts = @board.posts.all
-  end
-
-  def blog
-    @board = Board.where(name: "tech-blog").first
-    @posts = @board.posts.all
-    #@post = Post.find(params[:id])
-    #@post_attachments = @post.post_attachments #ImageUploader
+    @posts = @board.posts.paginate(:page => params[:page])
   end
 
   # GET /posts/1
