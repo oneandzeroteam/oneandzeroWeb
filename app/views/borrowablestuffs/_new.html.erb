@@ -1,0 +1,48 @@
+          <section class="content-header"  style="padding-bottom: 2px; border-bottom: 1px solid;">
+            <h2>
+              물품 등록
+            </h2>
+
+          </section>
+
+          <section style="margin-top: 20px;">
+
+            <form id="new_borrowablestuff" class="forms" action="/borrowablestuffs" method="POST">
+              <center>
+                <div class="row">
+                  <div class="col-sm-12">
+                    <input type="string" name="borrowablestuff[stufftype]" class="form-control" placeholder="물품 종류(ex: 모니터)">
+                  </div><!-- /.col -->
+                </div><!-- /.row -->
+
+                <div class="row">
+                  <div class="col-sm-12">
+                    <input type="text" name="borrowablestuff[description]" class="form-control" placeholder="물품 설명(ex: 17인치 빨간모니터)">
+                  </div><!-- /.col -->
+                </div><!-- /.row -->
+
+                <div class="row">
+                  <div class="col-sm-12">
+                    <input type="string" name="borrowablestuff[image_url]" class="form-control" placeholder="이미지 업로드">
+                  </div><!-- /.col -->
+                </div><!-- /.row -->
+
+              <% if @user == nil %>
+                <% @user = current_user %>
+              <% end %>
+              <% unless @user == nil %>
+                <% if @user.is_admin? %>
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <input type="integer" name="borrowablestuff[max_lendingperiod]" class="form-control" placeholder="최대 대여가능 일수">
+                    </div><!-- /.col -->
+                  </div><!-- /.row -->
+                <% end %>
+              <% end %>
+
+                <button type="submit" class="btn btn-default btn-gray btn-submit">물품 등록하기</button>
+              </center>
+            </form>
+
+
+          </section>
