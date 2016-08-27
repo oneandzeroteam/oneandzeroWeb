@@ -69,6 +69,18 @@ class Borrowablestuff < ApplicationRecord
     end
   end
 
+  def image?
+    if(self.image_url != nil)
+      if(self.image_url.empty?)
+        return false;
+      else
+        return true;
+      end
+    else
+      return false;
+    end
+  end
+
   def borrowed?
     (self.current_lended_user_id != nil)
   end
