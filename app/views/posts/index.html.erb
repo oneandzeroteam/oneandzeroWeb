@@ -23,117 +23,21 @@
                 <div class="panel-body">
                   <div id="owl-popular-posts" class="owl-carousel owl-item-gap-sm">
 
+                    <% unless @popular_posts.nil? ; @popular_posts.each do |post|; %>
                     <div class="item">
                       <a href="blog-post.html">
                         <figure>
                           <figcaption class="text-overlay">
                             <div class="info">
-                              <h4>Vintage Bicycles</h4>
-                              <p>Interactive</p>
+                              <h4><%= post.title %></h4>
+                              <p><%= truncate(post.content, length: 200, omission: "...#{post.content[-5, 5]}")  %></p>
                             </div><!-- /.info -->
                           </figcaption>
-                          <img src="assets/images/art/work03.jpg" alt="">
+                          <img src="<%= post.image_url %>" alt="">
                         </figure>
                       </a>
                     </div><!-- /.item -->
-
-                    <div class="item">
-                      <a href="blog-post.html">
-                        <figure>
-                          <figcaption class="text-overlay">
-                            <div class="info">
-                              <h4>Simpli Nota</h4>
-                              <p>Identity</p>
-                            </div><!-- /.info -->
-                          </figcaption>
-                          <img src="assets/images/art/work04.jpg" alt="">
-                        </figure>
-                      </a>
-                    </div><!-- /.item -->
-
-                    <div class="item">
-                      <a href="blog-post.html">
-                        <figure>
-                          <figcaption class="text-overlay">
-                            <div class="info">
-                              <h4>Vinyl Records</h4>
-                              <p>Identity</p>
-                            </div><!-- /.info -->
-                          </figcaption>
-                          <img src="assets/images/art/work07.jpg" alt="">
-                        </figure>
-                      </a>
-                    </div><!-- /.item -->
-
-                    <div class="item">
-                      <a href="blog-post.html">
-                        <figure>
-                          <figcaption class="text-overlay">
-                            <div class="info">
-                              <h4>Astor & Yancy</h4>
-                              <p>Identity</p>
-                            </div><!-- /.info -->
-                          </figcaption>
-                          <img src="assets/images/art/work09.jpg" alt="">
-                        </figure>
-                      </a>
-                    </div><!-- /.item -->
-
-                    <div class="item">
-                      <a href="blog-post.html">
-                        <figure>
-                          <figcaption class="text-overlay">
-                            <div class="info">
-                              <h4>Signwall</h4>
-                              <p>Identity</p>
-                            </div><!-- /.info -->
-                          </figcaption>
-                          <img src="assets/images/art/work16.jpg" alt="">
-                        </figure>
-                      </a>
-                    </div><!-- /.item -->
-
-                    <div class="item">
-                      <a href="blog-post.html">
-                        <figure>
-                          <figcaption class="text-overlay">
-                            <div class="info">
-                              <h4>Tri Fold Brochure</h4>
-                              <p>Print</p>
-                            </div><!-- /.info -->
-                          </figcaption>
-                          <img src="assets/images/art/work10.jpg" alt="">
-                        </figure>
-                      </a>
-                    </div><!-- /.item -->
-
-                    <div class="item">
-                      <a href="blog-post.html">
-                        <figure>
-                          <figcaption class="text-overlay">
-                            <div class="info">
-                              <h4>Embroidered</h4>
-                              <p>Identity</p>
-                            </div><!-- /.info -->
-                          </figcaption>
-                          <img src="assets/images/art/work05a.jpg" alt="">
-                        </figure>
-                      </a>
-                    </div><!-- /.item -->
-
-                    <div class="item">
-                      <a href="blog-post.html">
-                        <figure>
-                          <figcaption class="text-overlay">
-                            <div class="info">
-                              <h4>El Corcho</h4>
-                              <p>Identity</p>
-                            </div><!-- /.info -->
-                          </figcaption>
-                          <img src="assets/images/art/work12.jpg" alt="">
-                        </figure>
-                      </a>
-                    </div><!-- /.item -->
+                    <% end; end %>
 
                   </div><!-- /.owl-carousel -->
                 </div><!-- /.panel-body -->
@@ -229,37 +133,7 @@
 
               <div class="col-xs-6 thumb">
                 <figure class="icon-overlay icn-link">
-                  <a href="blog-post.html"><img src="assets/images/art/work17.jpg" alt=""></a>
-                </figure>
-              </div><!-- /.thumb -->
-
-              <div class="col-xs-6 thumb">
-                <figure class="icon-overlay icn-link">
-                  <a href="blog-post.html"><img src="assets/images/art/photograph02.jpg" alt=""></a>
-                </figure>
-              </div><!-- /.thumb -->
-
-              <div class="col-xs-6 thumb">
-                <figure class="icon-overlay icn-link">
-                  <a href="blog-post.html"><img src="assets/images/art/work18.jpg" alt=""></a>
-                </figure>
-              </div><!-- /.thumb -->
-
-              <div class="col-xs-6 thumb">
-                <figure class="icon-overlay icn-link">
-                  <a href="blog-post.html"><img src="assets/images/art/work21.jpg" alt=""></a>
-                </figure>
-              </div><!-- /.thumb -->
-
-              <div class="col-xs-6 thumb">
-                <figure class="icon-overlay icn-link">
-                  <a href="blog-post.html"><img src="assets/images/art/work23.jpg" alt=""></a>
-                </figure>
-              </div><!-- /.thumb -->
-
-              <div class="col-xs-6 thumb">
-                <figure class="icon-overlay icn-link">
-                  <a href="blog-post.html"><img src="assets/images/art/work22.jpg" alt=""></a>
+                  <a href="blog-post.html"><img src="" alt=""></a>
                 </figure>
               </div><!-- /.thumb -->
 
@@ -312,7 +186,7 @@
             <figure>
 
               <div class="icon-overlay icn-link">
-                <a href="blog-post.html"><img src="assets/images/art/work01.jpg" alt=""></a>
+                <a href="blog-post.html"><img src="" alt=""></a>
               </div><!-- /.icon-overlay -->
 
               <figcaption class="bordered no-top-border">

@@ -10,6 +10,10 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
  *= require_self
+ *= require application/animate.min.css
+ *= require application/green.css
+ *= require application/main
+ *= require application/owl.carousel
+ *= require application/owl.transitions
  */
