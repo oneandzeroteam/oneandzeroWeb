@@ -32,6 +32,7 @@
 .env
 
 #precompiled assets
+public/assets/*
 public/assets/.sprockets-manifest-*.json
 public/assets/admin-*.css
 public/assets/admin-*.css.gz

@@ -1,57 +1,84 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require application/animate.min
+ *= require application/green
+ *= require application/main
+ *= require application/owl.carousel
+ *= require application/owl.transitions
+ */
+
+
 @charset "UTF-8";
 
 @font-face {
-  font-family: 'fontello';
-  src: url("fontello/fontello.eot");
-  src: url("fontello/fontello-.eot#iefix") format('embedded-opentype'), url("fontello/fontello.woff") format('woff'), url("fontello/fontello.ttf") format('truetype'), url("fontello/fontello.svg#fontello") format('svg');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'fontello';
+    src: url(asset-path('fontello.eot'));
+    src: url(asset-path("fontello-.eot#iefix")) format('embedded-opentype'),
+         url(asset-path("fontello.woff")) format('woff'),
+         url(asset-path("fontello.ttf")) format('truetype'),
+         url(asset-path("fontello.svg#fontello")) format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'fontello-social';
-  src: url("fontello/fontello-social.eot");
-  src: url("fontello/fontello-social-.eot#iefix") format('embedded-opentype'), url("fontello/fontello-social.woff") format('woff'), url("fontello/fontello-social.ttf") format('truetype'), url("fontello/fontello-social.svg#fontello") format('svg');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'fontello-social';
+    src: url(asset-path("fontello-social.eot"));
+    src: url(asset-path("fontello-social-.eot#iefix")) format('embedded-opentype'),
+         url(asset-path("fontello-social.woff")) format('woff'),
+         url(asset-path("fontello-social.ttf")) format('truetype'),
+         url(asset-path("fontello-social.svg#fontello")) format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 @font-face {
-  font-family: 'fontello-circle';
-  src: url('fontello/fontello-circle.eot');
-  src: url('fontello/fontello-circle.eot#iefix') format('embedded-opentype'),
-url('fontello/fontello-circle.woff') format('woff'),
-url('fontello/fontello-circle.ttf') format('truetype'),
-url('fontello/fontello-circle.svg#fontello') format('svg');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'fontello-circle';
+    src: url(asset-path('fontello-circle.eot'));
+    src: url(asset-path('fontello-circle.eot#iefix')) format('embedded-opentype'),
+         url(asset-path('fontello-circle.woff')) format('woff'),
+         url(asset-path('fontello-circle.ttf')) format('truetype'),
+         url(asset-path('fontello-circle.svg#fontello')) format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 
 [class^="icon-"]:before,
 [class*=" icon-"]:before {
-  font-family: 'fontello';
-  font-style: normal;
-  font-weight: normal;
-  speak: none;
-  display: inline-block;
-  text-decoration: inherit;
-  width: 1em;
-  margin-right: 0;
-  text-align: center;
-  line-height: 1em;
+    font-family: 'fontello';
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: 0;
+    text-align: center;
+    line-height: 1em;
 }
 
 [class^="icon-s-"]:before,
 [class*=" icon-s-"]:before {
-  font-family: 'fontello-social';
-  font-style: normal;
-  font-weight: normal;
-  speak: none;
-  display: inline-block;
-  text-decoration: inherit;
-  width: 1em;
-  margin-right: 0;
-  text-align: center;
-  line-height: 1em;
+    font-family: 'fontello-social';
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: 0;
+    text-align: center;
+    line-height: 1em;
 }
 
 .icon-plus:before { content: '\2b'; } /* '+' */
