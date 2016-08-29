@@ -1,11 +1,23 @@
 class Member < ApplicationRecord
+  # mount_uploader :image_url, AvatarUploader
+
   searchkick
+
+  def search_data
+    {
+        name: name,
+        image_url: image_url,
+        occupation: occupation,
+        email: email,
+        description: description
+    }
+  end
+
   self.per_page = 9
 
-  mount_uploader :image_url, AvatarUploader
 
 	has_one :user
-  has_many :attachments
+  has_one :attachment
 
   def add_linkage_with_user(user)
     self.user_id = user.id

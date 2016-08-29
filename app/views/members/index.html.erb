@@ -20,7 +20,7 @@
             <!-- Alumni  경계 위아래 구분선 -->
           </ul><!-- /.filter -->
 
-          <ul class="items col-3 gap">
+          <ul class="items col-4 gap">
 
             <% @members.each do |member| %>
                 <!-- Alumni Items -->
@@ -29,7 +29,7 @@
 
                     <div class="icon-overlay icn-link">
                       <a href="/members/<%= member.id %>">
-                        <img src="<%= member.image_url %>" style="height:400px; object-fit:cover;"/>
+                        <img src="<%= member.attachment.file.url unless member.attachment.nil? %>" style="object-fit:cover;"/>
                       </a>
                     </div><!-- /.icon-overlay -->
 

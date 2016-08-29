@@ -7,10 +7,15 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # ADMIN SEED - FOR PRODUCTION
-Member.create(name: '김재훈', facebook_url: 'https://www.facebook.com/turtle.gatpa?fref=ts', image_url: open(File.join(Rails.root, 'app/assets/images/admins/JH.png')), occupation: '회장', description: '착하고 은근히 리더십이 있어서 학회를 잘 이끌어감. 뭐 필요하면 연락하면 된다. 좀 더 카리스마 있게 해도 괜찮을 듯.', is_admin: true)
-Member.create(name: '오영택', facebook_url: 'http://facebook.com/youlooksoupset', image_url: open(File.join(Rails.root, 'appassets/images/admins/YT.png')), occupation: '부회장', description: '15학번인데 벌써 부회장의 자리에 오른 능력자. 차기 회장이라는 소문이 있던데...?!', is_admin: true)
-Member.create(name: '신홍규', facebook_url: 'https://www.facebook.com/profile.php?id=100005457848000&fref=ts', image_url: open(File.join(Rails.root, 'app/assets/images/admins/HG.png')), occupation: '부회장', description: '베일에 감춰진 신비스러운 존재. 우리는 아직 그를 잘 모른다. 궁금하면 학회에 들어오면 된다.', is_admin: true)
-Member.create(name: '김승주', facebook_url: 'https://www.facebook.com/nicholas.kim.1994', image_url: open(File.join(Rails.root, 'app/assets/images/admins/SJ.png')), occupation: '총무', description: '학회의 돈줄을 쥐고 있는 실권자이지만 일도 실제로 많이 한다.', is_admin: true)
+m = Member.create(name: '김재훈', facebook_url: 'https://www.facebook.com/turtle.gatpa?fref=ts', occupation: '회장', description: '착하고 은근히 리더십이 있어서 학회를 잘 이끌어감. 뭐 필요하면 연락하면 된다. 좀 더 카리스마 있게 해도 괜찮을 듯.', is_admin: true)
+m.attachment = Attachment.create(file: open(File.join(Rails.root, 'app/assets/images/admins/JH.png')), member_id: m.id)
+m = Member.create(name: '오영택', facebook_url: 'http://facebook.com/youlooksoupset', occupation: '부회장', description: '15학번인데 벌써 부회장의 자리에 오른 능력자. 차기 회장이라는 소문이 있던데...?!', is_admin: true)
+m.attachment = Attachment.create(file: open(File.join(Rails.root, 'app/assets/images/admins/YT.png')), member_id: m.id)
+m = Member.create(name: '신홍규', facebook_url: 'https://www.facebook.com/profile.php?id=100005457848000&fref=ts', occupation: '부회장', description: '베일에 감춰진 신비스러운 존재. 우리는 아직 그를 잘 모른다. 궁금하면 학회에 들어오면 된다.', is_admin: true)
+m.attachment = Attachment.create(file: open(File.join(Rails.root, 'app/assets/images/admins/HG.png')), member_id: m.id)
+m = Member.create(name: '김승주', facebook_url: 'https://www.facebook.com/nicholas.kim.1994', occupation: '총무', description: '학회의 돈줄을 쥐고 있는 실권자이지만 일도 실제로 많이 한다.', is_admin: true)
+m.attachment = Attachment.create(file: open(File.join(Rails.root, 'app/assets/images/admins/SJ.png')), member_id: m.id)
+
 
 #Administrator
 User.new(email: "admin@oaz.com", password: "1234", name: "관리자", is_admin: true, is_member: true, confirmed_at: DateTime.now).save(validate: false)

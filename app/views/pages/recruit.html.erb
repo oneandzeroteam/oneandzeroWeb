@@ -97,7 +97,7 @@
             <h3 class="team-headline sidelines text-center"><span>Contact names</span></h3>
 
             <div class="row thumbs gap-md text-center">
-              <% @admins.each do |admin| %>
+              <% @admins.take(3).each do |admin| %>
 
               <div class="col-sm-6 thumb">
                 <figure class="member">
@@ -114,7 +114,7 @@
                       </div><!-- /.info -->
                     </div><!-- /.text-overlay -->
 
-                    <img src="<%= admin.image_url %>">
+                    <img src="<%= admin.attachment.file.url %>">
 
                   </div><!-- /.member-image -->
 
