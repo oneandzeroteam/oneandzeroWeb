@@ -11,7 +11,7 @@
 
 			<h2><%=@borrowablestuff.stuffcode%></h2>
 
-			<% unless @borrowablestuff.image_url.nil? %>
+			<% if @borrowablestuff.image? %>
 			<div class="thumb">
 				<figure class="icon-overlay">
 					<img src=@borrowalbestuff.image_url alt="">
