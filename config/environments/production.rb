@@ -101,10 +101,4 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  # Compress JavaScripts and CSS
-  config.assets.compress = true
-
-  # Generate digests for assets URLs
-  config.assets.digest = true
-
 end
