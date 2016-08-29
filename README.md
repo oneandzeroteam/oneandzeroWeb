@@ -10,16 +10,22 @@
 
 ## Get Started
 
-이 프로젝트는 Ruby 2.3.0 or higher, Rails 5.0.0 이 사용되었습니다.
+이 프로젝트는 Ruby 2.3.0 or higher, Rails 5.0.0, ElasticSearch 가 사용되었습니다.
 Homebrew를 사용한다면, 
 
 ```
+# Ruby 2.3.0
 brew install rbenv ruby-build
 rbenv install 2.3.0
 rbenv global 2.3.0
 ruby -v
 
+# Rails 5.0.0
 gem install rails -v 5.0.0
+
+# Elastic Search
+brew install elasticsearch
+elasticsearch
 ```
 
 개발용 데이터베이스 마이그레이션과 서버를 시작할려면, 
@@ -122,7 +128,7 @@ rake searchkick:reindex:all
 RAILS_ENV=production rake searchkick:reindex:all
 ```
 
-
+인덱싱에 대한 코드는 `reset_db.sh` 스크립트에 포함되어있습니다
 
 #### Searchable Rails Objects
 - Borrowablestuff
@@ -147,10 +153,12 @@ bundle install
 ##Frontend Guide
 
 #### Assets
-- 사용된 사진 경로 : public/assets/images/*
-- 운영진 사진과 랜딩페이지 사진 : public/assets/images/pics/* 
-- 사용된 로고들과 패비콘 : public/assets/images/logo_icon/* 
-- 기존 템플릿 icons : public/assets/images/art/*
+
+모든 Asset은 성능향상을 위해서 `app/assets/*` 다이렉토리에 있으면 precompiled 되어 serving 됩니다
+
+- 사용된 로고들 : app/assets/images/icons
+- Favicon : app/assets/images/favicon.png
+- 기존 템플릿 icons : vendor/assets/images/art/*
 
 #### URIs
 - /admin : admin계정을 위한 각종 도구 페이지가 있습니다.
