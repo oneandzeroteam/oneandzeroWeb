@@ -2,6 +2,8 @@ class Member < ApplicationRecord
   searchkick
   self.per_page = 9
 
+  mount_uploader :image_url, AvatarUploader
+
 	has_one :user
   has_many :attachments
 

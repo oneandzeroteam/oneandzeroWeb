@@ -1,6 +1,9 @@
 class PagesController < ApplicationController
   def show
     if valid_page?
+			if params[:pagename] == "about"
+				@admins = Member.where(is_admin: true).all
+			end
       render template: "pages/#{params[:pagename]}"
     else
       render file: "public/404.html", status: :not_found

@@ -22,7 +22,7 @@ class PostsController < ApplicationController
     if user_signed_in?
       @board = Board.where(name: params[:boardname]).first
       @post = Post.new
-      @post_attachments = @post.post_attachments.build #ImageUploader
+      @post_attachments = @post.post_attachments.build #AttachmentUploader
     else
       redirect_to new_user_session_path, flash: {notice: "로그인이 필요한 페이지입니다."}
     end
@@ -40,10 +40,10 @@ class PostsController < ApplicationController
     board = Board.where(name: params[:boardname]).first
     @post.board_id = board.id
     @post.user_id = current_user.id
-    @post.post_attachments << PostAttachment.create(image_url: params[:image], post_id: @post.id)
+    @post.post_attachments << Attachment.create(image_url: params[:image], post_id: @post.id)
     respond_to do |format|
       if @post.save
-        #params[:post_attachments]['image'].each do |i| #ImageUploader
+        #params[:post_attachments]['image'].each do |i| #AttachmentUploader
         #  @post_attachments = @post.post_attachments.create!(:image => i)
         #end
         format.html { redirect_to "/board/#{board.name}", notice: 'Post was successfully created.' }

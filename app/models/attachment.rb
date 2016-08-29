@@ -1,5 +1,5 @@
 class Attachment < ApplicationRecord
-  mount_uploader :image_url, ImageUploader
+  mount_uploader :file, AttachmentUploader
 
   belongs_to :post
   belongs_to :timeline

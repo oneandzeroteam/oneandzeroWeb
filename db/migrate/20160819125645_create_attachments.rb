@@ -7,7 +7,7 @@ class CreateAttachments < ActiveRecord::Migration[5.0]
       t.integer :member_id
       t.integer :project_id
 
-      t.string :image_url
+      t.string :file
 
       t.timestamps
     end

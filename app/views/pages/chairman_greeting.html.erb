@@ -3,7 +3,7 @@
 
   <!-- ============================================================= SECTION – HERO ============================================================= -->
 
-  <section id="image-background-2" class="dark-bg img-bg-soft img-bg" style="background-image: url(/assets/images/art/image-background02.jpg);">
+  <section id="image-background-2" class="dark-bg img-bg-soft img-bg" style="background-image: url(<%= asset_path 'backgrounds/image-background02' %>);">
     <div class="container inner">
       <div class="row">
         <div class="col-sm-10">
@@ -19,12 +19,6 @@
 
   <section id="chairman_greeting_contents">
     <div class="container inner">
-
-
-
-
-
-
       <div class="col-sm-8 inner-right-xs inner-bottom-x">
         <header style="margin-bottom:50px">
 
@@ -47,7 +41,7 @@
       <div class="col-sm-4 inner-left-xs inner-bottom-xs">
 
         <figure style="float:middle;">
-          <img src="../assets/images/pics/chairsman.jpg" style="width:280px;margin: 0 auto;display: block;max-width: 100%">
+          <%= image_tag 'admins/chairman.jpg', :style => 'width:280px;margin: 0 auto;display: block;max-width: 100%' %>
           <figcaption style="text-align: center">김재훈 現 하나와영 회장</figcaption>
         </figure>
 
@@ -69,7 +63,7 @@
             </td>
             <td align="left" width="70%">
 
-              <img src="../assets/images/pics/chairman_sig.png" style="width:500px">
+              <%= image_tag 'admins/signature', :style=> 'width:500px' %>
             </td>
           </tr>
         </table>

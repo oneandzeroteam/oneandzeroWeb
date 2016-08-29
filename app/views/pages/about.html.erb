@@ -4,7 +4,7 @@
 
 	<!-- ============================================================= SECTION – HERO ============================================================= -->
 
-	<section id="pattern-background-1" class="light-bg img-bg-softer" style="background-image: url(/assets/images/art/pattern-background01.jpg);">
+	<section id="pattern-background-1" class="light-bg img-bg-softer" style="background-image: url(<%= asset_path 'backgrounds/pattern-background01' %>);">
 		<div class="container inner">
 			<div class="row">
 				<div class="col-sm-10">
@@ -62,7 +62,7 @@
 					<figure class="member">
 
 						<div>
-							<a ><img src="../assets/images/pics/chairman_about_mod.png" class="img-circle"></a>
+							<a ><%= image_tag 'admins/JH' , :class=>'img-circle' %></a>
 						</div><!-- /.icon-overlay -->
 
 						<figcaption>
@@ -89,7 +89,7 @@
 					<figure class="member">
 
 						<div>
-							<a ><img src="/assets/images/pics/OYT_about_2_mod.png" class="img-circle"></a>
+							<a ><%= image_tag 'admins/YT' , :class=>'img-circle' %></a>
 						</div><!-- /.icon-overlay -->
 
 						<figcaption>
@@ -117,7 +117,7 @@
 					<figure class="member">
 
 						<div>
-							<a><img src="/assets/images/pics/HG_about_mod.png" class="img-circle"></a>
+							<a><%= image_tag 'admins/HG' , :class=>'img-circle' %></a>
 						</div><!-- /.icon-overlay -->
 
 						<figcaption>
@@ -138,33 +138,35 @@
 					</figure>
 				</div><!-- /.col -->
 
+        <% @admins.each do |admin| %>
 				<div class="col-sm-3 inner-bottom-sm inner-left inner-right">
 					<figure class="member">
 
+
+
 						<div >
-							<a><img src="/assets/images/pics/SJ_about_2_mod.png" class="img-circle"></a>
+							<a><img src="<%= admin.image_url %>" class='img-circle'></a>
 						</div><!-- /.icon-overlay -->
 
 						<figcaption>
 
 							<h2>
-								김승주
-								<span>총-무</span>
+								<%= admin.name %>
+								<span><%= admin.occupation %></span>
 							</h2>
 
-							<p align="left">학회의 돈줄을 쥐고 있는 실권자이지만 일도 실제로 많이 한다. 
-								<br>(술을 굉장히 사랑한다. 그를 만나러 갈때는 예거밤을 잊지 말자.)</p>
+							<p align="left"><%= admin.description %>
 
 							<ul class="social">
-								<li><a href="https://www.facebook.com/nicholas.kim.1994"><i class="icon-s-facebook"></i></a></li>
+								<li><a href="<%= admin.facebook_url %>"><i class="icon-s-facebook"></i></a></li>
 							</ul><!-- /.social -->
 
 
 						</figcaption>
 
 					</figure>
-				</div><!-- /.col -->
-
+				</div><!-- /.col
+				<% end %>
 			</div><!-- /.row -->
 
 		</div><!-- /.container -->
@@ -192,7 +194,7 @@
 
 				<div class="col-sm-4 inner-bottom-xs">
 					<div class="icon">
-						<a><img src="/assets/images/logo_icon/c_language.png"></a>
+						<a><%= image_tag 'icons/c' %></a>
 					</div><!-- /.icon -->
 					<h2>C language</h2>
 					<p class="text-small" align="left">현존하는 프로그래밍 언어 중 점유율이 가장 높다. 
@@ -202,7 +204,7 @@
 
 				<div class="col-sm-4 inner-bottom-xs">
 					<div class="icon">
-						<a><img src="/assets/images/logo_icon/java-logo.png"></a>
+						<a><%= image_tag 'icons/java' %></a>
 					</div><!-- /.icon -->
 					<h2>Java</h2>
 					<p class="text-small" align="left">C와 달리 객체 지향 프로그래밍 언어이고 점유율 2위이다. C 보다 훨씬 쉽고 간편하게  
@@ -212,7 +214,7 @@
 
 				<div class="col-sm-4 inner-bottom-xs">
 					<div class="icon">
-						<a><img src="/assets/images/logo_icon/web-design.png"></a>
+						<a><%= image_tag 'icons/web' %></a>
 					</div><!-- /.icon -->
 					<h2>Web Design</h2>
 					<p class="text-small" align="left">HTML, CSS, JavaScript의 기초를 배운다. HTML은 웹 페이지가 직접 구현되는 언어이고 
@@ -226,7 +228,7 @@
 
 				<div class="col-sm-4 inner-bottom-xs">
 					<div class="icon">
-						<a><img src="/assets/images/logo_icon/android.png"></a>
+						<a><%= image_tag 'icons/android' %></a>
 					</div><!-- /.icon -->
 					<h2>Android</h2>
 					<p class="text-small" align="left">세계 스마트폰 시장에서 81%의 점유율을 차지하고 있는 플랫폼이다.
@@ -236,7 +238,7 @@
 
 				<div class="col-sm-4 inner-bottom-xs">
 					<div class="icon">
-						<a><img src="/assets/images/logo_icon/rubyonrails-size-edited.png"></a>
+						<a><%= image_tag 'icons/ruby_on_rails' %></a>
 					</div><!-- /.icon -->
 					<h2>Ruby</h2>
 					<p class="text-small" align="left">순수 객체 지향 언어로 '마츠모토 유키히로'라는 일본인이 만들었다. 
@@ -246,7 +248,7 @@
 
 				<div class="col-sm-4 inner-bottom-xs">
 					<div class="icon">
-						<a><img src="/assets/images/logo_icon/php.png"></a>
+						<a><%= image_tag 'icons/php' %></a>
 					</div><!-- /.icon -->
 					<h2>PHP</h2>
 					<p class="text-small" align="left">JavaScript와 같이 웹 페이지 애니메이션에 사용되는 언어이다. 
@@ -262,9 +264,10 @@
 	<!-- ============================================================= SECTION – HOW WE WORK : END ============================================================= -->
 
 
+
 	<!-- ============================================================= SECTION – TESTIMONIALS ============================================================= -->
 
-	<section id="testimonials" class="light-bg img-bg-softer" style="background-image: url(/assets/images/art/pattern-background01.jpg);">
+	<section id="testimonials" class="light-bg img-bg-softer" style="background-image: url(<%= asset_path 'backgrounds/pattern-background01' %>);">
 		<div class="container inner">
 
 			<div class="row">

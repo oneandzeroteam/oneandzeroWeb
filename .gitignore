@@ -42,13 +42,4 @@ public/assets/application-*.js
 public/assets/application-*.js.gz
 public/assets/application-*.css
 public/assets/application-*.css.gz
-app/views/projects/new.html.erb
-public/uploads/post_attachment/image_url/10/20160817_072336.jpg
-public/uploads/post_attachment/image_url/11/20160817_072336.jpg
-public/uploads/post_attachment/image_url/12/20160727_223008.jpg
-public/uploads/post_attachment/image_url/13/20160727_223008.jpg
-public/uploads/post_attachment/image_url/14/20160727_223008.jpg
-public/uploads/post_attachment/image_url/15/20160727_223008.jpg
-public/uploads/post_attachment/image_url/16/20160817_072336.jpg
-public/uploads/post_attachment/image_url/8/KakaoTalk_Photo_2016-07-26-16-28-14.jpeg
-public/uploads/post_attachment/image_url/9/20160817_073426.jpg
+public/uploads/*
