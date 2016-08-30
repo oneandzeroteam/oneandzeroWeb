@@ -18,6 +18,9 @@ WorkingDirectory=/opt/elasticsearch/elasticsearch-2.3.0
 User=oaz
 Group=oaz
 
+PermissionsStartOnly=true
+ExecStartPre=-/bin/mkdir ${PID_DIR}
+ExecStartPre=/bin/chown -R oaz:oaz ${PID_DIR}
 #ExecStartPre=/usr/share/elasticsearch/bin/elasticsearch-systemd-pre-exec
 
 ExecStart=/opt/elasticsearch/elasticsearch-2.3.0/bin/elasticsearch \
