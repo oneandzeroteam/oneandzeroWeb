@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Error!</title>
+  <style type="text/css">
+    <%= File.read(Gaffe.root.join('app/assets/stylesheets/errors.css')).gsub("\n", ' ').gsub('  ', ' ') %>
+  </style>
+</head>
+<body>
+<div id="wrap">
+  <h1>여긴 아무것도 없습니다</h1>
+
+  <p><%= ['죽창 앞에서는 너도 한 방, 나도 한 방.', '바로! 한 방이면! 관통된다는 것이야!!', '개발자에게 죽창 배송이 완료되었습니다', '서버 관리자에게 죽창을!'].sample %><a href="/">홈으로</a></p>
+
+  <div class="content">
+    <hr>
+    <%= yield %>
+    <hr>
+  </div>
+
+  <% if Rails.env.development? || Rails.env.test? %>
+      <p>Original exception (only displayed in <strong>development</strong> and <strong>test</strong> environment):</p>
+
+<pre>
+<code><%= @exception.inspect %></code>
+</pre>
+  <% end %>
+
+  <!--<p>You can overwrite this page by creating these files:</p>-->
+
+  <!--<% handlers = ActionView::Template::Handlers.extensions.map(&:to_s).join(', ') %>-->
+  <!--<pre>-->
+    <!--<code><%= Rails.root.join('app', 'views', 'layouts', "error.html.<em title='#{handlers}'>handler</em>").to_s.html_safe %></code>-->
+    <!--<code><%= Rails.root.join('app', 'views', 'errors', "#{@rescue_response.to_s}.html.<em title='#{handlers}'>handler</em>").to_s.html_safe %></code>-->
+  <!--</pre>-->
+</div>
+</body>
+</html>

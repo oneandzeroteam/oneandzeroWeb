@@ -143,6 +143,8 @@ RAILS_ENV=production rake searchkick:reindex:all
 - [ambethia/recaptcha](https://github.com/ambethia/recaptcha)
 - [mislav/will_paginate](https://github.com/mislav/will_paginate)
 - [ankane/searchkick](https://github.com/ankane/searchkick)
+- [mirego/gaffe](https://github.com/mirego/gaffe)
+- [carrierwaveuploader/carrierwave](carrierwaveuploader/carrierwave)
 
 모든 라이브러리는 루비의 다음 명령어로 설치가 가능합니다
 
