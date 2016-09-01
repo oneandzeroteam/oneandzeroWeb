@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :comments
     end
 
-  devise_for :users, controllers: {registrations: "registrations"}
+  devise_for :users, controllers: {registrations: "users/registrations", sessions: "users/sessions"}
   get "/recruit" => "pages#recruit"
   post "/pages/recruit_check" => "pages#recruit_check"
   get "/search" => "search#search"
