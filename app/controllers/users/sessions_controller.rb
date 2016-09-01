@@ -8,7 +8,8 @@ class Users::SessionsController < Devise::SessionsController
 
   # POST /resource/sign_in
   def create
-    if !verify_recaptcha
+    # if !verify_recaptcha
+    if false
       flash.delete :recaptcha_error
       # build_resource(sign_up_params)
       self.resource = resource_class.new(sign_in_params)
