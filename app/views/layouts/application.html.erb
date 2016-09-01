@@ -264,7 +264,7 @@
             <% @current_projects.first(4).each do |project| %>
                 <div class="col-xs-6 thumb">
                   <figure class="icon-overlay icn-link">
-                    <a href="/projects/<%= project.id %>"><img src="<%= project.image_url %>" alt=""></a>
+                    <a href="/projects/<%= project.id %>"><img src="<%= project.attachments.first.file.url unless project.attachments.first.nil?  %>" alt=""></a>
                   </figure>
                 </div><!-- /.thumb -->
             <% end %>
@@ -299,13 +299,13 @@
     <div class="footer-bottom">
       <div class="container inner">
         <p class="pull-left">© 2016 하나와영. All rights Reserved.</p>
-        <a href="/pages/policy"> 개인정보처리방침</a>
         <ul class="footer-menu pull-right" style="margin-right: 40px;">
           <li><a href="/">Home</a></li>
           <li><a href="/pages/about">About</a></li>
           <li><a href="/board/tech-blog">Blog</a></li>
           <li><a href="/projects">Projects</a></li>
           <li><a href="/pages/recruit">Contact</a></li>
+          <li><a href="/pages/policy"> 개인정보처리방침</a></li>
         </ul><!-- .footer-menu -->
       </div><!-- .container -->
     </div><!-- .footer-bottom -->
