@@ -18,8 +18,8 @@
     <%= yield %>
     <hr>
   </div>
-  <!--Rails.env.development? || Rails.env.test?-->
-  <% if true %>
+
+  <% if Rails.env.development? || Rails.env.test? %>
       <p>Original exception (only displayed in <strong>development</strong> and <strong>test</strong> environment):</p>
 
 <pre>

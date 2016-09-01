@@ -9,8 +9,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
-    # if !verify_recaptcha
-    if false
+    if !verify_recaptcha
       flash.delete :recaptcha_error
       build_resource(sign_up_params)
       resource.valid?
