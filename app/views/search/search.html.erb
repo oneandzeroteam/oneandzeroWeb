@@ -1,23 +1,147 @@
-<% @results.each do |result| %>
-  <% result.each do |object| %>
-    <% if object.is_a? Project %>
-      <%= object.title %>
-      <%= object.short_description %>
-    <% end %>
+<!-- ============================================================= MAIN ============================================================= -->
+<main>
+  <!-- ============================================================= SECTION – PRICING TABLES ============================================================= -->
+  <section id="pricing-tables">
+    <div class="container inner">
+      <h2>검색결과</h2><span>in <%= @time_elapsed %>ms</span>
 
-    <% if object.is_a? Member %>
-        <%= object.name %>
-        <%= object.email %>
-    <% end %>
+      <div class="row search">
+        <div class="col-md-12 col-sm-6">
+          <div class="boxtitle">프로젝트 </div>
 
-    <% if object.is_a? Borrowablestuff %>
-        <%= object.stufftype %>
-        <%= object.description %>
-    <% end %>
+          <% @projects.each do |object| %>
+            <div class="searchbox">
 
-    <% if object.is_a? Post %>
-        <%= object.title %>
-        <%= truncate(object.content, length: 60, omission: "...#{object.content[-5, 5]}") %>
-    <% end %>
-  <% end %>
-<% end %>
+              <div class="search_header"> <a href="#"><%= object.title %></a> </div>
+
+              <div class="postimg">
+                <img src="<%= object.attachments.first.file.url unless object.attachments.first.nil? %>" alt="">
+              </div>
+              <div class="search_body">
+                <%= object.short_description %>
+              </div>
+              <div class="search_footer"> Tech Blog | 작성자: 누구 | 2016. 08. 08 </div>
+            </div><!-- ./searchbox -->
+          <% end %>
+          <!--<div class="searchmore text-small text-right"> 포스트 더 보기 > </div>-->
+          <!-- /.plan -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+
+
+      <div class="row search">
+        <div class="col-md-12 col-sm-6">
+          <div class="boxtitle">포스트 </div>
+
+          <% @posts.each do |object| %>
+            <div class="searchbox">
+              <div class="search_header"> <a href="#"><%= object.title %></a> </div>
+              <div class="search_body text-small"><%= truncate(object.content, length: 300, omission: "...#{object.content[-5, 5]}") %></div>
+              <div class="search_footer"> Current Project | 팀원: 누구 | 2016. 08. 08 </div>
+            </div>
+          <% end %>
+          <!--<div class="searchmore text-small text-right"> 프로젝트 더 보기 > </div>-->
+          <!-- /.plan -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+
+      <div class="row search">
+        <div class="col-md-12 col-sm-6">
+          <div class="boxtitle">대여 물품 </div>
+
+          <% @items.each do |object| %>
+              <div class="searchbox">
+                <div class="search_header"> <a href="#"><%= object.stufftype %></a> </div>
+                <div class="search_body text-small"><%= object.description %></div>
+                <div class="search_footer"> Current Project | 팀원: 누구 | 2016. 08. 08 </div>
+              </div>
+          <% end %>
+          <!--<div class="searchmore text-small text-right"> 프로젝트 더 보기 > </div>-->
+          <!-- /.plan -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+
+      <div class="row search">
+        <div class="col-md-12 col-sm-6">
+          <div class="boxtitle">학회원 </div>
+
+          <% @members.each do |object| %>
+              <div class="searchbox">
+                <div class="search_header"> <a href="#"><%= object.name %></a> </div>
+                <div class="postimg">
+                  <img src="<%= object.attachment.file.url unless object.attachment.nil? %>" alt="">
+                </div>
+                <div class="search_body text-small"><%= object.description %></div>
+                <div class="search_footer"><%= object.email %></div>
+              </div>
+          <% end %>
+          <!--<div class="searchmore text-small text-right"> 프로젝트 더 보기 > </div>-->
+          <!-- /.plan -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+
+      </div>
+  <!-- /.container -->
+</section>
+  <!-- ============================================================= SECTION – PRICING TABLES : END ============================================================= -->
+  <!-- ============================================================= SECTION – FAQ ============================================================= -->
+  <section id="faq" class="light-bg">
+    <div class="container inner">
+      <div class="row">
+        <div class="col-md-8 col-sm-9 center-block text-center">
+          <header>
+            <h1>Questions?</h1>
+            <p>Magnis modipsae que voloratati andigen daepeditem quiate re porem aut labor. Laceaque quiae sitiorem rest non restibusaes maio es dem tumquam.</p>
+          </header>
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+      <div class="row">
+        <div class="col-sm-6 inner-right-sm inner-top-sm">
+          <h3>How long are the contracts?</h3>
+          <p>Conecus iure posae volor remped modis aut accabora incim resto explabo eictemperum quiae sitiorem volor remped modis volor.</p>
+          <h3>Can i switch plans later?</h3>
+          <p>Conecus iure posae volor remped modis aut accabora incim resto explabo eictemperum quiae sitiorem volor remped modis volor.</p>
+          <h3>What support options do i have?</h3>
+          <p>Conecus iure posae volor remped modis aut accabora incim resto explabo eictemperum quiae sitiorem volor remped modis volor.</p>
+        </div>
+        <!-- /.col -->
+        <div class="col-sm-6 inner-left-sm inner-top-sm">
+          <h3>Is there a setup fee?</h3>
+          <p>Conecus iure posae volor remped modis aut accabora incim resto explabo eictemperum quiae sitiorem volor remped modis volor.</p>
+          <h3>What types of payment methods are accepted?</h3>
+          <p>Conecus iure posae volor remped modis aut accabora incim resto explabo eictemperum quiae sitiorem volor remped modis volor.</p>
+          <h3>Can i cancel my account at any time?</h3>
+          <p>Conecus iure posae volor remped modis aut accabora incim resto explabo eictemperum quiae sitiorem volor remped modis volor.</p>
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container -->
+  </section>
+  <!-- ============================================================= SECTION – FAQ : END ============================================================= -->
+  <!-- ============================================================= SECTION – CONTACT US ============================================================= -->
+  <section id="contact-us" class="tint-bg">
+    <div class="container inner-sm">
+      <div class="row">
+        <div class="col-sm-10 center-block text-center">
+          <h1 class="single-block">Need more help? <a href="#" class="btn btn-large">Contact us</a></h1> </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container -->
+  </section>
+  <!-- ============================================================= SECTION – CONTACT US : END ============================================================= -->
+</main>
+<!-- ============================================================= MAIN : END ============================================================= -->
