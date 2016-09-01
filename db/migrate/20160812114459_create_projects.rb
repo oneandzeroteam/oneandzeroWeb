@@ -7,6 +7,7 @@ class CreateProjects < ActiveRecord::Migration[5.0]
       t.text :long_description
 
       t.string :image_url
+      t.string :reference_url
 
       t.boolean :is_ongoing
 

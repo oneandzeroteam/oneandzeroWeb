@@ -183,7 +183,7 @@
               <figure>
 
                 <div class="icon-overlay icn-link">
-                  <a href="/projects/<%= project.id %>"><img src="<%= project.image_url %>" alt=""></a>
+                  <a href="/projects/<%= project.id %>"><img src="<%= project.attachments.first.file.url unless project.attachments.first.nil? %>" alt=""></a>
                 </div><!-- /.icon-overlay -->
 
                 <figcaption class="bordered no-top-border">
@@ -212,7 +212,7 @@
                         <p><%= project.short_description %></p>
                       </div><!-- /.info -->
                     </figcaption>
-                    <img src="<%= project.image_url %>" alt="">
+                    <img src="<%= project.attachments.first.file.url unless project.attachments.first.nil?  %>" alt="">
                   </figure>
                 </a>
               </div><!-- /.item -->

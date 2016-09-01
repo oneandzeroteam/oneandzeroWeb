@@ -37,8 +37,8 @@
                       <p><%= project.short_description %></p>
                     </div><!-- /.info -->
                   </figcaption>
-                  <img src="/assets/images/art/work01.jpg" alt="">
-                </figure>ㄷ
+                  <img src="<%= project.attachments.first.file.url unless project.attachments.first.nil? %>" alt="">
+                </figure>
               </a>
             </li><!-- /.item -->
             <% end %>

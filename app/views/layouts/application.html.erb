@@ -139,7 +139,7 @@
                         <h4>Focus on</h4>
                         <figure>
                           <div class="icon-overlay icn-link">
-                            <a href="/projects/<%= @recent_project.id %>"><img src="<%= @recent_project.image_url %>" alt=""></a>
+                            <a href="/projects/<%= @recent_project.id %>"><img src="<%= @recent_project.attachments.first.file.url unless @recent_project.attachments.first.nil? %>" alt=""></a>
                           </div>
                           <figcaption>
                             <p><b><%= @recent_project.title %></b></p>
@@ -156,7 +156,7 @@
                           <% @current_projects.each do |project| %>
                           <div class="col-xs-6 thumb">
                             <figure class="icon-overlay icn-link">
-                              <a href="/projects/<%= project.id %>"><img src="<%= project.image_url %>" alt=""></a>
+                              <a href="/projects/<%= project.id %>"><img src="<%= project.attachments.first.file.url unless project.attachments.first.nil? %>" alt=""></a>
                             </figure>
                           </div>
                           <!-- /.thumb -->

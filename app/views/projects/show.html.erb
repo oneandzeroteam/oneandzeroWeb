@@ -11,7 +11,7 @@
 
             <div class="item">
               <figure>
-                <img src="<%= @project.image_url %>" alt="">
+                <img src="<%= @project.attachments.first.file.url unless @project.attachments.first.nil? %>" alt="">
               </figure>
             </div><!-- /.item -->
 
@@ -32,10 +32,10 @@
 
         <div class="col-sm-4 col-sm-offset-1 outer-top-xs inner-left-xs border-left">
           <ul class="item-details">
-            <li class="date">May 23, 2015</li>
+            <li class="date"><%= @project.created_at.to_s %></li>
             <li class="categories">Identity, Interactive, Print</li>
             <li class="client">Creative Startup</li>
-            <li class="url"><a href="http://demo.fuviz.com/reen">demo.fuviz.com/reen</a></li>
+            <li class="url"><a href="<%= @project.reference_url %>"><%= @project.reference_url %></a></li>
           </ul><!-- /.item-detailsdddd -->
         </div><!-- /.col -->
 

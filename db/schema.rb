@@ -89,6 +89,7 @@ ActiveRecord::Schema.define(version: 20160819125645) do
     t.text     "short_description"
     t.text     "long_description"
     t.string   "image_url"
+    t.string   "reference_url"
     t.boolean  "is_ongoing"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
