@@ -24,6 +24,7 @@ class PagesController < ApplicationController
 
 		  valid = false
 		  reason = ""
+
 		  if name.length == 0
 			  reason = "이름이 없습니다."
 		  elsif phoneNumber.length == 0
@@ -35,8 +36,9 @@ class PagesController < ApplicationController
 		  else
 		  	resume={name: name, phoneNumber: phoneNumber, email: email, message: message}
 		  	ApplicationMailer.recruit_mail(resume).deliver_now
-			valid = true
-		  end
+				valid = true
+			end
+
 		  respond_to do |format|
 			  if valid
 			  	msg = { status: "success", reason: reason, name: name, phoneNumber: phoneNumber, email: email, message: message }
@@ -44,7 +46,8 @@ class PagesController < ApplicationController
 			  	msg = { status: "fail", reason: reason, name: name, phoneNumber: phoneNumber, email: email, message: message }
 			  end
 			  format.json  { render :json => msg }
-		  end
+			end
+
 	  end
   end
 
