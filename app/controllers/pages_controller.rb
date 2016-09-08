@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   def show
     if valid_page?
 			if params[:pagename] == "about"
-				@admins = Member.where(is_admin: true).all
+				@admins = Member.where(is_admin: true).shuffle
 			end
       render template: "pages/#{params[:pagename]}"
     else

@@ -3,10 +3,12 @@ class ApplicationMailer < ActionMailer::Base
   layout 'mailer'
 
   def recruit_mail(resume)
+		mailing_list = []
+		Member.where(is_admin:true).each { |admin| mailing_list << admin.email }
 	  @name=resume[:name]
 	  @phoneNumber=resume[:phoneNumber]
 	  @email=resume[:email]
 	  @message=resume[:message]
-	  mail(to: "nicholaskim94@gmail.com", subject: "하나와영 지원서")
+	  mail(to: mailing_list, subject: "하나와영 지원서")
   end
 end
