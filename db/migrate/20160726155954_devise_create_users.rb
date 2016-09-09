@@ -43,6 +43,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.string :entry_semester
       t.string :kakaotalkid
       t.string :profile_image_url
+      t.string :gisu
 
 
 

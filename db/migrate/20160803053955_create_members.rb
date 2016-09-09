@@ -6,6 +6,8 @@ class CreateMembers < ActiveRecord::Migration[5.0]
       t.string :occupation
       t.string :email
       t.string :facebook_url
+      t.string :gisu
+      t.string :entry_semester
       t.text :description
 
       ## User Model Linkage
