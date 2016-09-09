@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 20160819125645) do
     t.string   "name"
     t.string   "image_url"
     t.string   "occupation"
-    t.string   "email"
+    t.string   "email",        default: "제공되지 않음"
     t.string   "facebook_url"
     t.text     "description"
     t.integer  "user_id"
@@ -72,6 +72,8 @@ ActiveRecord::Schema.define(version: 20160819125645) do
     t.boolean  "is_alumni",    default: false
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
+    t.string   "entry_semester", default: "제공되지 않음"
+    t.string   "gisu",           default: "제공되지 않음"
   end
 
   create_table "posts", force: :cascade do |t|

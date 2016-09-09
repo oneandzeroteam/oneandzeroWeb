@@ -13,5 +13,5 @@ class User < ApplicationRecord
   validates :department_name, presence: true
   validates :entry_semester, presence: true
   validates :kakaotalkid, presence: true
-  # validates :profile_image_url, presence: true
+  validates :profile_image_url, presence: true
 end
