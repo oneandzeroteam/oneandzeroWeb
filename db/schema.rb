@@ -63,17 +63,17 @@ ActiveRecord::Schema.define(version: 20160819125645) do
     t.string   "name"
     t.string   "image_url"
     t.string   "occupation"
-    t.string   "email",        default: "제공되지 않음"
+    t.string   "email"
     t.string   "facebook_url"
+    t.string   "gisu"
+    t.string   "entry_semester"
     t.text     "description"
     t.integer  "user_id"
-    t.boolean  "is_admin",     default: false
-    t.boolean  "is_professor", default: false
-    t.boolean  "is_alumni",    default: false
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-    t.string   "entry_semester", default: "제공되지 않음"
-    t.string   "gisu",           default: "제공되지 않음"
+    t.boolean  "is_admin",       default: false
+    t.boolean  "is_professor",   default: false
+    t.boolean  "is_alumni",      default: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
   create_table "posts", force: :cascade do |t|
@@ -133,6 +133,7 @@ ActiveRecord::Schema.define(version: 20160819125645) do
     t.string   "entry_semester"
     t.string   "kakaotalkid"
     t.string   "profile_image_url"
+    t.string   "gisu"
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
     t.index ["email"], name: "index_users_on_email", unique: true

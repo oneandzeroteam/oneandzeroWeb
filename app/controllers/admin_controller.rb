@@ -43,7 +43,7 @@ class AdminController < ApplicationController
   end
 
   def create_member
-    @member = Member.create(member_params)
+    @member = Member.create(name:name ,occupation:occupation , email:email , entry_semester:entry_semester , gisu:gisu)
     @member.attachments << Attachment.create(file: params[:image_url], member_id: @member.id)
     respond_to do |format|
       if @member.save
