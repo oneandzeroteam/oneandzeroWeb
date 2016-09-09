@@ -11,11 +11,11 @@ m = Member.create(name: '김재훈', facebook_url: 'https://www.facebook.com/tur
 m.attachment = Attachment.create(file: open(File.join(Rails.root, 'app/assets/images/admins/JH.png')), member_id: m.id)
 m = Member.create(name: '오영택', facebook_url: 'http://facebook.com/youlooksoupset', occupation: '부회장', description: '15학번인데 벌써 부회장의 자리에 오른 능력자. 차기 회장이라는 소문이 있던데...?!', is_admin: true, email: 'plaque5@naver.com')
 m.attachment = Attachment.create(file: open(File.join(Rails.root, 'app/assets/images/admins/YT.png')), member_id: m.id)
-m = Member.create(name: '신홍규', facebook_url: 'https://www.facebook.com/profile.php?id=100005457848000&fref=ts', occupation: '부회장', description: '베일에 감춰진 신비스러운 존재. 우리는 아직 그를 잘 모른다. 궁금하면 학회에 들어오면 된다.', is_admin: false)
+m = Member.create(name: '신홍규', facebook_url: 'https://www.facebook.com/profile.php?id=100005457848000&fref=ts', occupation: '학회원', description: '베일에 감춰진 신비스러운 존재. 우리는 아직 그를 잘 모른다. 궁금하면 학회에 들어오면 된다.', is_admin: false)
 m.attachment = Attachment.create(file: open(File.join(Rails.root, 'app/assets/images/admins/HG.png')), member_id: m.id)
 m = Member.create(name: '김승주', facebook_url: 'https://www.facebook.com/nicholas.kim.1994', occupation: '총무', description: '학회의 돈줄을 쥐고 있는 실권자이지만 일도 실제로 많이 한다.', is_admin: true, email: 'nicholaskim94@gmail.com')
 m.attachment = Attachment.create(file: open(File.join(Rails.root, 'app/assets/images/admins/SJ.png')), member_id: m.id)
-m = Member.create(name: '김대한', facebook_url: 'https://www.facebook.com/daehan.kim.7902?fref=ts', occupation: '부회장', description: '학회의 새로운 떠오르는 별이다.', is_admin: true, email: 'kdh5852@gmail.com')
+m = Member.create(name: '김대한', facebook_url: 'https://www.facebook.com/daehan.kim.7902?fref=ts', occupation: '부회장', description: '학회의 떠오르는 별이다. 수학을 전공하고 있지만 소프트웨어에 더 관심이 많다.', is_admin: true, email: 'kdh5852@gmail.com')
 m.attachment = Attachment.create(file: open(File.join(Rails.root, 'app/assets/images/admins/DH.png')), member_id: m.id)
 
 
@@ -24,7 +24,19 @@ User.new(email: "admin@oaz.com", password: "1234", name: "관리자", is_admin: 
 Board.create(name: 'tech-blog')
 
 # Member Seeds
-Member.create(name: 'Hana-Kim', image_url: open(File.join(Rails.root, 'app/assets/images/admins/JH.png')), occupation: "운영진")
+
+m = Member.create(name: '장태훈', facebook_url: '#', occupation: '학회원', description: '하나와영의 학회원이다.', is_admin: false, email: 'cloudlesslakitu67@gmail.com')
+m.attachment = Attachment.create(file: open(File.join(Rails.root, 'app/assets/images/members/member_default_pic.png')), member_id: m.id)
+m = Member.create(name: '이혜진', facebook_url: '#', occupation: '학회원', description: '하나와영의 학회원이다.', is_admin: false, email: 'ku24@korea.ac.kr')
+m.attachment = Attachment.create(file: open(File.join(Rails.root, 'app/assets/images/members/LHJ.jpg')), member_id: m.id)
+m = Member.create(name: '김인수', facebook_url: '#', occupation: '학회원', description: '하나와영의 학회원이다.', is_admin: false, email: '제공하지 않음')
+m.attachment = Attachment.create(file: open(File.join(Rails.root, 'app/assets/images/members/KIS.jpg')), member_id: m.id)
+m = Member.create(name: '정규열', facebook_url: '#', occupation: '학회원', description: '하나와영의 학회원이다.', is_admin: false, email: '제공하지 않음')
+m.attachment = Attachment.create(file: open(File.join(Rails.root, 'app/assets/images/members/JGY.jpg')), member_id: m.id)
+m = Member.create(name: '이세령', facebook_url: '#', occupation: '학회원', description: '하나와영의 학회원이다.', is_admin: false, email: '제공하지 않음')
+m.attachment = Attachment.create(file: open(File.join(Rails.root, 'app/assets/images/members/LSR.jpg')), member_id: m.id)
+
+
 
 # Project Seeds
 p = Project.create(title: "하나와영 웹프로젝트", short_description: "하나와영 공식 웹페이지 프로젝트 Ruby on Rails", is_ongoing: true, reference_url: "https://github.com/oneandzeroteam/oneandzeroWeb")
