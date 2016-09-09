@@ -9,7 +9,7 @@
 # ADMIN SEED - FOR PRODUCTION
 m = Member.create(name: '김재훈', facebook_url: 'https://www.facebook.com/turtle.gatpa?fref=ts', occupation: '회장', description: '착하고 은근히 리더십이 있어서 학회를 잘 이끌어감. 뭐 필요하면 연락하면 된다. 좀 더 카리스마 있게 해도 괜찮을 듯.', is_admin: true, email: 'gatpa@korea.ac.kr')
 m.attachment = Attachment.create(file: open(File.join(Rails.root, 'app/assets/images/admins/JH.png')), member_id: m.id)
-m = Member.create(name: '오영택', facebook_url: 'http://facebook.com/youlooksoupset', occupation: '부회장', description: '15학번인데 벌써 부회장의 자리에 오른 능력자. 차기 회장이라는 소문이 있던데...?!', is_admin: true, email: 'plaque5@naver.com')
+m = Member.create(name: '오영택', facebook_url: 'http://facebook.com/youlooksoupset', occupation: '부회장', description: '15학번인데 벌써 부회장의 자리에 오른 능력자. 차기 회장이라는 소문이 있던데...?!', is_admin: true, email: 'dhdudxor9@gmail.com')
 m.attachment = Attachment.create(file: open(File.join(Rails.root, 'app/assets/images/admins/YT.png')), member_id: m.id)
 m = Member.create(name: '신홍규', facebook_url: 'https://www.facebook.com/profile.php?id=100005457848000&fref=ts', occupation: '학회원', description: '베일에 감춰진 신비스러운 존재. 우리는 아직 그를 잘 모른다. 궁금하면 학회에 들어오면 된다.', is_admin: false)
 m.attachment = Attachment.create(file: open(File.join(Rails.root, 'app/assets/images/admins/HG.png')), member_id: m.id)
