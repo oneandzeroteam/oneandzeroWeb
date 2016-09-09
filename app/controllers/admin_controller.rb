@@ -44,7 +44,7 @@ class AdminController < ApplicationController
 
   def create_member
     @member = Member.create(member_params)
-    @member.attachments << Attachment.create(file: params[:image], member_id: @member.id)
+    @member.attachments << Attachment.create(file: params[:image_url], member_id: @member.id)
     respond_to do |format|
       if @member.save
         if ((@user = @member.find_pairUser(@member.email)) != nil)
