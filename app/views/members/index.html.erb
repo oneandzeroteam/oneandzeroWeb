@@ -29,7 +29,7 @@
 
                     <div class="icon-overlay icn-link">
                       <a href="/members/<%= member.id %>">
-                        <img src="<%= member.attachment.file.url unless member.attachment.nil? %>" style="object-fit:cover;"/>
+                        <img src="<%= if member.attachment.nil? ; '/member_default_pic.png' else member.attachment.file.url end %>" style="object-fit:cover;"/>
                       </a>
                     </div><!-- /.icon-overlay -->
 

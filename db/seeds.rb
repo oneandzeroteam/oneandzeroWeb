@@ -18,15 +18,9 @@ m.attachment = Attachment.create(file: open(File.join(Rails.root, 'app/assets/im
 m = Member.create(name: '김대한', facebook_url: 'https://www.facebook.com/daehan.kim.7902?fref=ts', occupation: '부회장', description: '학회의 떠오르는 별이다. 수학을 전공하고 있지만 소프트웨어에 더 관심이 많다.', is_admin: true, email: 'kdh5852@gmail.com')
 m.attachment = Attachment.create(file: open(File.join(Rails.root, 'app/assets/images/admins/DH.png')), member_id: m.id)
 
+# MEMBER SEED - FOR PRODUCTION
+Member.create(name: '장태훈', facebook_url: '#', occupation: '학회원', description: '하나와영의 학회원이다.', is_admin: false, email: 'cloudlesslakitu67@gmail.com')
 
-# Administrator
-User.new(email: "admin@oaz.com", password: "1234", name: "관리자", is_admin: true, is_member: true, confirmed_at: DateTime.now).save(validate: false)
-Board.create(name: 'tech-blog')
-
-# Member Seeds
-
-m = Member.create(name: '장태훈', facebook_url: '#', occupation: '학회원', description: '하나와영의 학회원이다.', is_admin: false, email: 'cloudlesslakitu67@gmail.com')
-m.attachment = Attachment.create(file: open(File.join(Rails.root, 'app/assets/images/members/member_default_pic.png')), member_id: m.id)
 m = Member.create(name: '이혜진', facebook_url: '#', occupation: '학회원', description: '하나와영의 학회원이다.', is_admin: false, email: 'ku24@korea.ac.kr')
 m.attachment = Attachment.create(file: open(File.join(Rails.root, 'app/assets/images/members/LHJ.jpg')), member_id: m.id)
 m = Member.create(name: '김인수', facebook_url: '#', occupation: '학회원', description: '하나와영의 학회원이다.', is_admin: false, email: '제공하지 않음')
@@ -35,6 +29,17 @@ m = Member.create(name: '정규열', facebook_url: '#', occupation: '학회원',
 m.attachment = Attachment.create(file: open(File.join(Rails.root, 'app/assets/images/members/JGY.jpg')), member_id: m.id)
 m = Member.create(name: '이세령', facebook_url: '#', occupation: '학회원', description: '하나와영의 학회원이다.', is_admin: false, email: '제공하지 않음')
 m.attachment = Attachment.create(file: open(File.join(Rails.root, 'app/assets/images/members/LSR.jpg')), member_id: m.id)
+m = Member.create(name: '노창재', facebook_url: '#', occupation: '학회원', description: '하나와영의 학회원이다.', is_admin: false, email: '제공하지 않음')
+m.attachment = Attachment.create(file: open(File.join(Rails.root, 'app/assets/images/members/RCJ.png')), member_id: m.id)
+m = Member.create(name: '서가람', facebook_url: '#', occupation: '학회원', description: '하나와영의 학회원이다.', is_admin: false, email: '제공하지 않음')
+m.attachment = Attachment.create(file: open(File.join(Rails.root, 'app/assets/images/members/SGR.png')), member_id: m.id)
+
+
+# Administrator
+User.new(email: "admin@oaz.com", password: "1234", name: "관리자", is_admin: true, is_member: true, confirmed_at: DateTime.now).save(validate: false)
+Board.create(name: 'tech-blog')
+
+
 
 
 

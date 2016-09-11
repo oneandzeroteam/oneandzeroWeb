@@ -8,7 +8,7 @@
 
             <div class="item">
               <figure>
-                <img src="<%= @member.attachment.file.url %>" alt="" style="height:700px; object-fit:cover;">
+                <img src="<%= if @member.attachment.nil? ; '/member_default_pic.png' else @member.attachment.file.url end %>" alt="" style="height:700px; object-fit:cover;">
               </figure>
             </div><!-- /.item -->
 

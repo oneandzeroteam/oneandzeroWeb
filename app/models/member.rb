@@ -13,7 +13,7 @@ class Member < ApplicationRecord
     }
   end
 
-  self.per_page = 9
+  self.per_page = 8
 
 
 	has_one :user
