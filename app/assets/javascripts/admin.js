@@ -12,8 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-// require turbolinks
-// require_tree .
 //= require admin/app.min
 //= require admin/dashboard2
-
+//= require Chart.bundle
+//= require chartkick

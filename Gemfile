@@ -9,7 +9,9 @@ gem 'recaptcha', require: 'recaptcha/rails'
 gem 'therubyracer', platforms: :ruby
 gem 'carrierwave'
 gem 'gaffe'
-
+gem 'ahoy_matey'
+gem 'chartkick'
+gem 'groupdate'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0'

@@ -25,3 +25,4 @@
 //= require jquery.easytabs.min
 //= require viewport-units-buggyfill
 //= require scripts
+//= require ahoy
