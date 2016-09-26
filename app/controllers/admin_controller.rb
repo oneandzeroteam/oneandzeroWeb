@@ -43,7 +43,7 @@ class AdminController < ApplicationController
   end
 
   def create_member
-    @member = Member.create(name:name ,occupation:occupation , email:email , entry_semester:entry_semester , gisu:gisu)
+    @member = Member.create(member_params)
     @member.attachments << Attachment.create(file: params[:image_url], member_id: @member.id)
     respond_to do |format|
       if @member.save
@@ -266,7 +266,7 @@ class AdminController < ApplicationController
   end
 
   def member_params
-    params.require(:member).permit(:name, :email)
+    params.require(:member).permit(:name, :email, :gisu, :occupation, :entry_semester, :description, :image_url )
   end
 
   def set_timeline

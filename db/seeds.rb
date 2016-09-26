@@ -15,7 +15,7 @@ m = Member.create(name: '신홍규', facebook_url: 'https://www.facebook.com/pro
 m.attachment = Attachment.create(file: open(File.join(Rails.root, 'app/assets/images/admins/HG.png')), member_id: m.id)
 m = Member.create(name: '김승주', facebook_url: 'https://www.facebook.com/nicholas.kim.1994', occupation: '총무', description: '학회의 돈줄을 쥐고 있는 실권자이지만 일도 실제로 많이 한다.', is_admin: true, email: 'nicholaskim94@gmail.com')
 m.attachment = Attachment.create(file: open(File.join(Rails.root, 'app/assets/images/admins/SJ.png')), member_id: m.id)
-m = Member.create(name: '김대한', facebook_url: 'https://www.facebook.com/daehan.kim.7902?fref=ts', occupation: '부회장', description: '학회의 떠오르는 별이다. 수학을 전공하고 있지만 소프트웨어에 더 관심이 많다.', is_admin: true, email: 'kdh5852@gmail.com')
+m = Member.create(name: '김대한', facebook_url: 'https://www.facebook.com/daehan.kim.7902?fref=ts', occupation: '부회장', description: '학회의 떠오르는 별이다. 수학을 전공하고 있지만 소프트웨어에 더 관심이 많다.', is_admin: true, email: 'kdh5852@naver.com')
 m.attachment = Attachment.create(file: open(File.join(Rails.root, 'app/assets/images/admins/DH.png')), member_id: m.id)
 
 # MEMBER SEED - FOR PRODUCTION

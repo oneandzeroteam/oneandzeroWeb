@@ -3,15 +3,15 @@ class Member < ApplicationRecord
 
   searchkick
 
-  def search_data
-    {
-        name: name,
-        image_url: image_url,
-        occupation: occupation,
-        email: email,
-        description: description
-    }
-  end
+#  def search_data
+#    {
+#        name: name,
+#        image_url: image_url,
+#        occupation: occupation,
+#        email: email,
+#        description: description
+#    }
+#  end
 
   self.per_page = 8
 
