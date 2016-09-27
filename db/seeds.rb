@@ -9,7 +9,7 @@
 # ADMIN SEED - FOR PRODUCTION
 m = Member.create(name: '김재훈', facebook_url: 'https://www.facebook.com/turtle.gatpa?fref=ts', occupation: '회장', description: '착하고 은근히 리더십이 있어서 학회를 잘 이끌어감. 뭐 필요하면 연락하면 된다. 좀 더 카리스마 있게 해도 괜찮을 듯.', is_admin: true, email: 'gatpa@korea.ac.kr')
 m.attachment = Attachment.create(file: open(File.join(Rails.root, 'app/assets/images/admins/JH.png')), member_id: m.id)
-m = Member.create(name: '오영택', facebook_url: 'http://facebook.com/youlooksoupset', occupation: '부회장', description: '15학번인데 벌써 부회장의 자리에 오른 능력자. 차기 회장이라는 소문이 있던데...?!', is_admin: true, email: 'dhdudxor9@gmail.com')
+m = Member.create(name: '오영택', facebook_url: 'http://facebook.com/youlooksoupset', occupation: '부회장', description: '15학번인데 벌써 부회장의 자리에 오른 능력자. 차기 회장이라는 소문이 있던데...?!', is_admin: true, email: 'vnv1051@naver.com')
 m.attachment = Attachment.create(file: open(File.join(Rails.root, 'app/assets/images/admins/YT.png')), member_id: m.id)
 m = Member.create(name: '신홍규', facebook_url: 'https://www.facebook.com/profile.php?id=100005457848000&fref=ts', occupation: '학회원', description: '베일에 감춰진 신비스러운 존재. 우리는 아직 그를 잘 모른다. 궁금하면 학회에 들어오면 된다.', is_admin: false)
 m.attachment = Attachment.create(file: open(File.join(Rails.root, 'app/assets/images/admins/HG.png')), member_id: m.id)
@@ -164,7 +164,7 @@ l.call()
 루비 1.9부터는 신택스 슈가인 ->를 사용할 수도 있습니다.
 
 ->{ puts 'Hello, world!' }
-왜 lambda가 존재하는 걸까요? 람다라는 표현을 거슬러 올라가면 람다 대수가 나옵니다. 람다 대수는 알론조 처치에 의해 만들어진 수학 체계입니다. 이 체계가 흥미로운 것은 하나의 인자를 받는 함수들만을 사용하면서, 튜링 컴플리트하다는 점입니다. 즉, 완전히 수학적이면서 튜링 머신에서 가능한 모든 계산이 가능하다는 의미입니다. 단, 여기서 lambda라는 표현은 엄밀한 의미에서 수학적인 표현이라기보다는 루비 이전의 언어들에서 익명 함수를 의미할 때 사용해오던 관용구라고 이해하는 게 좋습니다. 루비에서는 이렇게 생성된 객체가 일반적인 Proc 객체보다 좀 더 함수답게 작동한다는 차이점을 가지고 있습니다.
+왜 lambda가 존재하는 걸까요? 람다라는 표현을 거슬러 올라가면 람다 대수가 나옵니다. 람다 대수는 알론조 처치에 의해 만들어진 수학 체계입니다. 이 체계가 흥미로운 것은 하나의 인자를 받는 함수들만을 사용하면서, 튜링 컴플리트하다는 점입니다. 즉, 완전히 수학적이면서 튜링 머신에서 가능한 모든 계산이 가능하다는 의미입니다. 단, 여기서 lambda라는 표현은 엄밀한 의미에서 수학적인 표현이라기보다는 루비 이전의 언어들에서 익명 함수를 ���미할 때 사용해오던 관용구라고 이해하는 게 좋습니다. 루비에서는 이렇게 생성된 객체가 일반적인 Proc 객체보다 좀 더 함수답게 작동한다는 차이점을 가지고 있습니다.
 
 Proc#lambda? 를 사용한 lambda 여부 확인
 
