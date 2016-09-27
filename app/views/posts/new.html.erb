@@ -45,7 +45,15 @@
 
           <section style="margin-top: 20px;">
 
-            <form id="" class="forms" action="/board/<%= @board.name %>/posts" method="POST" enctype="multipart/form-data">
+<script>
+  
+String content = reqbox.getString("CONTENT");
+content = content.replaceAll("\r\n", "<br>"); // 줄바꿈 처리
+content = content.replaceAll("\u0020", "&nbsp;"); // 스페이스바 처리
+  
+</script>
+
+            <form id="formforpost" class="forms" action="/board/<%= @board.name %>/posts" method="POST" enctype="multipart/form-data">
               <center>
                 <div class="row">
                   <div class="col-sm-12">
