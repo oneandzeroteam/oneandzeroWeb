@@ -86,13 +86,13 @@
 
                       <!--<div id="owl-work" class="owl-carousel owl-inner-pagination owl-inner-nav post-media">-->
 
-                        <!--<% post.attachments.each do |attachment| %>-->
-                            <!--<div class="item">-->
-                              <!--<figure>-->
-                                <!--<img src="<%=attachment.image_url%>" alt="">-->
-                              <!--</figure>-->
-                            <!--</div>&lt;!&ndash; /.item &ndash;&gt;-->
-                        <!--<% end %>-->
+                        <!-- <% post.attachments.each do |attachment| %> -->
+                            <div class="item">
+                              <figure>
+                                <img src="<%=attachment.image_url unless attachment.nil? %>" alt="">
+                              </figure>
+                            </div>
+                        <% end %>
 
                       <!--</div>&lt;!&ndash; /.owl-carousel &ndash;&gt;-->
 
