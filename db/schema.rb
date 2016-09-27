@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20160911084558) do
     t.integer  "borrowablestuff_id"
     t.integer  "member_id"
     t.integer  "project_id"
+    t.string   "image_url"
     t.string   "file"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false

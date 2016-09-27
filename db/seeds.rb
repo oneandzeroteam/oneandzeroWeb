@@ -59,7 +59,7 @@ Timeline.create(title: "2014년 하나와영 핸즈 합동 전시회", descripti
 (1...20).each { |code| Borrowablestuff.create(stufftype: "Monitor", description: "싸구려 모니터", stuffcode: code)}
 
 # Posts.Seeds
-(1...30).each { |i| Post.create(board_id: 1, user_id: 1, title: "루비와 익명 함수 - 블록(block), Proc(절차, procedure) 객체와 람다(lambda) 함수의 차이 이해하기" , content: "
+(1...3).each { |i| Post.create(board_id: 1, user_id: 1, title: "루비와 익명 함수 - 블록(block), Proc(절차, procedure) 객체와 람다(lambda) 함수의 차이 이해하기" , content: "
 Proc(절차, Procedure) 객체 이해하기
 Proc 객체 실행하기
 블록
