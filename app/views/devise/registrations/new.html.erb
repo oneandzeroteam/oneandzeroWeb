@@ -67,7 +67,7 @@
       <%= f.text_field :department_name, class: "form-control" %>
     </div>
 
-    <% semesters = [] ; (2010..Time.now.year).each{ |year| semesters += ["#{year}년 봄학기", "#{year}년 가을학기"]} %>
+    <% semesters = [] ; (1980..Time.now.year).each{ |year| semesters += ["#{year}년 봄학기", "#{year}년 가을학기"]} %>
 
     <div class="form-group">
       <%= f.label :입회학기 %>
