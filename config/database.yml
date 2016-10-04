@@ -20,6 +20,15 @@ test:
   <<: *default
   database: db/test.sqlite3
 
+#production:
+#  <<: *default
+#  database: db/production.sqlite3
+
 production:
-  <<: *default
-  database: db/production.sqlite3
+   adapter: mysql2
+   encoding: utf8
+   host: localhost
+   port: 3306
+   database: oneandzeroWeb
+   username: ENV['MYSQL_USERNAME']
+   password: ENV['MYSQL_PASSWORD']
